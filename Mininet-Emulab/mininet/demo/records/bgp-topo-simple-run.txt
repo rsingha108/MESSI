@@ -1,0 +1,2184 @@
+(base) rathin@rathin-XPS-13-9310:~/Desktop/Mininet-Emulab/mininet/demo$ sudo python bgp-topo-simple.py
+[sudo] password for rathin: 
+Sorry, try again.
+[sudo] password for rathin: 
+Sorry, try again.
+[sudo] password for rathin: 
+Error response from daemon: No such container: mn.d1
+mn.d2
+Error response from daemon: No such container: mn.d3
+Error response from daemon: No such container: mn.d4
+Error response from daemon: No such container: mn.s1
+Error response from daemon: No such container: mn.s2
+Error response from daemon: No such container: mn.s3
+Error response from daemon: No such container: mn.s4
+Error: No such container: mn.d1
+mn.d2
+Error: No such container: mn.d3
+Error: No such container: mn.d4
+Error: No such container: mn.s1
+Error: No such container: mn.s2
+Error: No such container: mn.s3
+Error: No such container: mn.s4
+*** Adding docker containers
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d1: kwargs {}
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d2: kwargs {}
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d3: kwargs {}
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d4: kwargs {}
+*** Adding switches
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s1: kwargs {'bgpd': 'yes'}
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s2: kwargs {'bgpd': 'yes'}
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s3: kwargs {'bgpd': 'yes'}
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s4: kwargs {'bgpd': 'yes'}
+*** Adding subnets
+*** Creating links
+Traceback (most recent call last):
+  File "bgp-topo-simple.py", line 106, in <module>
+    net.addLink(d2, s2, ip1=ip1, ip2=ip2) 
+NameError: name 'd2' is not defined
+(base) rathin@rathin-XPS-13-9310:~/Desktop/Mininet-Emulab/mininet/demo$ sudo python bgp-topo-simple.py
+mn.d1
+mn.d2
+mn.d3
+mn.d4
+mn.s1
+mn.s2
+mn.s3
+mn.s4
+mn.d1
+mn.d2
+mn.d3
+mn.d4
+mn.s1
+mn.s2
+mn.s3
+mn.s4
+*** Adding docker containers
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d1: kwargs {}
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d2: kwargs {}
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d3: kwargs {}
+1: 
+ubuntu; trusty; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+ubuntu; trusty; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+ubuntu; trusty; None; sha256:21cbaa7ccdc7de279a395f3c4d2fec6f6e67c134548044d92a1b21daa4c9d7aa
+ubuntu; trusty; None; sha256:5c56abe154a4dbfca7dfcc79c85b9ef2710f29faadb5ef050d96a1f1a3f11b23
+d4: kwargs {}
+*** Adding switches
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s1: kwargs {'bgpd': 'yes'}
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s2: kwargs {'bgpd': 'yes'}
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s3: kwargs {'bgpd': 'yes'}
+1: 
+kathara/quagga; latest; None; sha256:d208c531daef8b062a61c024d7f360980b6cf12ec6df24c5304113b9edb00714
+kathara/quagga; latest; None; sha256:c1e8318d7d68367484da0414dfe35ebecdcaf451e5dc1f9357338ff84e71149b
+s4: kwargs {'bgpd': 'yes'}
+*** Adding subnets
+*** Creating links
+Configure daemons following zebra=yes\nbgpd=yes\nospfd=no\nospf6d=no\nripd=no\nripngd=no\nisisd=no\nbfdd=no\nzebra_options=\"-f /etc/quagga/zebra.conf\"\nbgpd_options=\"-f /etc/quagga/bgpd.conf\"\nospfd_options=\"-f /etc/quagga/ospfd.conf\"\nospf6d_options=\"-f /etc/quagga/ospf6d.conf\"\nripd_options=\"-f /etc/quagga/ripd.conf\"\nripngd_options=\"-f /etc/quagga/ripngd.conf\"\nisisd_options=\"-f /etc/quagga/isisd.conf\"\nbfdd_options=\"-f /etc/quagga/bfdd.conf\"\n
+Setup the general configurations of routing software hostname s1\npassword zebra\n\n
+Configure protocol zebra following 
+Configure protocol bgpd following 
+Start quagga Daemons
+Configure daemons following zebra=yes\nbgpd=yes\nospfd=no\nospf6d=no\nripd=no\nripngd=no\nisisd=no\nbfdd=no\nzebra_options=\"-f /etc/quagga/zebra.conf\"\nbgpd_options=\"-f /etc/quagga/bgpd.conf\"\nospfd_options=\"-f /etc/quagga/ospfd.conf\"\nospf6d_options=\"-f /etc/quagga/ospf6d.conf\"\nripd_options=\"-f /etc/quagga/ripd.conf\"\nripngd_options=\"-f /etc/quagga/ripngd.conf\"\nisisd_options=\"-f /etc/quagga/isisd.conf\"\nbfdd_options=\"-f /etc/quagga/bfdd.conf\"\n
+Setup the general configurations of routing software hostname s2\npassword zebra\n\n
+Configure protocol zebra following 
+Configure protocol bgpd following 
+Start quagga Daemons
+Configure daemons following zebra=yes\nbgpd=yes\nospfd=no\nospf6d=no\nripd=no\nripngd=no\nisisd=no\nbfdd=no\nzebra_options=\"-f /etc/quagga/zebra.conf\"\nbgpd_options=\"-f /etc/quagga/bgpd.conf\"\nospfd_options=\"-f /etc/quagga/ospfd.conf\"\nospf6d_options=\"-f /etc/quagga/ospf6d.conf\"\nripd_options=\"-f /etc/quagga/ripd.conf\"\nripngd_options=\"-f /etc/quagga/ripngd.conf\"\nisisd_options=\"-f /etc/quagga/isisd.conf\"\nbfdd_options=\"-f /etc/quagga/bfdd.conf\"\n
+Setup the general configurations of routing software hostname s3\npassword zebra\n\n
+Configure protocol zebra following 
+Configure protocol bgpd following 
+Start quagga Daemons
+Configure daemons following zebra=yes\nbgpd=yes\nospfd=no\nospf6d=no\nripd=no\nripngd=no\nisisd=no\nbfdd=no\nzebra_options=\"-f /etc/quagga/zebra.conf\"\nbgpd_options=\"-f /etc/quagga/bgpd.conf\"\nospfd_options=\"-f /etc/quagga/ospfd.conf\"\nospf6d_options=\"-f /etc/quagga/ospf6d.conf\"\nripd_options=\"-f /etc/quagga/ripd.conf\"\nripngd_options=\"-f /etc/quagga/ripngd.conf\"\nisisd_options=\"-f /etc/quagga/isisd.conf\"\nbfdd_options=\"-f /etc/quagga/bfdd.conf\"\n
+Setup the general configurations of routing software hostname s4\npassword zebra\n\n
+Configure protocol zebra following 
+Configure protocol bgpd following 
+Start quagga Daemons
+*** Exp Setup
+*** Starting network
+*** Configuring hosts
+d1 d2 d3 d4 s1 s2 s3 s4 
+*** Starting controller
+
+*** Starting 0 switches
+
+*** Running CLI
+*** Starting CLI:
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# conf t
+s1(config)# router bgp 500
+s1(config-router)# neighbot \^C^C
+^C^C
+
+s1(config-router)# neighbor 1.1.1.2 remote-as 6--^C^C
+
+s1(config-router)# neighbor 1.1.1.2 remote-as 600
+s1(config-router)# neighbor 4.4.4.1 remote-as 500
+s1(config-router)# network 10.0.0.0
+s1(config-router)# network 1.0.0.0
+s1(config-router)# nw^C^C
+
+s1(config-router)# network 4.0.0.0
+s1(config-router)# ls
+% Unknown command.
+s1(config-router)# ei^C^C
+^C^C
+
+s1(config-router)# exit
+s1(config)# exit
+s1# show ip bgop^?^C^C
+^C^C
+
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          0.0.0.0                  0         32768 i
+*> 4.0.0.0          0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  3 out of 3 total prefixes
+s1# exit
+containernet> s2 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s2# conf t
+s2(config)# router bgo^C^C
+
+s2(config)# router bgp 600
+s2(config-router)# neighbor 1.1.1.1 remote-as 500
+s2(config-router)# neighbor 3^C^C
+^C^C
+^C^C
+
+s2(config-router)# neighbor 2.2.2.2 remote-as 700
+s2(config-router)# network 20.0.0.0
+s2(config-router)# network 1.0.0.0
+s2(config-router)# network 2.0.0.0
+s2(config-router)# exit
+s2(config)# exit
+s2# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.3
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          0.0.0.0                  0         32768 i
+*                   1.1.1.1                  0             0 500 i
+*> 2.0.0.0          0.0.0.0                  0         32768 i
+*> 4.0.0.0          1.1.1.1                  0             0 500 i
+*> 10.0.0.0         1.1.1.1                  0             0 500 i
+*> 20.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  5 out of 6 total prefixes
+s2# x^?^C^C
+^C^C
+exit
+containernet> s3 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s3# cinf t
+% Unknown command.
+s3# conf t
+s3(config)# router bgp 700
+s3(config-router)# neighbor 2.2.2.1 remoe^C^C
+^C^C
+
+s3(config-router)# neighbor 2.2.2.1 remote-as 600
+s3(config-router)# neighbor 2.2.2.^C^C
+^C^C
+
+s3(config-router)# neighbor 3.3.3.2 remote-as 500
+s3(config-router)# network 30.0.0.0
+s3(config-router)# network 2.0.0.0
+s3(config-router)# network 3.0.0.0
+s3(config-router)# exit
+s3(config)# exit
+s3# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.4
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          2.2.2.1                  0             0 600 i
+*> 2.0.0.0          0.0.0.0                  0         32768 i
+*                   2.2.2.1                  0             0 600 i
+*> 3.0.0.0          0.0.0.0                  0         32768 i
+*> 4.0.0.0          2.2.2.1                                0 600 500 i
+*> 10.0.0.0         2.2.2.1                                0 600 500 i
+*> 20.0.0.0         2.2.2.1                  0             0 600 i
+*> 30.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  7 out of 8 total prefixes
+s3# exit
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# neighbr^C^C
+
+s4(config-router)# neighbor 3.3.3.2 remote-as ^C^C
+
+s4(config-router)# 
+s4(config-router)# neighbor 3.3.3.1 remote-as 700
+s4(config-router)# neighbor 4.4.4.2 remote0^C^C
+^C^C
+
+s4(config-router)# neighbor 4.4.4.2 remote-as 500
+s4(config-router)# network 3.0.0.0
+s4(config-router)# network 4.0.0.0
+s4(config-router)# network 40.00^C^C
+^C^C
+
+s4(config-router)# network 40.0.0.0
+s4(config-router)# exit
+s4(config)# exit
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*>i1.0.0.0          4.4.4.2                  0    100      0 i
+*                   3.3.3.1                                0 700 600 i
+* i2.0.0.0          1.1.1.2                  0    100      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*> 3.0.0.0          0.0.0.0                  0         32768 i
+*                   3.3.3.1                  0             0 700 i
+*> 4.0.0.0          0.0.0.0                  0         32768 i
+* i                 4.4.4.2                  0    100      0 i
+*>i10.0.0.0         4.4.4.2                  0    100      0 i
+*>i20.0.0.0         1.1.1.2                  0    100      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# ^[[A^[[Aeit
+% Unknown command.
+s4# exit
+containernet> s4 route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.0.0.0         4.4.4.2         255.0.0.0       UG    20     0        0 s4-eth1
+2.0.0.0         3.3.3.1         255.0.0.0       UG    20     0        0 s4-eth0
+3.0.0.0         0.0.0.0         255.0.0.0       U     0      0        0 s4-eth0
+4.0.0.0         0.0.0.0         255.0.0.0       U     0      0        0 s4-eth1
+10.0.0.0        4.4.4.2         255.0.0.0       UG    20     0        0 s4-eth1
+30.0.0.0        3.3.3.1         255.0.0.0       UG    20     0        0 s4-eth0
+40.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 s4-eth2
+containernet> s1 route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.0.0.0         0.0.0.0         255.0.0.0       U     0      0        0 s1-eth0
+2.0.0.0         1.1.1.2         255.0.0.0       UG    20     0        0 s1-eth0
+3.0.0.0         4.4.4.1         255.0.0.0       UG    20     0        0 s1-eth1
+4.0.0.0         0.0.0.0         255.0.0.0       U     0      0        0 s1-eth1
+10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 s1-eth2
+20.0.0.0        1.1.1.2         255.0.0.0       UG    20     0        0 s1-eth0
+40.0.0.0        4.4.4.1         255.0.0.0       UG    20     0        0 s1-eth1
+containernet> s1 show ip bgp
+bash: show: command not found
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          3.3.3.1                  0    100      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0    100      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         3.3.3.1                  0    100      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# router bgp 500
+% Unknown command.
+s1# conf t
+s1(config)# router bgp 500
+s1(config-router)# neighbor 4.4.4.1 next-hop-self
+s1(config-router)# exit'
+% Unknown command.
+s1(config-router)# exit
+s1(config)# clear ip bgp * soft
+% Unknown command.
+s1(config)# exit
+s1# clear ip bgp * soft
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          3.3.3.1                  0    100      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0    100      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         3.3.3.1                  0    100      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          3.3.3.1                  0    100      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0    100      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         3.3.3.1                  0    100      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# exit
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*>i1.0.0.0          4.4.4.2                  0    100      0 i
+*                   3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0    100      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*> 3.0.0.0          0.0.0.0                  0         32768 i
+*                   3.3.3.1                  0             0 700 i
+*> 4.0.0.0          0.0.0.0                  0         32768 i
+* i                 4.4.4.2                  0    100      0 i
+*>i10.0.0.0         4.4.4.2                  0    100      0 i
+*>i20.0.0.0         4.4.4.2                  0    100      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# neighbor 4.4.4.2 next-hop-self
+s4(config-router)# exit
+s4(config)# exit
+s4# clear ip bgp * sod^C^C
+
+s4# 
+s4# clear ip bgp * soft
+s4# exit
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0    100      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0    100      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# s1 ping ^?^?\^?^?^C^C
+^C^C
+exit
+containernet> d1 ping d3
+PING 30.0.0.1 (30.0.0.1) 56(84) bytes of data.
+64 bytes from 30.0.0.1: icmp_seq=1 ttl=61 time=0.148 ms
+64 bytes from 30.0.0.1: icmp_seq=2 ttl=61 time=0.107 ms
+64 bytes from 30.0.0.1: icmp_seq=3 ttl=61 time=0.076 ms
+64 bytes from 30.0.0.1: icmp_seq=4 ttl=61 time=0.106 ms
+64 bytes from 30.0.0.1: icmp_seq=5 ttl=61 time=0.102 ms
+64 bytes from 30.0.0.1: icmp_seq=6 ttl=61 time=0.065 ms
+^C
+--- 30.0.0.1 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5098ms
+rtt min/avg/max/mdev = 0.065/0.100/0.148/0.028 ms
+
+containernet> d4 ping d2
+PING 20.0.0.1 (20.0.0.1) 56(84) bytes of data.
+64 bytes from 20.0.0.1: icmp_seq=1 ttl=61 time=0.169 ms
+64 bytes from 20.0.0.1: icmp_seq=2 ttl=61 time=0.093 ms
+64 bytes from 20.0.0.1: icmp_seq=3 ttl=61 time=0.104 ms
+64 bytes from 20.0.0.1: icmp_seq=4 ttl=61 time=0.103 ms
+64 bytes from 20.0.0.1: icmp_seq=5 ttl=61 time=0.102 ms
+64 bytes from 20.0.0.1: icmp_seq=6 ttl=61 time=0.087 ms
+64 bytes from 20.0.0.1: icmp_seq=7 ttl=61 time=0.093 ms
+64 bytes from 20.0.0.1: icmp_seq=8 ttl=61 time=0.087 ms
+64 bytes from 20.0.0.1: icmp_seq=9 ttl=61 time=0.090 ms
+64 bytes from 20.0.0.1: icmp_seq=10 ttl=61 time=0.110 ms
+64 bytes from 20.0.0.1: icmp_seq=11 ttl=61 time=0.103 ms
+^C
+--- 20.0.0.1 ping statistics ---
+11 packets transmitted, 11 received, 0% packet loss, time 10228ms
+rtt min/avg/max/mdev = 0.087/0.103/0.169/0.025 ms
+
+containernet> s1 route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+1.0.0.0         0.0.0.0         255.0.0.0       U     0      0        0 s1-eth0
+2.0.0.0         1.1.1.2         255.0.0.0       UG    20     0        0 s1-eth0
+3.0.0.0         4.4.4.1         255.0.0.0       UG    20     0        0 s1-eth1
+4.0.0.0         0.0.0.0         255.0.0.0       U     0      0        0 s1-eth1
+10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 s1-eth2
+20.0.0.0        1.1.1.2         255.0.0.0       UG    20     0        0 s1-eth0
+30.0.0.0        4.4.4.1         255.0.0.0       UG    20     0        0 s1-eth1
+40.0.0.0        4.4.4.1         255.0.0.0       UG    20     0        0 s1-eth1
+containernet> s1 vtysh -c show ip bgp
+% Command incomplete.
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0    100      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0    100      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# show ip bgp summary
+BGP router identifier 192.168.19.2, local AS number 500
+RIB entries 15, using 1680 bytes of memory
+Peers 2, using 18 KiB of memory
+
+Neighbor        V         AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/P
+fxRcd
+1.1.1.2         4   600      39      48        0    0    0 00:30:02        5
+4.4.4.1         4   500      40      58        0    0    0 00:25:01        5
+
+Total number of neighbors 2
+
+Total num. Established sessions 2
+Total num. of routes received     10
+s1# i[^?^C^C
+^C^C
+
+s1# ip bgp summary
+% Unknown command.
+s1# show run | s bgp
+% Unknown command.
+s1# sh run | s bgp
+% Unknown command.
+s1# en
+% Ambiguous command.
+s1# enable
+s1# sh run | s bgp
+% Unknown command.
+s1# conf t
+s1(config)# sh run | s bgp
+% Unknown command.
+s1(config)# exit
+s1# exit
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# conf t
+s1(config)# ne^?^?^C^C
+^C^C
+
+s1(config)# router bgp 500
+s1(config-router)# neighbor 1.1.1.2 weight 447
+s1(config-router)# exit
+s1(config)# exit
+s1# clear ip bgp ^?^X^X^C^C
+^C^C
+
+s1# clear ip bgp * soft
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0           447 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                  0           447 600 i
+* i3.0.0.0          4.4.4.1                  0    100      0 i
+*>                  1.1.1.2                              447 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0           447 600 i
+* i30.0.0.0         4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                              447 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# exit
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# neighbor 3.3.3.1 weight 446
+s4(config-router)# exit
+s4(config)# exit
+s4# i^?^C^C
+^C^C
+
+s4# clear bgp ^C^C
+^C^C
+
+s4# clear ip bgp ^C^C
+^C^C
+
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*>i1.0.0.0          4.4.4.2                  0    100      0 i
+*                   3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0    100      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+* i3.0.0.0          4.4.4.2                       100      0 600 700 i
+*>                  0.0.0.0                  0         32768 i
+*                   3.3.3.1                  0             0 700 i
+*> 4.0.0.0          0.0.0.0                  0         32768 i
+* i                 4.4.4.2                  0    100      0 i
+*>i10.0.0.0         4.4.4.2                  0    100      0 i
+*>i20.0.0.0         4.4.4.2                  0    100      0 600 i
+*                   3.3.3.1                                0 700 600 i
+* i30.0.0.0         4.4.4.2                       100      0 600 700 i
+*>                  3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 15 total prefixes
+s4# clear ip bgp * soft
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0    100      0 i
+*>                  3.3.3.1                              446 700 600 i
+* i2.0.0.0          4.4.4.2                  0    100      0 600 i
+*>                  3.3.3.1                  0           446 700 i
+* i3.0.0.0          4.4.4.2                       100      0 600 700 i
+*>                  0.0.0.0                  0         32768 i
+*                   3.3.3.1                  0           446 700 i
+*> 4.0.0.0          0.0.0.0                  0         32768 i
+* i                 4.4.4.2                  0    100      0 i
+*>i10.0.0.0         4.4.4.2                  0    100      0 i
+* i20.0.0.0         4.4.4.2                  0    100      0 600 i
+*>                  3.3.3.1                              446 700 600 i
+* i30.0.0.0         4.4.4.2                       100      0 600 700 i
+*>                  3.3.3.1                  0           446 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 15 total prefixes
+s4# exit
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.1                       100      0 700 600 i
+*                   1.1.1.2                  0           447 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                  0           447 600 i
+* i3.0.0.0          4.4.4.1                  0    100      0 i
+*>                  1.1.1.2                              447 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+* i20.0.0.0         4.4.4.1                       100      0 700 600 i
+*>                  1.1.1.2                  0           447 600 i
+* i30.0.0.0         4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                              447 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 15 total prefixes
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# conf t
+s1(config)# router bgp 500
+s1(config-router)# bgp default local-preference 135
+s1(config-router)# neighbor 1.1.1.2 weight 253
+s1(config-router)# exit
+s1(config)# exit
+s1# clear ip bgp * spft^C^C
+^C^C
+
+s1# clear ip bgp * soft
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.1                       100      0 700 600 i
+*                   1.1.1.2                  0           253 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                  0           253 600 i
+* i3.0.0.0          4.4.4.1                  0    100      0 i
+*>                  1.1.1.2                              253 600 700 i
+* i4.0.0.0          4.4.4.1                  0    100      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+* i20.0.0.0         4.4.4.1                       100      0 700 600 i
+*>                  1.1.1.2                  0           253 600 i
+* i30.0.0.0         4.4.4.1                  0    100      0 700 i
+*>                  1.1.1.2                              253 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    100      0 i
+
+Displayed  8 out of 15 total prefixes
+s1# s4^?^?^C^C
+^C^C
+
+s1# exit
+containernet> s4 vtysg\
+Interrupt
+containernet> 
+Interrupt
+containernet> 
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# bgp default local-preference 134
+s4(config-router)# router ^C^C
+^C^C
+
+s4(config-router)# neighbor 3.3.3.2 ^C^C
+
+s4(config-router)# neighbor 3.3.3.1 weight 253
+s4(config-router)# vty^C^C
+^C^C
+
+s4(config-router)# exit
+s4(config)# exit
+s4# clear ip bgp (^C^C
+^C^C
+
+s4# clear ip bgp * soft
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0    135      0 i
+*>                  3.3.3.1                              253 700 600 i
+* i2.0.0.0          4.4.4.2                  0    135      0 600 i
+*>                  3.3.3.1                  0           253 700 i
+* i3.0.0.0          4.4.4.2                       135      0 600 700 i
+*>                  0.0.0.0                  0         32768 i
+*                   3.3.3.1                  0           253 700 i
+*> 4.0.0.0          0.0.0.0                  0         32768 i
+* i                 4.4.4.2                  0    135      0 i
+*>i10.0.0.0         4.4.4.2                  0    135      0 i
+* i20.0.0.0         4.4.4.2                  0    135      0 600 i
+*>                  3.3.3.1                              253 700 600 i
+* i30.0.0.0         4.4.4.2                       135      0 600 700 i
+*>                  3.3.3.1                  0           253 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 15 total prefixes
+s4# exit
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0           253 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0    134      0 700 i
+*>                  1.1.1.2                  0           253 600 i
+* i3.0.0.0          4.4.4.1                  0    134      0 i
+*>                  1.1.1.2                              253 600 700 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+* i20.0.0.0         4.4.4.1                       134      0 700 600 i
+*>                  1.1.1.2                  0           253 600 i
+* i30.0.0.0         4.4.4.1                  0    134      0 700 i
+*>                  1.1.1.2                              253 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 15 total prefixes
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# ^[[A^[[A^[[B^[[B^C^C
+^C^C
+
+s1# conf t
+s1(config)# router bgp 500
+s1(config-router)# s^?^C^C
+^C^C
+
+s1(config-router)# neighbor 1.1.1.2 weight 0
+s1(config-router)# exit
+s1(config)# exit
+s1# clear ip bgp * sp^C^C
+^C^C
+
+s1# clear ip bgp * soft
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0    134      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+* i3.0.0.0          4.4.4.1                  0    134      0 i
+*>                  1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+* i20.0.0.0         4.4.4.1                       134      0 700 600 i
+*>                  1.1.1.2                  0             0 600 i
+* i30.0.0.0         4.4.4.1                  0    134      0 700 i
+*>                  1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 15 total prefixes
+s1# exit
+containernet> s4 vtysh -c "clear ip bgp * soft"
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0    135      0 i
+*>                  3.3.3.1                              253 700 600 i
+* i2.0.0.0          4.4.4.2                  0    135      0 600 i
+*>                  3.3.3.1                  0           253 700 i
+* i3.0.0.0          4.4.4.2                       135      0 600 700 i
+*>                  0.0.0.0                  0         32768 i
+*                   3.3.3.1                  0           253 700 i
+*> 4.0.0.0          0.0.0.0                  0         32768 i
+* i                 4.4.4.2                  0    135      0 i
+*>i10.0.0.0         4.4.4.2                  0    135      0 i
+* i20.0.0.0         4.4.4.2                  0    135      0 600 i
+*>                  3.3.3.1                              253 700 600 i
+* i30.0.0.0         4.4.4.2                       135      0 600 700 i
+*>                  3.3.3.1                  0           253 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 15 total prefixes
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# neighbor 3.3.3.1 weight 0
+s4(config-router)# exit
+s4(config)# exit
+s4# clear ip bgo^C^C
+^C^C
+
+s4# clear ip bgp * soft
+s4# clear ip bgp *
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0    135      0 i
+*  2.0.0.0          3.3.3.1                  0             0 700 i
+*>i                 4.4.4.2                  0    135      0 600 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+* i                 4.4.4.2                       135      0 600 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0    135      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0    135      0 i
+*  20.0.0.0         3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0    135      0 600 i
+*  30.0.0.0         3.3.3.1                  0             0 700 i
+*>i                 4.4.4.2                       135      0 600 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 15 total prefixes
+s4# ^[[A^[[A^[[B^[[B^?^?^C^C
+^C^C
+
+s4# exit
+containernet> s1 vtysh -c "clear ip bgp *"
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*> 2.0.0.0          1.1.1.2                  0             0 600 i
+* i3.0.0.0          4.4.4.1                  0    134      0 i
+*>                  1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*> 30.0.0.0         1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 11 total prefixes
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*> 2.0.0.0          1.1.1.2                  0             0 600 i
+* i3.0.0.0          4.4.4.1                  0    134      0 i
+*>                  1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*> 30.0.0.0         1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 11 total prefixes
+containernet> s1 vtysh -c "clear ip bgp * soft"
+containernet> s1 vtysh -c "clear ip bgp *"
+containernet> s1 vtysh -c "clear ip bgp * soft"
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*>i1.0.0.0          4.4.4.2                  0    135      0 i
+*                   3.3.3.1                                0 700 600 i
+*>i2.0.0.0          4.4.4.2                  0    135      0 600 i
+*                   3.3.3.1                  0             0 700 i
+* i3.0.0.0          4.4.4.2                       135      0 600 700 i
+*                   3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0    135      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0    135      0 i
+*>i20.0.0.0         4.4.4.2                  0    135      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*>i30.0.0.0         4.4.4.2                       135      0 600 700 i
+*                   3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 15 total prefixes
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*> 2.0.0.0          1.1.1.2                  0             0 600 i
+*> 3.0.0.0          1.1.1.2                                0 600 700 i
+* i                 4.4.4.1                  0    134      0 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*> 30.0.0.0         1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 11 total prefixes
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# router^C^C
+^C^C
+
+s1# conf t
+s1(config)# show ip bgp
+% Unknown command.
+s1(config)# roiter ^?^?^C^C
+^C^C
+
+s1(config)# router bgp 500
+s1(config-router)# bgp default-local^C^C
+^C^C
+
+s1(config-router)# bgp default local-preference 0
+s1(config-router)# exit
+s1(config)# c^?^C^C
+
+s1(config)# exit
+s1# clear ip bgp * soft
+s1# show ip bgp summary
+BGP router identifier 192.168.19.2, local AS number 500
+RIB entries 15, using 1680 bytes of memory
+Peers 2, using 18 KiB of memory
+
+Neighbor        V         AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/P
+fxRcd
+1.1.1.2         4   600      92     119        0    0    0 00:02:23        5
+4.4.4.1         4   500     123     153        0    0    0 00:02:25        7
+
+Total number of neighbors 2
+
+Total num. Established sessions 2
+Total num. of routes received     12
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*>i2.0.0.0          4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                  0             0 600 i
+*> 3.0.0.0          1.1.1.2                                0 600 700 i
+* i                 4.4.4.1                  0    134      0 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*>i20.0.0.0         4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 15 total prefixes
+s1# conf t
+s1(config)# router bgpo^?^C^C
+^C^C
+
+s1(config)# router bgp 500
+s1(config-router)# bgp default local-preference 135
+s1(config-router)# exit
+s1(config)# exit
+s1# clear ip bgp * soft
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*>i2.0.0.0          4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                  0             0 600 i
+*> 3.0.0.0          1.1.1.2                                0 600 700 i
+* i                 4.4.4.1                  0    134      0 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*>i20.0.0.0         4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 14 total prefixes
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*>i2.0.0.0          4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                  0             0 600 i
+*> 3.0.0.0          1.1.1.2                                0 600 700 i
+* i                 4.4.4.1                  0    134      0 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*>i20.0.0.0         4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 14 total prefixes
+s1# clear ip bgp *
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*> 2.0.0.0          1.1.1.2                  0             0 600 i
+* i3.0.0.0          4.4.4.1                  0    134      0 i
+*>                  1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*> 30.0.0.0         1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 11 total prefixes
+s1# ^[[A^[[Aexit
+% Unknown command.
+s1# exit
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# conf t
+s1(config)# refere^?^?^C^C
+^C^C
+
+s1(config)# bgp^?^?^C^C
+^C^C
+
+s1(config)# router bgp 500
+s1(config-router)# bgp default local-preferemce^?^?^C^C
+
+s1(config-router)# bgp local^?^C^C
+^C^C
+
+s1(config-router)# bgp default local p^?^C^C
+^C^C
+
+s1(config-router)# bgp default local-preferemc^C^C
+^C^C
+
+s1(config-router)# bgp defay^C^C
+^C^C
+
+s1(config-router)# bgp default local-preference 0
+s1(config-router)# exit
+s1(config)# clear ip bgp * soft
+% Unknown command.
+s1(config)# exit
+s1# clear ip bgo^C^C
+^C^C
+
+s1# clear ip bgp &^?^C^C
+^C^C
+
+s1# clear ip bgp * soft
+s1# exu^?^C^C
+^C^C
+
+s1# exit
+containernet> ls
+*** Unknown command: ls
+containernet> show ip bgp
+*** Unknown command: show ip bgp
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+*>i2.0.0.0          4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                  0             0 600 i
+* i3.0.0.0          4.4.4.1                  0    134      0 i
+*>                  1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0    134      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*>i20.0.0.0         4.4.4.1                       134      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0    134      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0    134      0 i
+
+Displayed  8 out of 15 total prefixes
+containernet> s4 vtysh -c "bgp router 500" -c "bgp default local-preference 0" -c "show ip bgp"
+% Unknown command.
+containernet> s4 vtysh -c "conf t" -c "bgp router 500" -c "bgp default local-preference 0" -c "exit" -c "exit" -c "show ip bgp"
+% Unknown command.
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# bgp de^?^?^C^C
+^C^C
+
+s4(config-router)# 
+s4(config-router)# exit
+s4(config)# exit
+s4# exit
+containernet> s4 vtysh -c "conf t" -c "router bgp 500" -c "bgp default local-preference 0" -c "exit" -c "exit" -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+*> 2.0.0.0          3.3.3.1                  0             0 700 i
+* i3.0.0.0          4.4.4.2                         0      0 600 700 i
+*                   3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 12 total prefixes
+containernet> s4 vtysh -c "conf t" -c "router bgp 500" -c "bgp default local-preference 0" -c "exit" -c "exit" -c "clear ip bgp * soft" -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+*> 2.0.0.0          3.3.3.1                  0             0 700 i
+* i3.0.0.0          4.4.4.2                         0      0 600 700 i
+*                   3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 12 total prefixes
+containernet> s4 vtysh -c "conf t" -c "router bgp 500" -c "bgp default local-preference 0" -c "exit" -c "exit" -c "clear ip bgp * soft" -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh -c "clear ip bgp * soft" -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s1 vtysh -c "clear ip bgp * soft" -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.1                         0      0 700 600 i
+*                   1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0      0      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0      0      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0      0      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0      0      0 i
+
+Displayed  8 out of 14 total prefixes
+containernet> s4 vtysh -c "clear ip bgp *" -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+* i1.0.0.0          4.4.4.2                  0      0      0 i
+*>                  3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh -c "clear ip bgp *"
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*>i1.0.0.0          4.4.4.2                  0      0      0 i
+*                   3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*>i1.0.0.0          4.4.4.2                  0      0      0 i
+*                   3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*>i1.0.0.0          4.4.4.2                  0      0      0 i
+*                   3.3.3.1                                0 700 600 i
+* i2.0.0.0          4.4.4.2                  0      0      0 600 i
+*>                  3.3.3.1                  0             0 700 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> reset
+*** Unknown command: reset
+containernet> s4 vtysh -c "clear ip bgp"
+% Command incomplete.
+containernet> s4 vtysh -c "clear ip bgp *"
+containernet> s4 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0             0 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*  20.0.0.0         3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s1 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0      0      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0      0      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0      0      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0      0      0 i
+
+Displayed  8 out of 13 total prefixes
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# shw^?^?^C^C
+^C^C
+
+s4# conf t
+s4(config)# n^?^C^C
+
+s4(config)# router bgp 500
+s4(config-router)# show^C^C
+^C^C
+
+s4(config-router)# neighbor 1.1.1^C^C
+^C^C
+
+s4(config-router)# neighbor 3.3.3.1 weight 200
+s4(config-router)# exit
+s4(config)# clr^?^C^C
+^C^C
+
+s4(config)# clear ip bgp * soft
+% Unknown command.
+s4(config)# exit
+s4# clear ip bgp * soft
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0           200 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0           200 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0           200 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0           200 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0           200 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0           200 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# router bgp 500
+% Unknown command.
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# nr^?^C^C
+^C^C
+
+s4(config-router)# neighbor 1.1.1.2 e^?^C^C
+^C^C
+
+s4(config-router)# neighbor 1.1.1.2 weight 300
+% Specify remote-as or peer-group commands first
+s4(config-router)# neighbor 1.1.1.2 remoye^?^C^C
+^C^C
+
+s4(config-router)# neighbor 1.1.1.2 remote-as 500
+s4(config-router)# eixt
+% Unknown command.
+s4(config-router)# exit
+s4(config)# s^?^C^C
+^C^C
+
+s4(config)# exit
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0           200 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0           200 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0           200 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# clear ip bgp * soft
+s4# ^[[A^[[B^C^C
+^C^C
+
+shp^?^?^C^C
+^C^C
+
+s4# show ip  go^?^?^C^C
+^C^C
+
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0           200 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0           200 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0           200 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# clear^?^?^?^C^C
+^C^C
+
+s4# show^?^?^?^C^C
+^C^C
+
+s4# conf t
+s4(config)# ip^C^C
+^C^C
+
+s4(config)# router bgp 500
+s4(config-router)# neighbor 1.1.1.2 remote0a^C^C
+^C^C
+
+s4(config-router)# neighbor 1.1.1.2 remp^C^C
+^C^C
+
+s4(config-router)# neighbor 1.1.1.2 remote-as 500 weight 600
+% Unknown command.
+s4(config-router)# neighbor 1.1.1.2 remote-as 500
+s4(config-router)# neighbto^C^C
+
+s4(config-router)# neighbor 1.1.1.2 re^C^C
+^C^C
+
+s4(config-router)# neighbor remote-as ^C^C
+^C^C
+
+s4(config-router)# neighbto^C^C
+^C^C
+
+s4(config-router)# neighbor 1.1.1.2 weight 4900
+s4(config-router)# exit
+s4(config)# exit
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0           200 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0           200 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0           200 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# clear ip bgp * soft
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 1.0.0.0          3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0           200 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0           200 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*> 20.0.0.0         3.3.3.1                              200 700 600 i
+* i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0           200 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# neighbor 3.3.3.1 weight 0
+s4(config-router)# exit
+s4(config)# exit
+s4# clear ip bgp * soft
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0             0 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*  20.0.0.0         3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0      0      0 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# clear ip bgp
+% Command incomplete.
+s4# clear ip bgp ?*^?^?^C^C
+^C^C
+
+s4# clear ip bgp * soft
+s4# c;e^C^C
+^C^C
+
+s4# clear ip bgp *
+s4# sh^?^?co^C^C
+^C^C
+
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# neighbor 1.1.1.2^C^C
+^C^C
+
+s4(config-router)# neighv^?b^C^C
+^C^C
+^C^C
+
+s4(config-router)# neighbor 44^C^C
+^C^C
+
+s4(config-router)# neighbior^C^C
+^C^C
+
+s4(config-router)# neighbor 4.4.4.2 remote-as 500
+s4(config-router)# neighbor 3.3.3.1 remote0^C^C
+^C^C
+
+s4(config-router)# neighbor 3.3.3.1 remote-as 700
+s4(config-router)# network 40.0.0.0
+s4(config-router)# network 10^C^C
+^C^C
+
+s4(config-router)# nwr^C^C
+^C^C
+
+s4(config-router)# network 3.0.0.0
+s4(config-router)# network 4.0.0.0
+s4(config-router)# clear^C^C
+^C^C
+
+s4(config-router)# exit
+s4(config)# exit
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0             0 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+*> 30.0.0.0         3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 13 total prefixes
+s4# clear ip bgpo^?^C^C
+^C^C
+
+s4# clear ip bgp &^?^C^C
+^C^C
+
+s4# clear ip bgp *
+s4# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.5
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          3.3.3.1                                0 700 600 i
+*>i                 4.4.4.2                  0      0      0 i
+*> 2.0.0.0          3.3.3.1                  0             0 700 i
+* i                 4.4.4.2                  0      0      0 600 i
+*  3.0.0.0          3.3.3.1                  0             0 700 i
+*>                  0.0.0.0                  0         32768 i
+* i4.0.0.0          4.4.4.2                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*>i10.0.0.0         4.4.4.2                  0      0      0 i
+*>i20.0.0.0         4.4.4.2                  0      0      0 600 i
+*                   3.3.3.1                                0 700 600 i
+* i30.0.0.0         4.4.4.2                         0      0 600 700 i
+*>                  3.3.3.1                  0             0 700 i
+*> 40.0.0.0         0.0.0.0                  0         32768 i
+
+Displayed  8 out of 14 total prefixes
+s4# co^C^C
+^C^C
+
+s4# 
+s4# exit
+containernet> s1 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0      0      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0      0      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0      0      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0      0      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# cler^?^C^C
+^C^C
+
+s1# clear ip bgp *
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0      0      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0      0      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0      0      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0      0      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# conf t
+s1(config)# router bgp 500
+s1(config-router)# neighbor ^C^C
+^C^C
+
+s1(config-router)# network 4.4.4.2
+s1(config-router)# clea^?^?^C^C
+^C^C
+
+s1(config-router)# sg^?^C^C
+^C^C
+
+s1(config-router)# exit
+s1(config)# exit
+s1# clear ip bgp *
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0      0      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0      0      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0      0      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0      0      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# conf t
+s1(config)# neighb^C^C
+^C^C
+
+s1(config)# 
+s1(config)# exit
+s1# show ip bgp
+BGP table version is 0, local router ID is 192.168.19.2
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          1.1.1.2                  0             0 600 i
+*>                  0.0.0.0                  0         32768 i
+* i2.0.0.0          4.4.4.1                  0      0      0 700 i
+*>                  1.1.1.2                  0             0 600 i
+*>i3.0.0.0          4.4.4.1                  0      0      0 i
+*                   1.1.1.2                                0 600 700 i
+* i4.0.0.0          4.4.4.1                  0      0      0 i
+*>                  0.0.0.0                  0         32768 i
+*> 10.0.0.0         0.0.0.0                  0         32768 i
+*> 20.0.0.0         1.1.1.2                  0             0 600 i
+*>i30.0.0.0         4.4.4.1                  0      0      0 700 i
+*                   1.1.1.2                                0 600 700 i
+*>i40.0.0.0         4.4.4.1                  0      0      0 i
+
+Displayed  8 out of 13 total prefixes
+s1# exit
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# router bgp 500^[[A^[[B^C^C
+
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# access-list 10 permit 10.0.0.0
+s4(config)# route-map CCIR^?^C^C
+
+s4(config)# route-map CCIER$^C^C
+
+s4(config)# route-map CCIER4 permit 10
+s4(config-route-map)# match ip address 10
+s4(config-route-map)# set as-path prepend 500
+s4(config-route-map)# rou^C^C
+
+s4(config-route-map)# exit
+s4(config)# route-map CCIER4 permit 20
+s4(config-route-map)# exit
+s4(config)# router bgp 500
+s4(config-router)# neighbor 3.3.3.1 route-map CCIER4 out
+s4(config-router)# end
+s4# clear ip bgp * soft
+s4# exit
+containernet> s3 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.4
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          3.3.3.2                                0 500 i
+*>                  2.2.2.1                  0             0 600 i
+*> 2.0.0.0          0.0.0.0                  0         32768 i
+*                   2.2.2.1                  0             0 600 i
+*  3.0.0.0          3.3.3.2                  0             0 500 i
+*>                  0.0.0.0                  0         32768 i
+*  4.0.0.0          2.2.2.1                                0 600 500 i
+*>                  3.3.3.2                  0             0 500 i
+*  10.0.0.0         2.2.2.1                                0 600 500 i
+*>                  3.3.3.2                                0 500 500 i
+*  20.0.0.0         3.3.3.2                                0 500 600 i
+*>                  2.2.2.1                  0             0 600 i
+*> 30.0.0.0         0.0.0.0                  0         32768 i
+*  40.0.0.0         2.2.2.1                                0 600 500 i
+*>                  3.3.3.2                  0             0 500 i
+
+Displayed  8 out of 15 total prefixes
+containernet> s4 vtysh
+
+Hello, this is Quagga (version 1.2.4).
+Copyright 1996-2005 Kunihiro Ishiguro, et al.
+
+s4# router bgp 500
+% Unknown command.
+s4# conf t
+s4(config)# router bgp 500
+s4(config-router)# access-list 10 permit 10.0.0.0
+s4(config)# route-map CCIR^C^C
+^C^C
+
+s4(config)# route-map CCIER4 permit 10
+s4(config-route-map)# match ip address 10
+s4(config-route-map)# set as-path prepend 500 500
+s4(config-route-map)# exit
+s4(config)# route-map CCIER4 permit 20
+s4(config-route-map)# exit
+s4(config)# router bgp 500
+s4(config-router)# neighbor 3.3.3.1 route-map CCIER4 out
+s4(config-router)# end
+s4# clear ip bgp * soft
+s4# exit
+containernet> s3 vtysh -c "show ip bgp"
+BGP table version is 0, local router ID is 192.168.19.4
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*  1.0.0.0          3.3.3.2                                0 500 i
+*>                  2.2.2.1                  0             0 600 i
+*> 2.0.0.0          0.0.0.0                  0         32768 i
+*                   2.2.2.1                  0             0 600 i
+*  3.0.0.0          3.3.3.2                  0             0 500 i
+*>                  0.0.0.0                  0         32768 i
+*  4.0.0.0          2.2.2.1                                0 600 500 i
+*>                  3.3.3.2                  0             0 500 i
+*> 10.0.0.0         2.2.2.1                                0 600 500 i
+*                   3.3.3.2                                0 500 500 500 i
+*  20.0.0.0         3.3.3.2                                0 500 600 i
+*>                  2.2.2.1                  0             0 600 i
+*> 30.0.0.0         0.0.0.0                  0         32768 i
+*  40.0.0.0         2.2.2.1                                0 600 500 i
+*>                  3.3.3.2                  0             0 500 i
+
+Displayed  8 out of 15 total prefixes
+containernet> 
+

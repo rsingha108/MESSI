@@ -1,0 +1,7 @@
+-c "access-list 50 permit 100.10.0.0/24"
+-c "bgp community-list 1 permit 0:80 0:90"
+-c "route-map RM1 deny 10" -c "match ip address 50"
+-c "route-map RM1 permit 20"
+-c "route-map RM3 deny 10" -c "match local-preference 135"
+-c "route-map RM3 permit 20"
+-c "route-map RM2 permit 10" -c "match community 1"

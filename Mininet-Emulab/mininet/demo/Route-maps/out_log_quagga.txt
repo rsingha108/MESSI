@@ -1,0 +1,136 @@
+100.20.4.5/8,138,8,3,0:0 0:0,False
+Expected decision : deny
+
+BGP table version is 0, local router ID is 192.168.19.3
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0          0.0.0.0                  0         32768 i
+*> 7.0.0.0          0.0.0.0                  0         32768 i
+
+Displayed  2 out of 2 total prefixes
+BGP table version is 0, local router ID is 192.168.19.3
+Status codes: s suppressed, d damped, h history, * valid, > best, = multipath,
+              i internal, r RIB-failure, S Stale, R Removed
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0          0.0.0.0                  0         32768 i
+*> 7.0.0.0          0.0.0.0                  0         32768 i
+*>i100.0.0.0        7.0.0.3                  8    138      0 3 e
+
+Displayed  3 out of 3 total prefixes
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.30.1.0/24    7.0.0.3                  4    133      0 43618 e
+
+Displayed  3 routes and 3 total paths
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.0.0.0/8      7.0.0.3                  4    133      0 43618 e
+
+Displayed  3 routes and 3 total paths
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.10.0.0/16    7.0.0.3                  4    133      0 43618 e
+
+Displayed  3 routes and 3 total paths
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.10.0.0/16    7.0.0.3                  4    133      0 43618 e
+
+Displayed  3 routes and 3 total paths
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.10.0.0/16    7.0.0.3                  4    133      0 43618 e
+
+Displayed  3 routes and 3 total paths
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.10.0.0/16    7.0.0.3                  4    133      0 43618 e
+
+Displayed  3 routes and 3 total paths
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.10.0.0/16    7.0.0.3                  4    133      0 23 e
+
+Displayed  3 routes and 3 total paths
+BGP table version is 3, local router ID is 192.168.19.3, vrf id 0
+Default local pref 100, local AS 43617
+Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
+               i internal, r RIB-failure, S Stale, R Removed
+Nexthop codes: @NNN nexthop's vrf id, < announce-nh-self
+Origin codes:  i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 2.0.0.0/8        0.0.0.0                  0         32768 i
+*> 7.0.0.0/8        0.0.0.0                  0         32768 i
+*>i100.10.3.4/32    7.0.0.3                  4    133      0 23 e
+
+Displayed  3 routes and 3 total paths

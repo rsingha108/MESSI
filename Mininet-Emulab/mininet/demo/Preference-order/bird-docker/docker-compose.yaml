@@ -1,0 +1,50 @@
+version: '3'
+services:
+
+  peer1:
+    build: .
+    hostname: peer1
+    privileged: true
+    volumes:
+      - ./conf/peer1/etc/bird:/etc/bird
+    networks:
+      peeringbr1:
+        ipv4_address: 3.0.0.2
+      peeringbr2:
+        ipv4_address: 7.0.0.2
+        
+  peer2:
+    image: "mikenowak/exabgp:latest"
+    hostname: peer2
+    privileged: true
+    volumes:
+      - ./conf/peer2/etc/exabgp:/exabgp
+    networks:
+      peeringbr1:
+        ipv4_address: 3.0.0.3
+    entrypoint: tail -f /dev/null #tail -F entrypoint.sh #
+    
+    
+  peer3:
+    image: "mikenowak/exabgp:latest"
+    hostname: peer3
+    privileged: true
+    volumes:
+      - ./conf/peer3/etc/exabgp:/exabgp
+    networks:
+      peeringbr2:
+        ipv4_address: 7.0.0.3
+    entrypoint: tail -f /dev/null #tail -F entrypoint.sh
+    
+
+networks:
+  peeringbr1:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: '3.0.0.0/24'
+  peeringbr2:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: '7.0.0.0/24'

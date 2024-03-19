@@ -1,0 +1,23 @@
+global:
+  apply-policy:
+    config:
+      default-import-policy: reject-route
+      import-policy-list: [example-policy]
+  config: {as: 65001, router-id: 192.2.3.4}
+neighbors:
+- config: {neighbor-address: 3.0.0.3, peer-as: 65002}
+  transport:
+    config: {local-address: 3.0.0.2}
+defined-sets:
+  bgp-defined-sets:
+    community-sets:
+      community-list: ['^[0-2]:[01]+ [1-2]:[1-2]$']
+      community-set-name: c1
+policy-definitions:
+- name: example-policy
+  statements:
+  - actions: {route-disposition: reject-route}
+    conditions:
+      bgp-conditions:
+        match-community-set: {community-set: c1, match-set-options: any}
+    name: statement1

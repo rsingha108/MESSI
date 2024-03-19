@@ -1,0 +1,48 @@
+s21 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 43617" -c "neighbor 7.0.0.3 remote-as 43617" -c "network 7.0.0.0" -c "network 2.0.0.0" -c "neighbor 7.0.0.3 soft-reconfiguration inbound"
+s11 mkdir exabgp
+s11 cd exabgp
+s11 echo "process announce-routes{" >> conf.ini
+s11 echo -e "\trun python exabgp/example.py;" >> conf.ini
+s11 echo -e "\tencoder json;" >> conf.ini
+s11 echo "}" >> conf.ini
+s11 echo "neighbor 7.0.0.1{" >> conf.ini
+s11 echo -e "\trouter-id 7.0.0.3;" >> conf.ini
+s11 echo -e "\tlocal-address 7.0.0.3;" >> conf.ini
+s11 echo -e "\tlocal-as 43617;" >> conf.ini
+s11 echo -e "\tpeer-as 43617;" >> conf.ini
+s11 echo -e "\tapi{" >> conf.ini
+s11 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
+s11 echo -e "\t}" >> conf.ini
+s11 echo -e "}" >> conf.ini
+s11 echo "from __future__ import print_function" >> example.py
+s11 echo "from sys import stdout" >> example.py
+s11 echo "from time import sleep" >> example.py
+s11 echo "messages = [" >> example.py
+s11 echo -e "\t'announce route 100.6.61.195/3 next-hop 99.192.2.4 local-preference 259 as-path [0 6] med 65 origin egp community [2:1 2:2]'," >> example.py
+s11 echo "]" >> example.py
+s11 echo "sleep(5)" >> example.py
+s11 echo "for message in messages:" >> example.py
+s11 printf "\tstdout.write(message + '\\\n')\n" >> example.py
+s11 echo -e "\tstdout.flush()" >> example.py
+s11 echo -e "\tsleep(1)" >> example.py
+s11 echo "while True:" >> example.py
+s11 echo -e "\tsleep(1)" >> example.py
+s11 cd ..
+py s11.cmd("exabgp exabgp/conf.ini &")
+py time.sleep(10)
+s21 vtysh -c "conf t" -c "bgp community-list 101 permit [0-2]?:[21]+"
+s21 vtysh -c "conf t" -c "route-map RMap permit 10" -c "match local-preference 259" -c "set comm-list 101 delete"
+s21 vtysh -c "conf t" -c "router bgp 43617" -c "neighbor 7.0.0.3 route-map RMap in" -c "end" -c "exit"
+s21 vtysh -c "clear ip bgp * soft"
+py time.sleep(5)
+s21 vtysh -c "show ip bgp 100.6.61.195/3" >> /mnt/Symb-Route-maps/frr/out.txt
+s21 vtysh -c "show running-config" >> /mnt/Symb-Route-maps/frr/running-config.txt
+s21 vtysh -c "conf t" -c "no bgp community-list 101"
+
+py time.sleep(5)
+s21 vtysh -c "show ip bgp 100.6.61.195/3" >> /mnt/Symb-Route-maps/frr/out2.txt
+s21 vtysh -c "show running-config" >> /mnt/Symb-Route-maps/frr/running-config2.txt
+s21 vtysh -c "conf t" -c "route-map RMap permit 10" -c "match local-preference 172" -c "set ip next-hop unchanged" -c "set ip next-hop peer-address"
+py time.sleep(5)
+s21 vtysh -c "show ip bgp 100.6.61.195/3" >> /mnt/Symb-Route-maps/frr/out2.txt
+s21 vtysh -c "show running-config" >> /mnt/Symb-Route-maps/frr/running-config2.txt

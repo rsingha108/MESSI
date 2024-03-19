@@ -1,0 +1,34 @@
+s2 vtysh -c "conf t" -c "router bgp 65000" -c "neighbor 1.1.1.1 remote-as 65000" -c "network 1.0.0.0" -c "network 2.0.0.0"
+s1 mkdir exabgp
+s1 cd exabgp
+s1 echo "process announce-routes{" >> conf.ini
+s1 echo -e "\trun python exabgp/example.py;" >> conf.ini
+s1 echo -e "\tencoder json;" >> conf.ini
+s1 echo "}" >> conf.ini
+s1 echo "neighbor 1.1.1.2{" >> conf.ini
+s1 echo -e "\trouter-id 1.1.1.1;" >> conf.ini
+s1 echo -e "\tlocal-address 1.1.1.1;" >> conf.ini
+s1 echo -e "\tlocal-as 65000;" >> conf.ini
+s1 echo -e "\tpeer-as 65000;" >> conf.ini
+s1 echo -e "\tapi{" >> conf.ini
+s1 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
+s1 echo -e "\t}" >> conf.ini
+s1 echo -e "}" >> conf.ini
+s1 echo "from __future__ import print_function" >> example.py
+s1 echo "from sys import stdout" >> example.py
+s1 echo "from time import sleep" >> example.py
+s1 echo "messages = [" >> example.py
+s1 echo -e "\t'announce route 100.10.0.0/24 next-hop self'," >> example.py
+s1 echo "]" >> example.py
+s1 echo "sleep(5)" >> example.py
+s1 echo "for message in messages:" >> example.py
+s1 printf "\tstdout.write(message + '\\\n')\n" >> example.py
+s1 echo -e "\tstdout.flush()" >> example.py
+s1 echo -e "\tsleep(1)" >> example.py
+s1 echo "sleep(5)"
+s1 echo "while True:" >> example.py
+s1 echo -e "\tsleep(1)" >> example.py
+s1 cd ..
+py s1.cmd("exabgp exabgp/conf.ini &")
+py time.sleep(10)
+s2 vtysh -c "show ip bgp"

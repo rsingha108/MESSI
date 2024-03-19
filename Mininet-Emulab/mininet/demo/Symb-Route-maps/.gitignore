@@ -1,0 +1,5 @@
+# .gitignore
+tests/
+tests1/
+tests2/
+bird/nohup.out

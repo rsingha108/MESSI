@@ -1,0 +1,51 @@
+s22 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/quagga/bgpd.log" -c "router bgp 43617" -c "neighbor 7.0.0.3 remote-as 43617" -c "network 7.0.0.0" -c "network 2.0.0.0" -c "neighbor 7.0.0.3 soft-reconfiguration inbound"
+s12 mkdir exabgp
+s12 cd exabgp
+s12 echo "process announce-routes{" >> conf.ini
+s12 echo -e "\trun python exabgp/example.py;" >> conf.ini
+s12 echo -e "\tencoder json;" >> conf.ini
+s12 echo "}" >> conf.ini
+s12 echo "neighbor 7.0.0.1{" >> conf.ini
+s12 echo -e "\trouter-id 7.0.0.3;" >> conf.ini
+s12 echo -e "\tlocal-address 7.0.0.3;" >> conf.ini
+s12 echo -e "\tlocal-as 43617;" >> conf.ini
+s12 echo -e "\tpeer-as 43617;" >> conf.ini
+s12 echo -e "\tapi{" >> conf.ini
+s12 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
+s12 echo -e "\t}" >> conf.ini
+s12 echo -e "}" >> conf.ini
+s12 echo "from __future__ import print_function" >> example.py
+s12 echo "from sys import stdout" >> example.py
+s12 echo "from time import sleep" >> example.py
+s12 echo "messages = [" >> example.py
+s12 echo -e "\t'announce route 100.0.1.3/0 next-hop 99.192.1.64 local-preference 133 as-path [1 2] med 80 origin egp community [1:1 2:1]'," >> example.py
+s12 echo "]" >> example.py
+s12 echo "sleep(5)" >> example.py
+s12 echo "for message in messages:" >> example.py
+s12 printf "\tstdout.write(message + '\\\n')\n" >> example.py
+s12 echo -e "\tstdout.flush()" >> example.py
+s12 echo -e "\tsleep(1)" >> example.py
+s12 echo "while True:" >> example.py
+s12 echo -e "\tsleep(1)" >> example.py
+s12 cd ..
+py s12.cmd("exabgp exabgp/conf.ini &")
+py time.sleep(10)
+s22 vtysh -c "conf t" -c "ip community-list 100 permit ^[0-2]:[01]+ [1-2]:[1-2]$"
+s22 vtysh -c "conf t" -c "ip community-list expanded DEL permit [0-2]:[01]+"
+s22 vtysh -c "conf t" -c "route-map RMap permit 10" -c "match community 100" -c "set local-preference 160" -c "set metric 0" -c "set comm-list DEL delete" -c "set as-path exclude 32" -c "set ip next-hop unchanged"
+s22 vtysh -c "conf t" -c "router bgp 43617" -c "neighbor 7.0.0.3 route-map RMap in" -c "end" -c "exit"
+s22 vtysh -c "clear ip bgp * soft"
+py time.sleep(5)
+s22 vtysh -c "show ip bgp 100.0.1.3/0" >> /mnt/Symb-Route-maps/quagga/out.txt
+s22 vtysh -c "show running-config" >> /mnt/Symb-Route-maps/quagga/running-config.txt
+s22 vtysh -c "conf t" -c "no ip community-list expanded DEL"
+
+s22 vtysh -c "clear ip bgp *"
+py time.sleep(20)
+s22 vtysh -c "show ip bgp 100.0.1.3/0" >> /mnt/Symb-Route-maps/quagga/out2.txt
+s22 vtysh -c "show running-config" >> /mnt/Symb-Route-maps/quagga/running-config2.txt
+s22 vtysh -c "conf t" -c "route-map RMap deny 10" -c "match community 100" -c "set ip next-hop unchanged" -c "set ip next-hop peer-address"
+s22 vtysh -c "clear ip bgp *"
+py time.sleep(20)
+s22 vtysh -c "show ip bgp 100.0.1.3/0" >> /mnt/Symb-Route-maps/quagga/out2.txt
+s22 vtysh -c "show running-config" >> /mnt/Symb-Route-maps/quagga/running-config2.txt

@@ -1,0 +1,17 @@
+global:
+    config:
+        as: 65002
+        #port: 5000
+        router-id: 192.168.255.0
+neighbors:
+    - config:
+        neighbor-address: 10.0.0.100
+        peer-as: 65001
+        auth-password: "password"
+      transport:
+        config:
+          local-address: 10.0.0.200
+      afi-safis:
+        - config:
+            afi-safi-name: ipv4-unicast
+

@@ -1,0 +1,55 @@
+[global.config]
+  as = 42000
+
+[[neighbors]]
+  [neighbors.config]
+    neighbor-address = "10.1.1.1"
+    peer-as = <ISP1_AS_Number>
+    [neighbors.transport.config]
+      local-address = "<R1_Interface_IP>"
+    [neighbors.apply-policy.config]
+      export-policy-list = ["R1-Out"]
+
+[[neighbors]]
+  [neighbors.config]
+    neighbor-address = "<R2_Interface_IP>"
+    peer-as = 42000
+    [neighbors.transport.config]
+      local-address = "<R2_Interface_IP>"
+    [neighbors.apply-policy.config]
+      import-policy-list = ["R2-In"]
+
+[[defined-sets]]
+  [defined-sets.community]
+    [defined-sets.community.community-list]
+      name = "R2-In-Community"
+      members = ["100:2"]
+
+[[policy-definitions]]
+  [policy-definitions.policy-definition]
+    name = "R1-Out"
+    [policy-definitions.policy-definition.statements]
+      [policy-definitions.policy-definition.statements.statement]
+        name = "add-community"
+        [policy-definitions.policy-definition.statements.statement.conditions]
+          [policy-definitions.policy-definition.statements.statement.conditions.match]
+            prefix-set = "R1-network"
+        [policy-definitions.policy-definition.statements.statement.actions]
+          [policy-definitions.policy-definition.statements.statement.actions.bgp-actions]
+            set-community = ["100:1"]
+      [policy-definitions.policy-definition.statements.statement]
+        name = "accept-all"
+        [policy-definitions.policy-definition.statements.statement.actions]
+          [policy-definitions.policy-definition.statements.statement.actions.accept-route]
+
+  [policy-definitions.policy-definition]
+    name = "R2-In"
+    [policy-definitions.policy-definition.statements]
+      [policy-definitions.policy-definition.statements.statement]
+        name = "accept-R2-In-Community"
+        [policy-definitions.policy-definition.statements.statement.conditions]
+          [policy-definitions.policy-definition.statements.statement.conditions.match]
+            bgp-conditions = { match-community: ["R2-In-Community"] }
+        [policy-definitions.policy-definition.statements.statement.actions]
+          [policy-definitions.policy-definition.statements.statement.actions.accept-route]
+

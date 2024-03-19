@@ -1,0 +1,45 @@
+[
+  {
+    "Prefix": "Some",
+    "Prefix0": "100.10.0.0/16",
+    "LE0": "None",
+    "GE0": "None",
+    "PrefixPD0": "True",
+    "Prefix1": "99.192.2.64/31",
+    "LE1": "None",
+    "GE1": "None",
+    "PrefixPD1": "False",
+    "Prefix2": "100.8.64.4/27",
+    "LE2": "None",
+    "GE2": "None",
+    "PrefixPD2": "False",
+    "RmapPD": "True",
+    "LP": "None",
+    "MED": "4",
+    "Community": "None",
+    "Community-regex": "None",
+    "Community-permit": "None",
+    "ASPath": "None",
+    "ASPath-regex": "None",
+    "ASPath-permit": "None",
+    "Set": "None",
+    "SetLP": "None",
+    "SetMED": "None",
+    "SetCommunity": "None",
+    "DeleteCommunity": "None"
+  },
+  {
+    "Prefix": "100.10.2.0/24",
+    "LP": "322",
+    "MED": "4",
+    "Community": "0:1 2:111",
+    "ASPath": "2 22"
+  },
+  {
+    "Allowed": "False",
+    "Prefix": "None",
+    "LP": "None",
+    "MED": "None",
+    "Community": "None"
+  }
+]

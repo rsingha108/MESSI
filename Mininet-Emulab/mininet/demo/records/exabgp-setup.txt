@@ -1,0 +1,256 @@
+################################# Initial Setup #######################################
+
+- Run : sudo python exabgp-router.py [kathara/quagga & mikenowak/exabgp]
+- Configure s2 : s2 vtysh -c "conf t" -c "router bgp 65000" -c "neighbor 1.1.1.1 remote-as 65000" -c "network 1.0.0.0" -c "network 2.0.0.0"
+- Configure s1 exabgp :
+	- xterm s1
+	- mkdir exabgp
+	- vi exabgp/conf.ini
+	
+		neighbor 1.1.1.2 {                 # Remote neighbor to peer with
+			router-id 1.1.1.1;              # Our local router-id
+			local-address 1.1.1.1;          # Our local update-source
+			local-as 65000;                    # Our local AS
+			peer-as 65000;                     # Peer's AS
+		}
+	
+	- exabgp exabgp/conf.ini ## exabgp is running in s1 
+	- now check s2 vtysh -c "show ip bgp summary" --> you'll see exabgp as neighbor
+	
+	
+############################################ Announce Routes ####################################
+
+========= vi exabgp/example.py ===========
+
+#!/usr/bin/env python3
+
+from __future__ import print_function
+
+from sys import stdout
+from time import sleep
+
+messages = [
+    'announce route 100.10.0.0/24 next-hop self',
+    'announce route 200.20.0.0/24 next-hop self',
+]
+
+sleep(5)
+
+#Iterate through messages
+for message in messages:
+    stdout.write(message + '\n')
+    stdout.flush()
+    sleep(1)
+
+#Loop endlessly to allow ExaBGP to continue running
+while True:
+    sleep(1)
+    
+================== vi exabgp/conf.ini =================
+
+process announce-routes {
+    run python exabgp/example.py;
+    encoder json;
+}
+
+neighbor 1.1.1.2 {                 # Remote neighbor to peer with
+    router-id 1.1.1.1;              # Our local router-id
+    local-address 1.1.1.1;          # Our local update-source
+    local-as 65000;                    # Our local AS
+    peer-as 65000;                     # Peer's AS
+
+    api {
+        processes [announce-routes];
+    }
+}
+
+- exabgp exabgp/conf.ini
+
+- s2 vtysh -c "show ip bgp" shows the added routes
+
+############################################### Edit Attributes ################################ (Link : https://thepacketgeek.com/exabgp/advanced-route-announcement/)
+
+** local preference will only work if ExaBGP & Peer-Router in same AS (change config of s2 and exabgp/conf.ini in s1 to change AS numbers)
+
+===================== Changes in exabgp/examples.py =====================
+
+#!/usr/bin/env python3
+
+from __future__ import print_function
+
+from sys import stdout
+from time import sleep
+
+messages = [
+    'announce route 100.10.0.0/24 next-hop 1.1.1.3 med 500 local-preference 300',
+    'announce route 200.20.0.0/24 next-hop 1.1.1.4 as-path [100 200 300] local-preference 400',
+]
+
+sleep(5)
+
+#Iterate through messages
+for message in messages:
+    stdout.write(message + '\n')
+    stdout.flush()
+    sleep(1)
+
+#Loop endlessly to allow ExaBGP to continue running
+while True:
+    sleep(1)
+
+
+- exabgp exabgp/conf.ini
+
+- s2 vtysh -c "show ip bgp"
+
+############################################## Two Exabgp one Router ################################################
+
+Topology :
+
+
+       subnet1          subnet2
+(s1) ----------- (s2) ----------- (d1)
+1.1.1.1    1.1.1.2 | 2.2.2.1     2.2.2.2
+                   |
+                   |3.3.3.2
+                   |
+                   |
+                   |subnet3
+                   |
+                   |
+                   |3.3.3.1
+                  (s3)
+s1 : exabgp
+s2 : quagga
+s3 : exabgp
+
+===== s2 config =====
+
+s2 vtysh -c "conf t" -c "router bgp 65000" -c "network 1.0.0.0" -c "network 2.0.0.0" -c "network 3.0.0.0" -c "neighbor 3.3.3.1 remote-as 65000" -c "neighbor 1.1.1.1 remote-as 65000"
+
+====== s3 config ======
+
+==> conf.ini :
+
+process announce-routes {
+    run python exabgp/example.py;
+    encoder json;
+}
+
+neighbor 3.3.3.2 {                 # Remote neighbor to peer with
+    router-id 3.3.3.1;              # Our local router-id
+    local-address 3.3.3.1;          # Our local update-source
+    local-as 65000;                    # Our local AS
+    peer-as 65000;                     # Peer's AS
+
+    api {
+        processes [announce-routes];
+    }
+}
+
+==> example.py :
+
+#!/usr/bin/env python3
+
+from __future__ import print_function
+
+from sys import stdout
+from time import sleep
+
+messages = [
+    'announce route 100.10.0.0/24 next-hop self local-preference 200', ## in place of self you can also give 3.3.3.1
+]
+
+sleep(5)
+
+#Iterate through messages
+for message in messages:
+    stdout.write(message + '\n')
+    stdout.flush()
+    sleep(1)
+
+#Loop endlessly to allow ExaBGP to continue running
+while True:
+    sleep(1)
+    
+===== s1 config =====
+
+==> conf.ini :
+
+process announce-routes {
+    run python exabgp/example.py;
+    encoder json;
+}
+
+neighbor 1.1.1.2 {                 # Remote neighbor to peer with
+    router-id 1.1.1.1;              # Our local router-id
+    local-address 1.1.1.1;          # Our local update-source
+    local-as 65000;                    # Our local AS
+    peer-as 65000;                     # Peer's AS
+
+    api {
+        processes [announce-routes];
+    }
+}
+
+==> example.py :
+
+#!/usr/bin/env python3
+
+from __future__ import print_function
+
+from sys import stdout
+from time import sleep
+
+messages = [
+    'announce route 100.10.0.0/24 next-hop self local-preference 300', ## in place of self you can also give 3.3.3.1
+]
+
+sleep(5)
+
+#Iterate through messages
+for message in messages:
+    stdout.write(message + '\n')
+    stdout.flush()
+    sleep(1)
+
+#Loop endlessly to allow ExaBGP to continue running
+while True:
+    sleep(1)
+
+
+
+*** Now run :
+- In s1  : exabgp exabgp/conf.ini
+- In s3  : exabgp exabgp/conf.ini
+- s2 vtysh -c "show ip bgp" ## should be able to see one route is chosen over another
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

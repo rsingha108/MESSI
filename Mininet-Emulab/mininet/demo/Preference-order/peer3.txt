@@ -1,0 +1,23 @@
+s3 cd /etc/bird
+s3 rm -rf bird.conf
+
+
+s3 echo "protocol kernel {" >> bird.conf  
+s3 echo "  metric 0;" >> bird.conf              
+s3 echo "  import none;" >> bird.conf 
+s3 echo "  learn;" >> bird.conf     
+s3 echo "  export all;" >> bird.conf    
+s3 echo "}" >> bird.conf
+
+s3 echo "protocol device {" >> bird.conf        
+s3 echo "}" >> bird.conf
+
+s3 echo "protocol direct {" >> bird.conf        
+s3 echo "}" >> bird.conf
+
+s3 echo "protocol bgp peer2 {" >> bird.conf
+s3 echo "  local as 43619;" >> bird.conf
+s3 echo "  neighbor 3.0.100.10 as 43617;" >> bird.conf
+s3 echo "  export all;" >> bird.conf
+s3 echo "}" >> bird.conf
+

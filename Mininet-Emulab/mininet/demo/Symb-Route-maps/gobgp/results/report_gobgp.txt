@@ -1,0 +1,4067 @@
+Test case 17550 : no error!#######################################################################################
+
+
+Test case 25705 : no error!#######################################################################################
+
+
+Test case 41402 : no error!#######################################################################################
+
+
+Test case: 10071, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.27.239.27/30",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.186.65.158/30",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.12.114.163/27",
+        "LE2": "None",
+        "GE2": "27",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.12.114.165/30",
+        "LP": "134",
+        "MED": "48",
+        "Community": "1:12 10:22",
+        "ASPath": "1 31",
+        "NextHop": "100.0.1.3"
+    },
+    {
+        "Tag": "P1C4",
+        "Allowed": "True",
+        "Prefix": "100.12.114.165/30",
+        "LP": "134",
+        "MED": "0",
+        "Community": "10:22",
+        "ASPath": "1 31",
+        "NextHop": "100.0.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 16578 : no error!#######################################################################################
+
+
+Test case: 15685, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.9.204.8/19",
+        "LE0": "None",
+        "GE0": "23",
+        "PrefixPD0": "False",
+        "Prefix1": "100.10.2.16/32",
+        "LE1": "32",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.16.37.18/31",
+        "LE2": "None",
+        "GE2": "31",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "21980",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.16.37.19/31",
+        "LP": "129",
+        "MED": "8",
+        "Community": "1:1 11210:1",
+        "ASPath": "3 2211",
+        "NextHop": "100.16.1.3"
+    },
+    {
+        "Tag": "P1C4A3",
+        "Allowed": "True",
+        "Prefix": "100.16.37.19/31",
+        "LP": "129",
+        "MED": "8",
+        "Community": "11210:1",
+        "ASPath": "21980 3 2211",
+        "NextHop": "100.16.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 8231 : no error!#######################################################################################
+
+
+Test case 51469 : no error!#######################################################################################
+
+
+Test case 9010 : no error!#######################################################################################
+
+
+Test case 4801 : no error!#######################################################################################
+
+
+Test case 53746 : no error!#######################################################################################
+
+
+Test case: 10181, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.253.123.128/30",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.222.1.64/9",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.15.132.126/30",
+        "LE2": "30",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "0:128",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.15.132.126/30",
+        "LP": "288",
+        "MED": "33",
+        "Community": "2:1 2:122",
+        "ASPath": "1 3",
+        "NextHop": "99.216.1.5"
+    },
+    {
+        "Tag": "P1C3A4",
+        "Allowed": "True",
+        "Prefix": "100.15.132.126/30",
+        "LP": "288",
+        "MED": "33",
+        "Community": "2:1 2:122 0:128",
+        "ASPath": "1",
+        "NextHop": "99.216.1.5"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=1 3']
+#######################################################################################
+
+
+Test case 27117 : no error!#######################################################################################
+
+
+Test case 14403 : no error!#######################################################################################
+
+
+Test case: 27485, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.0.11/9",
+        "LE0": "None",
+        "GE0": "11",
+        "PrefixPD0": "False",
+        "Prefix1": "99.177.29.64/26",
+        "LE1": "27",
+        "GE1": "None",
+        "PrefixPD1": "True",
+        "Prefix2": "100.8.1.3/25",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "1",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.177.29.64/26",
+        "LP": "577",
+        "MED": "136",
+        "Community": "1:2 10100:211",
+        "ASPath": "0 1",
+        "NextHop": "99.190.1.3"
+    },
+    {
+        "Tag": "P1C4A4",
+        "Allowed": "True",
+        "Prefix": "99.177.29.64/26",
+        "LP": "577",
+        "MED": "136",
+        "Community": "10100:211",
+        "ASPath": "0",
+        "NextHop": "99.190.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']", 'ASPath=0 1']
+#######################################################################################
+
+
+Test case: 23130, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.29.128.26/32",
+        "LE0": "32",
+        "GE0": "32",
+        "PrefixPD0": "False",
+        "Prefix1": "99.159.128.0/31",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.12.177.4/0",
+        "LE2": "32",
+        "GE2": "20",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "64:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.28.91.205/32",
+        "LP": "128",
+        "MED": "1",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "2 22",
+        "NextHop": "100.20.1.3"
+    },
+    {
+        "Tag": "P1C3",
+        "Allowed": "True",
+        "Prefix": "100.28.91.205/32",
+        "LP": "128",
+        "MED": "1",
+        "Community": "22567:34243 65535:6 64:0",
+        "ASPath": "2 22",
+        "NextHop": "100.20.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', '64:0', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case 11702 : no error!#######################################################################################
+
+
+Test case 4705 : no error!#######################################################################################
+
+
+Test case 50401 : no error!#######################################################################################
+
+
+Test case 16907 : no error!#######################################################################################
+
+
+Test case: 1664, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.32.3/0",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.251.188.232/16",
+        "LE1": "None",
+        "GE1": "16",
+        "PrefixPD1": "True",
+        "Prefix2": "100.22.1.19/29",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "8:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.251.172.3/16",
+        "LP": "261",
+        "MED": "34",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 2",
+        "NextHop": "99.192.1.9"
+    },
+    {
+        "Tag": "P1C3H5",
+        "Allowed": "True",
+        "Prefix": "99.251.172.3/16",
+        "LP": "261",
+        "MED": "34",
+        "Community": "22567:34243 65535:6 8:0",
+        "ASPath": "0 2",
+        "NextHop": "99.192.1.9"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', '8:0', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 13851, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.160.32.129/0",
+        "LE0": "0",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.161.0.64/10",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.222.0.203/0",
+        "LE2": "None",
+        "GE2": "7",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "44737",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.190.33.64/7",
+        "LP": "192",
+        "MED": "4",
+        "Community": "2:11 10:222",
+        "ASPath": "1 221",
+        "NextHop": "100.18.1.8"
+    },
+    {
+        "Tag": "P1C4A3",
+        "Allowed": "True",
+        "Prefix": "99.190.33.64/7",
+        "LP": "192",
+        "MED": "4",
+        "Community": "10:222",
+        "ASPath": "44737 1 221",
+        "NextHop": "100.18.1.8"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 1669, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.172.1.64/8",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.17.121.76/30",
+        "LE1": "None",
+        "GE1": "30",
+        "PrefixPD1": "True",
+        "Prefix2": "100.11.2.131/29",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "545",
+        "SetMED": "None",
+        "SetCommunity": "0:1",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "26526",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.17.121.76/30",
+        "LP": "290",
+        "MED": "48",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 1",
+        "NextHop": "99.222.1.3"
+    },
+    {
+        "Tag": "P1L3M3C3A3",
+        "Allowed": "True",
+        "Prefix": "100.17.121.76/30",
+        "LP": "545",
+        "MED": "48",
+        "Community": "22567:34243 65535:6 0:1",
+        "ASPath": "26526 0 1",
+        "NextHop": "99.222.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['0:1', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 47560, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.159.174.153/32",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.184.1.3/4",
+        "LE1": "4",
+        "GE1": "4",
+        "PrefixPD1": "False",
+        "Prefix2": "99.226.113.100/25",
+        "LE2": "32",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "838",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.226.113.102/32",
+        "LP": "262",
+        "MED": "33",
+        "Community": "2:2 2:22",
+        "ASPath": "1 3",
+        "NextHop": "99.162.16.0"
+    },
+    {
+        "Tag": "P1L3M3A4",
+        "Allowed": "True",
+        "Prefix": "99.226.113.102/32",
+        "LP": "838",
+        "MED": "33",
+        "Community": "2:2 2:22",
+        "ASPath": "1",
+        "NextHop": "99.162.16.0"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=1 3']
+#######################################################################################
+
+
+Test case: 33812, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.215.0.3/0",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.23.68.9/32",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.174.239.251/32",
+        "LE2": "32",
+        "GE2": "32",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "0:32768",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.92.7.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.174.239.251/32",
+        "LP": "161",
+        "MED": "162",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 2",
+        "NextHop": "100.18.1.64"
+    },
+    {
+        "Tag": "P1C3H3",
+        "Allowed": "True",
+        "Prefix": "99.174.239.251/32",
+        "LP": "161",
+        "MED": "0",
+        "Community": "22567:34243 65535:6 0:32768",
+        "ASPath": "0 2",
+        "NextHop": "97.92.7.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['0:32768', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 2184, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.191.39.246/30",
+        "LE0": "31",
+        "GE0": "30",
+        "PrefixPD0": "True",
+        "Prefix1": "100.0.32.8/25",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.26.64.2/32",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "0:16384",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "44737",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.191.39.246/30",
+        "LP": "582",
+        "MED": "34",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 6",
+        "NextHop": "100.28.1.3"
+    },
+    {
+        "Tag": "P1C3A3H5",
+        "Allowed": "True",
+        "Prefix": "99.191.39.246/30",
+        "LP": "582",
+        "MED": "34",
+        "Community": "22567:34243 65535:6 0:16384",
+        "ASPath": "44737 0 6",
+        "NextHop": "100.28.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['0:16384', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 16920, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.194.2.128/0",
+        "LE0": "None",
+        "GE0": "20",
+        "PrefixPD0": "False",
+        "Prefix1": "99.159.64.3/14",
+        "LE1": "None",
+        "GE1": "16",
+        "PrefixPD1": "False",
+        "Prefix2": "99.186.193.199/12",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.188.217.130/12",
+        "LP": "514",
+        "MED": "8",
+        "Community": "2:11 10:222",
+        "ASPath": "0 6",
+        "NextHop": "100.16.32.3"
+    },
+    {
+        "Tag": "P1C4H5",
+        "Allowed": "True",
+        "Prefix": "99.188.217.130/12",
+        "LP": "514",
+        "MED": "0",
+        "Community": "10:222",
+        "ASPath": "0 6",
+        "NextHop": "100.16.32.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 34660, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.32.64/25",
+        "LE0": "31",
+        "GE0": "31",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.69.185/29",
+        "LE1": "29",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.17.251.3/15",
+        "LE2": "None",
+        "GE2": "16",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "162",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.16.2.65/29",
+        "LP": "129",
+        "MED": "48",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "3 32",
+        "NextHop": "100.10.2.128"
+    },
+    {
+        "Tag": "P1L3M3C4",
+        "Allowed": "True",
+        "Prefix": "100.16.2.65/29",
+        "LP": "162",
+        "MED": "0",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "3 32",
+        "NextHop": "100.10.2.128"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case 24478 : no error!#######################################################################################
+
+
+Test case: 40982, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.235.49.29/32",
+        "LE0": "32",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.161.144.191/32",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.6.206.160/32",
+        "LE2": "32",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "4",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "100.6.206.160/32",
+        "LP": "321",
+        "MED": "129",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 1",
+        "NextHop": "100.0.32.0"
+    },
+    {
+        "Tag": "P1A4H5",
+        "Allowed": "True",
+        "Prefix": "100.6.206.160/32",
+        "LP": "321",
+        "MED": "0",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 1",
+        "NextHop": "100.0.32.0"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 6241, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.27.36.164/15",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.160.1.66/0",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.14.84.130/10",
+        "LE2": "None",
+        "GE2": "10",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "0:1024",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "97.68.72.129",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.14.238.66/10",
+        "LP": "320",
+        "MED": "98",
+        "Community": "28663:658 6720:7",
+        "ASPath": "1 3",
+        "NextHop": "100.0.32.4"
+    },
+    {
+        "Tag": "P1C3A4H3",
+        "Allowed": "True",
+        "Prefix": "100.14.238.66/10",
+        "LP": "320",
+        "MED": "0",
+        "Community": "28663:658 6720:7 0:1024",
+        "ASPath": "1",
+        "NextHop": "97.68.72.129"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=1 3']
+#######################################################################################
+
+
+Test case 4545 : no error!#######################################################################################
+
+
+Test case 16726 : no error!#######################################################################################
+
+
+Test case 34325 : no error!#######################################################################################
+
+
+Test case: 41871, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.8.1.16/3",
+        "LE0": "3",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.16.16.64/1",
+        "LE1": "8",
+        "GE1": "3",
+        "PrefixPD1": "False",
+        "Prefix2": "99.190.93.64/0",
+        "LE2": "None",
+        "GE2": "0",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.26.29.128/1",
+        "LP": "262",
+        "MED": "132",
+        "Community": "1:1 11210:1",
+        "ASPath": "1 3",
+        "NextHop": "100.14.2.16"
+    },
+    {
+        "Tag": "P1C4A4",
+        "Allowed": "True",
+        "Prefix": "100.26.29.128/1",
+        "LP": "262",
+        "MED": "0",
+        "Community": "11210:1",
+        "ASPath": "1 3",
+        "NextHop": "100.14.2.16"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 28237, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.6.3.64/4",
+        "LE0": "None",
+        "GE0": "6",
+        "PrefixPD0": "False",
+        "Prefix1": "99.222.16.3/16",
+        "LE1": "16",
+        "GE1": "16",
+        "PrefixPD1": "False",
+        "Prefix2": "99.187.226.247/1",
+        "LE2": "None",
+        "GE2": "2",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "326",
+        "SetMED": "0",
+        "SetCommunity": "1:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "4",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.191.10.162/2",
+        "LP": "261",
+        "MED": "33",
+        "Community": "10012:11 20022:11",
+        "ASPath": "0 4",
+        "NextHop": "99.190.2.130"
+    },
+    {
+        "Tag": "P1L3M3C3A4",
+        "Allowed": "True",
+        "Prefix": "99.191.10.162/2",
+        "LP": "326",
+        "MED": "0",
+        "Community": "10012:11 20022:11 1:0",
+        "ASPath": "0",
+        "NextHop": "99.190.2.130"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=0 4']
+#######################################################################################
+
+
+Test case: 25591, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.190.1.32/5",
+        "LE0": "5",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.204.224.128/0",
+        "LE1": "1",
+        "GE1": "1",
+        "PrefixPD1": "True",
+        "Prefix2": "100.0.1.128/28",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.68.135.66",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.174.232.3/1",
+        "LP": "518",
+        "MED": "34",
+        "Community": "20197:66 17010:10101",
+        "ASPath": "0 2",
+        "NextHop": "100.28.1.3"
+    },
+    {
+        "Tag": "P1C4H3",
+        "Allowed": "True",
+        "Prefix": "99.174.232.3/1",
+        "LP": "518",
+        "MED": "0",
+        "Community": "20197:66 17010:10101",
+        "ASPath": "0 2",
+        "NextHop": "97.68.135.66"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['20197:66']"]
+#######################################################################################
+
+
+Test case: 31938, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.195.32.94/30",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.170.0.1/14",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.198.58.172/30",
+        "LE2": "None",
+        "GE2": "30",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "544",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.198.58.172/30",
+        "LP": "261",
+        "MED": "1",
+        "Community": "1:12 11:2222",
+        "ASPath": "2",
+        "NextHop": "100.18.16.0"
+    },
+    {
+        "Tag": "P1L3M3A4",
+        "Allowed": "True",
+        "Prefix": "99.198.58.172/30",
+        "LP": "544",
+        "MED": "0",
+        "Community": "1:12 11:2222",
+        "ASPath": "",
+        "NextHop": "100.18.16.0"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=2']
+#######################################################################################
+
+
+Test case 26289 : no error!#######################################################################################
+
+
+Test case: 52009, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.194.16.18/14",
+        "LE0": "16",
+        "GE0": "16",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.2.3/19",
+        "LE1": "19",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.22.1.3/6",
+        "LE2": "None",
+        "GE2": "7",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "549",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.14.32.8/8",
+        "LP": "513",
+        "MED": "34",
+        "Community": "1:2 10100:211",
+        "ASPath": "3 32",
+        "NextHop": "99.172.1.66"
+    },
+    {
+        "Tag": "P1L3M3C4",
+        "Allowed": "True",
+        "Prefix": "100.14.32.8/8",
+        "LP": "549",
+        "MED": "0",
+        "Community": "10100:211",
+        "ASPath": "3 32",
+        "NextHop": "99.172.1.66"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 33446 : no error!#######################################################################################
+
+
+Test case: 38392, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.184.1.3/2",
+        "LE0": "2",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.29.130.195/27",
+        "LE1": "29",
+        "GE1": "27",
+        "PrefixPD1": "True",
+        "Prefix2": "100.2.65.16/32",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "806",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2211",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.29.130.195/29",
+        "LP": "134",
+        "MED": "33",
+        "Community": "1:12 11:2222",
+        "ASPath": "1 221",
+        "NextHop": "99.190.33.2"
+    },
+    {
+        "Tag": "P1L3M3C4A4",
+        "Allowed": "True",
+        "Prefix": "100.29.130.195/29",
+        "LP": "806",
+        "MED": "33",
+        "Community": "11:2222",
+        "ASPath": "1 221",
+        "NextHop": "99.190.33.2"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 46126 : no error!#######################################################################################
+
+
+Test case 16822 : no error!#######################################################################################
+
+
+Test case: 52498, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.222.1.16/22",
+        "LE0": "32",
+        "GE0": "32",
+        "PrefixPD0": "False",
+        "Prefix1": "99.160.1.128/20",
+        "LE1": "None",
+        "GE1": "32",
+        "PrefixPD1": "False",
+        "Prefix2": "99.160.33.55/31",
+        "LE2": "31",
+        "GE2": "31",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "289",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.160.33.54/31",
+        "LP": "546",
+        "MED": "48",
+        "Community": "72:65 43001:1100",
+        "ASPath": "2 3",
+        "NextHop": "100.0.1.64"
+    },
+    {
+        "Tag": "P1L3M3A4H5",
+        "Allowed": "True",
+        "Prefix": "99.160.33.54/31",
+        "LP": "289",
+        "MED": "48",
+        "Community": "72:65 43001:1100",
+        "ASPath": "2",
+        "NextHop": "100.0.1.64"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=2 3']
+#######################################################################################
+
+
+Test case: 4714, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.10.8.3/9",
+        "LE0": "None",
+        "GE0": "30",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.16.8/9",
+        "LE1": "9",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.174.37.50/29",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "578",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.174.37.50/29",
+        "LP": "192",
+        "MED": "48",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "2 211",
+        "NextHop": "100.1.0.64"
+    },
+    {
+        "Tag": "P1L3M3",
+        "Allowed": "True",
+        "Prefix": "99.174.37.50/29",
+        "LP": "578",
+        "MED": "48",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "2 211",
+        "NextHop": "100.1.0.64"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 43982, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.192.1.16/6",
+        "LE0": "None",
+        "GE0": "24",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.32.16/29",
+        "LE1": "29",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.2.213.16/28",
+        "LE2": "None",
+        "GE2": "28",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "0:512",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "4",
+        "NextHopIP": "97.132.72.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.2.213.16/28",
+        "LP": "162",
+        "MED": "48",
+        "Community": "68:6553 7465:7",
+        "ASPath": "0 4",
+        "NextHop": "100.0.128.3"
+    },
+    {
+        "Tag": "P1C3A4H3",
+        "Allowed": "True",
+        "Prefix": "100.2.213.16/28",
+        "LP": "162",
+        "MED": "0",
+        "Community": "68:6553 7465:7 0:512",
+        "ASPath": "0",
+        "NextHop": "97.132.72.3"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=0 4']
+#######################################################################################
+
+
+Test case: 46375, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.4.2.16/13",
+        "LE0": "None",
+        "GE0": "18",
+        "PrefixPD0": "False",
+        "Prefix1": "99.192.32.0/5",
+        "LE1": "None",
+        "GE1": "11",
+        "PrefixPD1": "True",
+        "Prefix2": "100.21.131.64/0",
+        "LE2": "11",
+        "GE2": "10",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "1",
+        "NextHopIP": "97.156.64.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.11.131.203/10",
+        "LP": "130",
+        "MED": "68",
+        "Community": "2:11 10:222",
+        "ASPath": "1 31",
+        "NextHop": "100.1.0.64"
+    },
+    {
+        "Tag": "P1C4A4H3",
+        "Allowed": "True",
+        "Prefix": "100.11.131.203/10",
+        "LP": "130",
+        "MED": "68",
+        "Community": "10:222",
+        "ASPath": "31",
+        "NextHop": "97.156.64.3"
+    }
+]
+
+Unmatched route attributes:
+no []
+#######################################################################################
+
+
+Test case: 22410, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.160.2.0/18",
+        "LE0": "18",
+        "GE0": "18",
+        "PrefixPD0": "False",
+        "Prefix1": "99.222.8.8/4",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.219.145.3/0",
+        "LE2": "None",
+        "GE2": "10",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "160",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "97.103.195.34",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.178.153.11/19",
+        "LP": "193",
+        "MED": "40",
+        "Community": "68:6553 7465:7",
+        "ASPath": "3 32",
+        "NextHop": "100.4.33.2"
+    },
+    {
+        "Tag": "P1L3M3A4H3",
+        "Allowed": "True",
+        "Prefix": "99.178.153.11/19",
+        "LP": "160",
+        "MED": "0",
+        "Community": "68:6553 7465:7",
+        "ASPath": "32",
+        "NextHop": "97.103.195.34"
+    }
+]
+
+Unmatched route attributes:
+no []
+#######################################################################################
+
+
+Test case: 29026, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.160.128.3/26",
+        "LE0": "None",
+        "GE0": "28",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.0.3/1",
+        "LE1": "1",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.159.85.3/3",
+        "LE2": "None",
+        "GE2": "4",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.124.72.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.20.17.3/4",
+        "LP": "326",
+        "MED": "66",
+        "Community": "1:12 11:2222",
+        "ASPath": "0 4",
+        "NextHop": "100.0.1.64"
+    },
+    {
+        "Tag": "P1C4H3",
+        "Allowed": "True",
+        "Prefix": "100.20.17.3/4",
+        "LP": "326",
+        "MED": "0",
+        "Community": "11:2222",
+        "ASPath": "0 4",
+        "NextHop": "97.124.72.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 45963, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.14.1.34/10",
+        "LE0": "None",
+        "GE0": "30",
+        "PrefixPD0": "False",
+        "Prefix1": "100.26.1.3/1",
+        "LE1": "1",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.190.49.3/1",
+        "LE2": "25",
+        "GE2": "1",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "21494",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.196.154.67/24",
+        "LP": "162",
+        "MED": "144",
+        "Community": "1:2 20111:11",
+        "ASPath": "0 1",
+        "NextHop": "99.190.16.16"
+    },
+    {
+        "Tag": "P1C4A3H5",
+        "Allowed": "True",
+        "Prefix": "99.196.154.67/24",
+        "LP": "162",
+        "MED": "144",
+        "Community": "20111:11",
+        "ASPath": "21494 0 1",
+        "NextHop": "99.190.16.16"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 10629 : no error!#######################################################################################
+
+
+Test case 34498 : no error!#######################################################################################
+
+
+Test case: 30712, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.160.127.131/6",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.5.0.3/8",
+        "LE1": "8",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.198.112.180/0",
+        "LE2": "None",
+        "GE2": "6",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "513",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "100.22.113.192/6",
+        "LP": "258",
+        "MED": "68",
+        "Community": "2:11 10:222",
+        "ASPath": "0 1",
+        "NextHop": "99.188.1.8"
+    },
+    {
+        "Tag": "P1L3M3C4H5",
+        "Allowed": "True",
+        "Prefix": "100.22.113.192/6",
+        "LP": "513",
+        "MED": "68",
+        "Community": "10:222",
+        "ASPath": "0 1",
+        "NextHop": "99.188.1.8"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 49515 : no error!#######################################################################################
+
+
+Test case 7700 : no error!#######################################################################################
+
+
+Test case: 42672, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.190.1.3/1",
+        "LE0": "1",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.16.32.2/25",
+        "LE1": "None",
+        "GE1": "26",
+        "PrefixPD1": "False",
+        "Prefix2": "99.188.23.222/0",
+        "LE2": "None",
+        "GE2": "0",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "325",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2211",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.189.157.185/0",
+        "LP": "520",
+        "MED": "48",
+        "Community": "1:2 10100:211",
+        "ASPath": "3 2211",
+        "NextHop": "99.190.2.1"
+    },
+    {
+        "Tag": "P1L3M3C4A4",
+        "Allowed": "True",
+        "Prefix": "99.189.157.185/0",
+        "LP": "325",
+        "MED": "48",
+        "Community": "10100:211",
+        "ASPath": "3",
+        "NextHop": "99.190.2.1"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']", 'ASPath=3 2211']
+#######################################################################################
+
+
+Test case: 34549, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.14.16.3/29",
+        "LE0": "31",
+        "GE0": "31",
+        "PrefixPD0": "False",
+        "Prefix1": "99.182.1.65/31",
+        "LE1": "32",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.159.126.20/30",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "804",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "21980",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.171.199.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.159.126.23/30",
+        "LP": "261",
+        "MED": "36",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 4",
+        "NextHop": "99.178.1.3"
+    },
+    {
+        "Tag": "P1L3M3A3H3",
+        "Allowed": "True",
+        "Prefix": "99.159.126.23/30",
+        "LP": "804",
+        "MED": "36",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "21980 0 4",
+        "NextHop": "97.171.199.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 33985, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.1.3/19",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.2.140.137/32",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.16.35.54/32",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "97.64.72.64",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.16.35.54/32",
+        "LP": "513",
+        "MED": "34",
+        "Community": "1:12 11:2222",
+        "ASPath": "0",
+        "NextHop": "99.160.1.3"
+    },
+    {
+        "Tag": "P1C4A4H3",
+        "Allowed": "True",
+        "Prefix": "100.16.35.54/32",
+        "LP": "513",
+        "MED": "0",
+        "Community": "11:2222",
+        "ASPath": "0",
+        "NextHop": "97.64.72.64"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 34048, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.16.64.2/25",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.196.1.3/9",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.178.45.136/24",
+        "LE2": "26",
+        "GE2": "26",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "577",
+        "SetMED": "0",
+        "SetCommunity": "16:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.178.45.64/26",
+        "LP": "258",
+        "MED": "80",
+        "Community": "21001:11 22202:11",
+        "ASPath": "0 2",
+        "NextHop": "100.29.1.65"
+    },
+    {
+        "Tag": "P1L3M3C3A4H5",
+        "Allowed": "True",
+        "Prefix": "99.178.45.64/26",
+        "LP": "577",
+        "MED": "0",
+        "Community": "21001:11 22202:11 16:0",
+        "ASPath": "0",
+        "NextHop": "100.29.1.65"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=0 2']
+#######################################################################################
+
+
+Test case: 46461, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.8.3/32",
+        "LE0": "None",
+        "GE0": "32",
+        "PrefixPD0": "False",
+        "Prefix1": "100.7.0.3/31",
+        "LE1": "None",
+        "GE1": "31",
+        "PrefixPD1": "False",
+        "Prefix2": "99.238.235.3/25",
+        "LE2": "28",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "2:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2211",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.238.235.1/28",
+        "LP": "324",
+        "MED": "36",
+        "Community": "1:1 2:2",
+        "ASPath": "3 2211",
+        "NextHop": "100.16.1.3"
+    },
+    {
+        "Tag": "P1C3A4H5",
+        "Allowed": "True",
+        "Prefix": "99.238.235.1/28",
+        "LP": "324",
+        "MED": "36",
+        "Community": "1:1 2:2 2:0",
+        "ASPath": "3",
+        "NextHop": "100.16.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=3 2211']
+#######################################################################################
+
+
+Test case: 51686, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.17.0.8/12",
+        "LE0": "15",
+        "GE0": "15",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.32.3/29",
+        "LE1": "29",
+        "GE1": "29",
+        "PrefixPD1": "False",
+        "Prefix2": "100.4.240.64/13",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "546",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "44737",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.4.225.64/13",
+        "LP": "134",
+        "MED": "128",
+        "Community": "1:2 20111:11",
+        "ASPath": "1 2222",
+        "NextHop": "99.218.1.128"
+    },
+    {
+        "Tag": "P1L3M3C4A3",
+        "Allowed": "True",
+        "Prefix": "100.4.225.64/13",
+        "LP": "546",
+        "MED": "128",
+        "Community": "20111:11",
+        "ASPath": "44737 1 2222",
+        "NextHop": "99.218.1.128"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 20084, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.12.3.3/8",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.1.4/29",
+        "LE1": "None",
+        "GE1": "29",
+        "PrefixPD1": "False",
+        "Prefix2": "100.5.41.130/21",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "100",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "100.5.41.18/21",
+        "LP": "161",
+        "MED": "80",
+        "Community": "1:1 11210:1",
+        "ASPath": "3 32",
+        "NextHop": "100.0.8.0"
+    },
+    {
+        "Tag": "P1L3M3C4H5",
+        "Allowed": "True",
+        "Prefix": "100.5.41.18/21",
+        "LP": "100",
+        "MED": "80",
+        "Community": "11210:1",
+        "ASPath": "3 32",
+        "NextHop": "100.0.8.0"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 14023, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.218.36.11/27",
+        "LE0": "31",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.24.146.35/27",
+        "LE1": "None",
+        "GE1": "31",
+        "PrefixPD1": "True",
+        "Prefix2": "100.0.2.67/28",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "32:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "21980",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.116.55.16",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.24.146.34/31",
+        "LP": "137",
+        "MED": "36",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 4",
+        "NextHop": "99.180.1.3"
+    },
+    {
+        "Tag": "P1C3A3H3",
+        "Allowed": "True",
+        "Prefix": "100.24.146.34/31",
+        "LP": "137",
+        "MED": "36",
+        "Community": "22567:34243 65535:6 32:0",
+        "ASPath": "21980 0 4",
+        "NextHop": "97.116.55.16"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', '32:0', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 17900, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.174.60.131/29",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.197.128.36/29",
+        "LE1": "29",
+        "GE1": "None",
+        "PrefixPD1": "True",
+        "Prefix2": "100.0.67.64/29",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "550",
+        "SetMED": "0",
+        "SetCommunity": "0:32768",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "1",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.197.128.34/29",
+        "LP": "268",
+        "MED": "36",
+        "Community": "2:2 2:22",
+        "ASPath": "1 31",
+        "NextHop": "100.0.3.0"
+    },
+    {
+        "Tag": "P1L3M3C3A4",
+        "Allowed": "True",
+        "Prefix": "99.197.128.34/29",
+        "LP": "550",
+        "MED": "0",
+        "Community": "2:2 2:22 0:32768",
+        "ASPath": "31",
+        "NextHop": "100.0.3.0"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=1 31']
+#######################################################################################
+
+
+Test case: 38383, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.192.0.35/5",
+        "LE0": "5",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.222.16.11/7",
+        "LE1": "16",
+        "GE1": "8",
+        "PrefixPD1": "True",
+        "Prefix2": "100.16.4.64/31",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "549",
+        "SetMED": "0",
+        "SetCommunity": "16:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.220.32.64/16",
+        "LP": "517",
+        "MED": "34",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "3 32",
+        "NextHop": "99.187.1.33"
+    },
+    {
+        "Tag": "P1L3M3C3H5",
+        "Allowed": "True",
+        "Prefix": "99.220.32.64/16",
+        "LP": "549",
+        "MED": "0",
+        "Community": "22567:34243 65535:6 16:0",
+        "ASPath": "3 32",
+        "NextHop": "99.187.1.33"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['16:0', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 24990, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.11.9.159/31",
+        "LE0": "31",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.168.0.3/1",
+        "LE1": "1",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.21.95.67/31",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "289",
+        "SetMED": "0",
+        "SetCommunity": "32768:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.21.95.66/31",
+        "LP": "257",
+        "MED": "4",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "3 2211",
+        "NextHop": "100.0.17.1"
+    },
+    {
+        "Tag": "P1L3M3C3",
+        "Allowed": "True",
+        "Prefix": "100.21.95.66/31",
+        "LP": "289",
+        "MED": "0",
+        "Community": "22567:34243 65535:6 32768:0",
+        "ASPath": "3 2211",
+        "NextHop": "100.0.17.1"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', '32768:0', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 17695, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.28.23.24/21",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.222.8.66/0",
+        "LE1": "0",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.243.94.205/3",
+        "LE2": "None",
+        "GE2": "11",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.238.113.98/21",
+        "LP": "265",
+        "MED": "34",
+        "Community": "2:11 10:222",
+        "ASPath": "0 4",
+        "NextHop": "99.198.1.3"
+    },
+    {
+        "Tag": "P1C4A4H5",
+        "Allowed": "True",
+        "Prefix": "99.238.113.98/21",
+        "LP": "265",
+        "MED": "34",
+        "Community": "10:222",
+        "ASPath": "0 4",
+        "NextHop": "99.198.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 8885 : no error!#######################################################################################
+
+
+Test case: 42877, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.2.3/8",
+        "LE0": "9",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.216.43.5/6",
+        "LE1": "None",
+        "GE1": "6",
+        "PrefixPD1": "False",
+        "Prefix2": "99.213.31.66/0",
+        "LE2": "None",
+        "GE2": "4",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "133",
+        "SetMED": "0",
+        "SetCommunity": "256:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2",
+        "NextHopIP": "97.100.70.0",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.23.43.192/6",
+        "LP": "520",
+        "MED": "144",
+        "Community": "1:12 10:22",
+        "ASPath": "0 2",
+        "NextHop": "100.8.16.2"
+    },
+    {
+        "Tag": "P1L3M3C3A4H3",
+        "Allowed": "True",
+        "Prefix": "100.23.43.192/6",
+        "LP": "133",
+        "MED": "0",
+        "Community": "1:12 10:22 256:0",
+        "ASPath": "0",
+        "NextHop": "97.100.70.0"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=0 2']
+#######################################################################################
+
+
+Test case 22056 : no error!#######################################################################################
+
+
+Test case 39314 : no error!#######################################################################################
+
+
+Test case: 15123, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.159.64.3/3",
+        "LE0": "3",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.10.41.19/0",
+        "LE1": "None",
+        "GE1": "0",
+        "PrefixPD1": "True",
+        "Prefix2": "99.190.32.66/26",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "3",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.187.44.11/2",
+        "LP": "264",
+        "MED": "36",
+        "Community": "10012:11 20022:11",
+        "ASPath": "2 3",
+        "NextHop": "99.222.32.3"
+    },
+    {
+        "Tag": "P1C4A4H5",
+        "Allowed": "True",
+        "Prefix": "99.187.44.11/2",
+        "LP": "264",
+        "MED": "0",
+        "Community": "10012:11 20022:11",
+        "ASPath": "2",
+        "NextHop": "99.222.32.3"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=2 3']
+#######################################################################################
+
+
+Test case: 50149, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.1.66/32",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.1.33/0",
+        "LE1": "0",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.171.55.48/29",
+        "LE2": "31",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "806",
+        "SetMED": "None",
+        "SetCommunity": "8:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2211",
+        "NextHopIP": "97.125.193.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.171.55.51/31",
+        "LP": "134",
+        "MED": "66",
+        "Community": "10:22 952:1000",
+        "ASPath": "3 2211",
+        "NextHop": "100.0.4.3"
+    },
+    {
+        "Tag": "P1L3M3C3A4H3",
+        "Allowed": "True",
+        "Prefix": "99.171.55.51/31",
+        "LP": "806",
+        "MED": "66",
+        "Community": "10:22 952:1000 8:0",
+        "ASPath": "3",
+        "NextHop": "97.125.193.3"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=3 2211']
+#######################################################################################
+
+
+Test case: 54027, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.1.64/30",
+        "LE0": "30",
+        "GE0": "30",
+        "PrefixPD0": "False",
+        "Prefix1": "99.161.0.65/8",
+        "LE1": "8",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.22.180.195/26",
+        "LE2": "None",
+        "GE2": "26",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "578",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.114.71.32",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.22.180.196/31",
+        "LP": "160",
+        "MED": "64",
+        "Community": "1:2 10100:211",
+        "ASPath": "0 2",
+        "NextHop": "100.0.2.2"
+    },
+    {
+        "Tag": "P1L3M3C4H3",
+        "Allowed": "True",
+        "Prefix": "100.22.180.196/31",
+        "LP": "578",
+        "MED": "64",
+        "Community": "10100:211",
+        "ASPath": "0 2",
+        "NextHop": "97.114.71.32"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case 26451 : no error!#######################################################################################
+
+
+Test case 41552 : no error!#######################################################################################
+
+
+Test case: 22984, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.244.141.45/30",
+        "LE0": "30",
+        "GE0": "30",
+        "PrefixPD0": "False",
+        "Prefix1": "99.171.114.208/30",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "True",
+        "Prefix2": "100.16.1.3/32",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "6743",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.148.79.64",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.171.114.210/30",
+        "LP": "518",
+        "MED": "64",
+        "Community": "1:2 20111:11",
+        "ASPath": "2 211",
+        "NextHop": "100.0.5.1"
+    },
+    {
+        "Tag": "P1C4A3H3",
+        "Allowed": "True",
+        "Prefix": "99.171.114.210/30",
+        "LP": "518",
+        "MED": "64",
+        "Community": "20111:11",
+        "ASPath": "6743 2 211",
+        "NextHop": "97.148.79.64"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 43409, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.1.64/3",
+        "LE0": "6",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.17.0.129/26",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.29.5.10/1",
+        "LE2": "None",
+        "GE2": "1",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "290",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.68.1.10",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.0.64.136/1",
+        "LP": "517",
+        "MED": "40",
+        "Community": "2:11 10:222",
+        "ASPath": "0 4",
+        "NextHop": "100.0.5.2"
+    },
+    {
+        "Tag": "P1L3M3C4H3",
+        "Allowed": "True",
+        "Prefix": "100.0.64.136/1",
+        "LP": "290",
+        "MED": "0",
+        "Community": "10:222",
+        "ASPath": "0 4",
+        "NextHop": "97.68.1.10"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 20357, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.64.3/31",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.34.67/29",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "True",
+        "Prefix2": "99.190.7.32/32",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "545",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "100.0.34.67/29",
+        "LP": "134",
+        "MED": "48",
+        "Community": "10012:11 20022:11",
+        "ASPath": "2 3",
+        "NextHop": "99.192.0.16"
+    },
+    {
+        "Tag": "P1L3M3A4H5",
+        "Allowed": "True",
+        "Prefix": "100.0.34.67/29",
+        "LP": "545",
+        "MED": "0",
+        "Community": "10012:11 20022:11",
+        "ASPath": "3",
+        "NextHop": "99.192.0.16"
+    }
+]
+
+Unmatched route attributes:
+yes ['ASPath=2 3']
+#######################################################################################
+
+
+Test case: 49192, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.248.12.36/32",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.190.32.64/29",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.23.39.4/30",
+        "LE2": "32",
+        "GE2": "32",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "325",
+        "SetMED": "0",
+        "SetCommunity": "0:1",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.108.82.67",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.23.39.4/32",
+        "LP": "576",
+        "MED": "129",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 4",
+        "NextHop": "100.22.1.3"
+    },
+    {
+        "Tag": "P1L3M3C3H3",
+        "Allowed": "True",
+        "Prefix": "100.23.39.4/32",
+        "LP": "325",
+        "MED": "0",
+        "Community": "22567:34243 65535:6 0:1",
+        "ASPath": "0 4",
+        "NextHop": "97.108.82.67"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['0:1', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 26322, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.81.3/25",
+        "LE0": "25",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.174.3.64/3",
+        "LE1": "3",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.22.221.210/24",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "865",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "4",
+        "NextHopIP": "97.71.171.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.22.221.195/24",
+        "LP": "322",
+        "MED": "34",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 4",
+        "NextHop": "99.166.16.33"
+    },
+    {
+        "Tag": "P1L3M3A4H3",
+        "Allowed": "True",
+        "Prefix": "100.22.221.195/24",
+        "LP": "865",
+        "MED": "34",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0",
+        "NextHop": "97.71.171.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']", 'ASPath=0 4']
+#######################################################################################
+
+
+Test case: 51746, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.1.3/24",
+        "LE0": "27",
+        "GE0": "27",
+        "PrefixPD0": "False",
+        "Prefix1": "99.192.1.32/17",
+        "LE1": "21",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.222.1.16/1",
+        "LE2": "None",
+        "GE2": "1",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "325",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[4][4]+:[4][4]+",
+        "ASPathPrepend": "30184",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.68.71.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.0.2.3/22",
+        "LP": "128",
+        "MED": "72",
+        "Community": "1:12 10:22",
+        "ASPath": "0 4",
+        "NextHop": "99.160.32.64"
+    },
+    {
+        "Tag": "P1L3M3C4A3H3",
+        "Allowed": "True",
+        "Prefix": "100.0.2.3/22",
+        "LP": "325",
+        "MED": "72",
+        "Community": "1:12 10:22",
+        "ASPath": "30184 0 4",
+        "NextHop": "97.68.71.3"
+    }
+]
+
+Unmatched route attributes:
+no []
+#######################################################################################
+
+
+Test case 26778 : no error!#######################################################################################
+
+
+Test case: 26964, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.14.0.0/32",
+        "LE0": "32",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.174.43.65/19",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.168.237.28/19",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "292",
+        "SetMED": "None",
+        "SetCommunity": "0:1",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "9663",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.168.239.28/19",
+        "LP": "273",
+        "MED": "40",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0",
+        "NextHop": "99.188.1.3"
+    },
+    {
+        "Tag": "P1L3M3C3A3H5",
+        "Allowed": "True",
+        "Prefix": "99.168.239.28/19",
+        "LP": "292",
+        "MED": "40",
+        "Community": "22567:34243 65535:6 0:1",
+        "ASPath": "9663 0",
+        "NextHop": "99.188.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['0:1', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 42478, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.32.3/29",
+        "LE0": "29",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.5.0.3/18",
+        "LE1": "18",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.27.253.199/27",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "166",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2211",
+        "NextHopIP": "97.60.232.19",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.27.253.199/27",
+        "LP": "518",
+        "MED": "36",
+        "Community": "1:1 11210:1",
+        "ASPath": "2 3",
+        "NextHop": "100.0.1.3"
+    },
+    {
+        "Tag": "P1L3M3C4A4H3",
+        "Allowed": "True",
+        "Prefix": "100.27.253.199/27",
+        "LP": "166",
+        "MED": "0",
+        "Community": "11210:1",
+        "ASPath": "2 3",
+        "NextHop": "97.60.232.19"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 37192, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.198.250.49/27",
+        "LE0": "32",
+        "GE0": "29",
+        "PrefixPD0": "False",
+        "Prefix1": "100.0.2.32/14",
+        "LE1": "22",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.187.5.232/30",
+        "LE2": "32",
+        "GE2": "30",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "816",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.108.1.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.187.5.233/30",
+        "LP": "512",
+        "MED": "144",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 6",
+        "NextHop": "99.162.2.4"
+    },
+    {
+        "Tag": "P1L3M3H3",
+        "Allowed": "True",
+        "Prefix": "99.187.5.233/30",
+        "LP": "816",
+        "MED": "144",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 6",
+        "NextHop": "97.108.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 37987, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.13.253.191/32",
+        "LE0": "32",
+        "GE0": "32",
+        "PrefixPD0": "False",
+        "Prefix1": "100.1.0.3/6",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.242.2.3/23",
+        "LE2": "32",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "805",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.242.2.64/32",
+        "LP": "517",
+        "MED": "36",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 2",
+        "NextHop": "99.192.1.3"
+    },
+    {
+        "Tag": "P1L3M3H5",
+        "Allowed": "True",
+        "Prefix": "99.242.2.64/32",
+        "LP": "805",
+        "MED": "36",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 2",
+        "NextHop": "99.192.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case 50795 : no error!#######################################################################################
+
+
+Test case: 51448, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.0.32.66/20",
+        "LE0": "32",
+        "GE0": "30",
+        "PrefixPD0": "False",
+        "Prefix1": "100.10.16.64/1",
+        "LE1": "1",
+        "GE1": "1",
+        "PrefixPD1": "False",
+        "Prefix2": "99.215.128.3/2",
+        "LE2": "2",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "None",
+        "SetMED": "None",
+        "SetCommunity": "1024:0",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "44737",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.23.144.3/2",
+        "LP": "106",
+        "MED": "130",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 1",
+        "NextHop": "100.24.1.3"
+    },
+    {
+        "Tag": "P1C3A3",
+        "Allowed": "True",
+        "Prefix": "100.23.144.3/2",
+        "LP": "106",
+        "MED": "130",
+        "Community": "22567:34243 65535:6 1024:0",
+        "ASPath": "44737 0 1",
+        "NextHop": "100.24.1.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['1024:0', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 51268, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.192.1.64/10",
+        "LE0": "None",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.202.117.38/32",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.25.2.9/32",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "292",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "5676",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "100.25.2.9/32",
+        "LP": "102",
+        "MED": "32",
+        "Community": "2:11 10:222",
+        "ASPath": "2",
+        "NextHop": "99.222.65.0"
+    },
+    {
+        "Tag": "P1L3M3C4A3H5",
+        "Allowed": "True",
+        "Prefix": "100.25.2.9/32",
+        "LP": "292",
+        "MED": "0",
+        "Community": "10:222",
+        "ASPath": "5676 2",
+        "NextHop": "99.222.65.0"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 41916, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.184.17.32/31",
+        "LE0": "32",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.168.1.3/1",
+        "LE1": "8",
+        "GE1": "1",
+        "PrefixPD1": "False",
+        "Prefix2": "99.159.234.129/0",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "290",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "1",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.187.105.129/0",
+        "LP": "578",
+        "MED": "68",
+        "Community": "1:12 10:22",
+        "ASPath": "1",
+        "NextHop": "100.0.1.64"
+    },
+    {
+        "Tag": "P1L3M3C4A4H5",
+        "Allowed": "True",
+        "Prefix": "99.187.105.129/0",
+        "LP": "290",
+        "MED": "0",
+        "Community": "1:12 10:22",
+        "ASPath": "",
+        "NextHop": "100.0.1.64"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']", 'ASPath=1']
+#######################################################################################
+
+
+Test case: 8603, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.160.32.16/1",
+        "LE0": "None",
+        "GE0": "5",
+        "PrefixPD0": "False",
+        "Prefix1": "100.1.0.128/0",
+        "LE1": "0",
+        "GE1": "0",
+        "PrefixPD1": "True",
+        "Prefix2": "99.190.32.3/19",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "806",
+        "SetMED": "None",
+        "SetCommunity": "0:1024",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "44737",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.131.168.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.192.16.0/0",
+        "LP": "193",
+        "MED": "36",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "2",
+        "NextHop": "99.192.2.32"
+    },
+    {
+        "Tag": "P1L3M3C3A3H3",
+        "Allowed": "True",
+        "Prefix": "99.192.16.0/0",
+        "LP": "806",
+        "MED": "36",
+        "Community": "22567:34243 65535:6 0:1024",
+        "ASPath": "44737 2",
+        "NextHop": "97.131.168.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['0:1024', '22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 27176, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.162.1.33/32",
+        "LE0": "32",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "100.4.0.64/5",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "99.235.185.248/29",
+        "LE2": "None",
+        "GE2": "29",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "320",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "6743",
+        "ASPathExclude": "None",
+        "NextHopIP": "97.92.39.3",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "99.235.185.251/29",
+        "LP": "321",
+        "MED": "34",
+        "Community": "1:2 10100:211",
+        "ASPath": "0 2",
+        "NextHop": "100.0.1.64"
+    },
+    {
+        "Tag": "P1L3M3C4A3H3",
+        "Allowed": "True",
+        "Prefix": "99.235.185.251/29",
+        "LP": "320",
+        "MED": "34",
+        "Community": "10100:211",
+        "ASPath": "6743 0 2",
+        "NextHop": "97.92.39.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 14648, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.222.1.8/32",
+        "LE0": "32",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.160.16.3/32",
+        "LE1": "32",
+        "GE1": "None",
+        "PrefixPD1": "True",
+        "Prefix2": "100.22.2.129/9",
+        "LE2": "None",
+        "GE2": "31",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "322",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "37359",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "100.22.2.129/31",
+        "LP": "288",
+        "MED": "72",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "2 3",
+        "NextHop": "100.0.1.64"
+    },
+    {
+        "Tag": "P1L3M3A3H5",
+        "Allowed": "True",
+        "Prefix": "100.22.2.129/31",
+        "LP": "322",
+        "MED": "72",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "37359 2 3",
+        "NextHop": "100.0.1.64"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 45838, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.14.5.10/11",
+        "LE0": "None",
+        "GE0": "22",
+        "PrefixPD0": "False",
+        "Prefix1": "100.26.17.2/5",
+        "LE1": "5",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.26.8.0/4",
+        "LE2": "None",
+        "GE2": "4",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "804",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-2][0-2]*:[0-2][0-2]",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "2211",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.219.33.65/4",
+        "LP": "194",
+        "MED": "34",
+        "Community": "1:12 11:2222",
+        "ASPath": "122",
+        "NextHop": "100.12.32.3"
+    },
+    {
+        "Tag": "P1L3M3C4A4H5",
+        "Allowed": "True",
+        "Prefix": "99.219.33.65/4",
+        "LP": "804",
+        "MED": "34",
+        "Community": "11:2222",
+        "ASPath": "122",
+        "NextHop": "100.12.32.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+
+Test case: 22587, yes-no
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.234.12.0/22",
+        "LE0": "32",
+        "GE0": "22",
+        "PrefixPD0": "False",
+        "Prefix1": "99.160.2.3/31",
+        "LE1": "31",
+        "GE1": "31",
+        "PrefixPD1": "False",
+        "Prefix2": "100.0.1.3/3",
+        "LE2": "None",
+        "GE2": "4",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "160",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "None",
+        "ASPathPrepend": "30184",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.21.241.32/32",
+        "LP": "517",
+        "MED": "129",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "0 2",
+        "NextHop": "99.222.32.3"
+    },
+    {
+        "Tag": "P1L3M3A3",
+        "Allowed": "True",
+        "Prefix": "100.21.241.32/32",
+        "LP": "160",
+        "MED": "129",
+        "Community": "22567:34243 65535:6",
+        "ASPath": "30184 0 2",
+        "NextHop": "99.222.32.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['22567:34243', 'llgr-stale']"]
+#######################################################################################
+
+
+Test case: 21695, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "100.10.1.65/1",
+        "LE0": "13",
+        "GE0": "13",
+        "PrefixPD0": "False",
+        "Prefix1": "100.28.1.128/12",
+        "LE1": "None",
+        "GE1": "None",
+        "PrefixPD1": "False",
+        "Prefix2": "100.15.175.164/0",
+        "LE2": "None",
+        "GE2": "3",
+        "PrefixPD2": "True",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "320",
+        "SetMED": "None",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "None",
+        "ASPathExclude": "4",
+        "NextHopIP": "97.118.64.0",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "False"
+    },
+    {
+        "Prefix": "100.29.167.167/4",
+        "LP": "517",
+        "MED": "40",
+        "Community": "2:11 10:222",
+        "ASPath": "2",
+        "NextHop": "100.22.4.66"
+    },
+    {
+        "Tag": "P1L3M3C4A4H3",
+        "Allowed": "True",
+        "Prefix": "100.29.167.167/4",
+        "LP": "320",
+        "MED": "40",
+        "Community": "2:11 10:222",
+        "ASPath": "2",
+        "NextHop": "97.118.64.0"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['2:11']"]
+#######################################################################################
+
+
+Test case: 42997, no-yes
+[
+    {
+        "Prefix": "Some",
+        "Prefix0": "99.182.3.129/2",
+        "LE0": "2",
+        "GE0": "None",
+        "PrefixPD0": "False",
+        "Prefix1": "99.215.173.243/1",
+        "LE1": "None",
+        "GE1": "1",
+        "PrefixPD1": "True",
+        "Prefix2": "100.28.64.3/31",
+        "LE2": "None",
+        "GE2": "None",
+        "PrefixPD2": "False",
+        "RmapPD": "True",
+        "LP": "None",
+        "MED": "None",
+        "Community": "None",
+        "Community-regex": "None",
+        "Community-permit": "None",
+        "ASPath": "None",
+        "ASPath-regex": "None",
+        "ASPath-permit": "None",
+        "Set": "Some",
+        "SetLP": "129",
+        "SetMED": "0",
+        "SetCommunity": "None",
+        "DeleteCommunity": "[0-1]:[1-2][1-2]?",
+        "ASPathPrepend": "21980",
+        "ASPathExclude": "None",
+        "NextHopIP": "None",
+        "NextHopPeer": "False",
+        "NextHopUnchanged": "True"
+    },
+    {
+        "Prefix": "99.190.185.192/1",
+        "LP": "261",
+        "MED": "16",
+        "Community": "1:1 11210:1",
+        "ASPath": "1 2222",
+        "NextHop": "100.4.8.3"
+    },
+    {
+        "Tag": "P1L3M3C4A3H5",
+        "Allowed": "True",
+        "Prefix": "99.190.185.192/1",
+        "LP": "129",
+        "MED": "0",
+        "Community": "11210:1",
+        "ASPath": "21980 1 2222",
+        "NextHop": "100.4.8.3"
+    }
+]
+
+Unmatched route attributes:
+yes ["Community=['']"]
+#######################################################################################
+
+

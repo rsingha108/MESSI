@@ -1,0 +1,4 @@
+1. bgp-topo.py creates the topology and then needs manual configuration of the routers. 
+
+
+driver.py runs bgp-topo.py

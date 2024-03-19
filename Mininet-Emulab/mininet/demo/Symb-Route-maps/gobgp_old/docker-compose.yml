@@ -1,0 +1,39 @@
+---
+version: "3"
+
+networks:  
+  test_net:
+    enable_ipv6: false
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 3.0.0.0/24
+        gateway: 3.0.0.1
+
+services: 
+  gobgp_1:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: ksator/gobgp:1.0
+    container_name: gobgp_1
+    privileged: true
+    volumes:
+     - $PWD/gobgp1:/etc/gobgp:rw
+    command: "gobgpd -t yaml -f /etc/gobgp/gobgp.yml -p > /etc/gobgp/log"
+    networks:
+      test_net:
+        ipv4_address: 3.0.0.2
+        
+        
+  exabgp_1:
+    image: mikenowak/exabgp:latest
+    container_name: exabgp_1
+    privileged: true
+    volumes:
+     - $PWD/exabgp1:/exabgp:rw
+    networks:
+      test_net:
+        ipv4_address: 3.0.0.3
+    entrypoint: tail -f /dev/null

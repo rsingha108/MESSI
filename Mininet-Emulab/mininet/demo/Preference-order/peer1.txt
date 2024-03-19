@@ -1,0 +1,24 @@
+s1 cd /etc/bird
+s1 rm -rf bird.conf
+
+
+s1 echo "protocol kernel {" >> bird.conf  
+s1 echo "  metric 0;" >> bird.conf              
+s1 echo "  import none;" >> bird.conf  
+s1 echo "  learn;" >> bird.conf    
+s1 echo "  export all;" >> bird.conf    
+s1 echo "}" >> bird.conf
+
+s1 echo "protocol device {" >> bird.conf        
+s1 echo "}" >> bird.conf
+
+s1 echo "protocol direct {" >> bird.conf        
+s1 echo "}" >> bird.conf
+
+s1 echo "protocol bgp peer2 {" >> bird.conf
+s1 echo "  local as 43618;" >> bird.conf
+s1 echo "  neighbor 7.0.0.10 as 43617;" >> bird.conf
+s1 echo "  export all;" >> bird.conf
+s1 echo "}" >> bird.conf
+
+

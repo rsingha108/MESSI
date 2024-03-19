@@ -1,0 +1,209 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/rajdeep/Desktop/BGP_Zenv2.0/Tests/Tests.csproj": {}
+  },
+  "projects": {
+    "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
+        "projectName": "BGP",
+        "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
+        "packagesPath": "/home/rajdeep/.nuget/packages/",
+        "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rajdeep/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "ZenLib": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
+        "projectName": "CLI",
+        "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
+        "packagesPath": "/home/rajdeep/.nuget/packages/",
+        "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rajdeep/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
+                "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "ZenLib": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/rajdeep/Desktop/BGP_Zenv2.0/Tests/Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/Tests/Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/Tests/Tests.csproj",
+        "packagesPath": "/home/rajdeep/.nuget/packages/",
+        "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rajdeep/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
+                "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj"
+              },
+              "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj": {
+                "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "ZenLib": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

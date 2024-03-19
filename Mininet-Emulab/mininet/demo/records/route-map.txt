@@ -1,0 +1,21 @@
+Route Filtering using Access list & Route-map : Deny advertisement of network 50.0.0.0 by neighbor 1.1.1.1
+
+s2# conf t
+s2(config)# access-list 20 permit 50.0.0.0
+s2(config)# route-map RMAP deny 10
+s2(config-route-map)# match ip address 20
+s2(config-route-map)# exit
+s2(config)# route-map RMAP permit 20
+s2(config-route-map)# exit
+s2(config)# exit
+s2# conf t
+s2(config)# router bgp 500
+s2(config-router)# neighbor 1.1.1.1 route-map RMAP in
+s2(config-router)# end
+s2# clear ip bgp * soft
+s2# show ip bgp
+
+---------------------------------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,3 @@
+s1 vtysh -c "show ip bgp" -c "conf t" -c "router bgp 500" 
+s1 vtysh -c "show ip bgp"
+

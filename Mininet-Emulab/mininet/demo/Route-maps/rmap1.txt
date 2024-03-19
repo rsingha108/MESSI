@@ -1,0 +1,8 @@
+RMap
+False	Community_List	^[1-2]?:[1-2][1-2]? [0-1]+:[1-2]*$,True
+False	Local_Preference	308
+False	MED	3
+True	ASP_List	^56161$,True
+True	Prefix_List	100.10.3.4/24,False
+True	MED	1
+

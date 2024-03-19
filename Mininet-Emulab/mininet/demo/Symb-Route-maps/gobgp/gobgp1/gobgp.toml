@@ -1,0 +1,51 @@
+[global.config]
+  as = 64512
+  router-id = "192.168.255.1"
+
+[[neighbors]]
+  [neighbors.config]
+    neighbor-address = "10.0.255.1"
+    peer-as = 65001
+  [neighbors.route-server.config]
+    route-server-client = true
+
+[[neighbors]]
+  [neighbors.config]
+    neighbor-address = "10.0.255.2"
+    peer-as = 65002
+  [neighbors.route-server.config]
+    route-server-client = true
+  [neighbors.apply-policy.config]
+    import-policy-list = ["pd2"]
+
+[[neighbors]]
+  [neighbors.config]
+    neighbor-address = "10.0.255.3"
+    peer-as = 65003
+  [neighbors.route-server.config]
+    route-server-client = true
+
+[[defined-sets.prefix-sets]]
+  prefix-set-name = "ps2"
+  [[defined-sets.prefix-sets.prefix-list]]
+    ip-prefix = "10.33.0.0/16"
+  [[defined-sets.prefix-sets.prefix-list]]
+    ip-prefix = "10.50.0.0/16"
+
+[[defined-sets.neighbor-sets]]
+  neighbor-set-name = "ns1"
+  [[defined-sets.neighbor-sets.neighbor-info-list]]
+    address = "10.0.255.1"
+
+[[policy-definitions]]
+  name = "pd2"
+  [[policy-definitions.statements]]
+    name = "statement1"
+    [policy-definitions.statements.conditions.match-prefix-set]
+      prefix-set = "ps2"
+      match-set-options = "any"
+    [policy-definitions.statements.conditions.match-neighbor-set]
+      neighbor-set = "ns1"
+      match-set-options = "any"
+    [policy-definitions.statements.actions]
+      route-disposition = "reject-route"

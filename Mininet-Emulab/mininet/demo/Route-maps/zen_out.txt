@@ -1,0 +1,11 @@
+For target router : IP1, IP2, ASNum
+
+For route advertisements : AS Number, Local Preference, AS_Path Length, Origin, MED, Community, Send/Arrival Time, Router ID, Neighbor Address
+
+
+(7.0.0.1,3.0.0.1,43617
+, 43617,133,1,e,3,0:80,0,7.0.0.3,7.0.0.3
+Yes
+)
+
+Total number of test cases generated: 16

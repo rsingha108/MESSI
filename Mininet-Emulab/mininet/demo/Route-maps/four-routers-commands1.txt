@@ -1,0 +1,18 @@
+s1 vtysh -c "conf t" -c "router bgp 100" -c "no bgp ebgp-requires-policy" -c "neighbor 1.1.1.2 remote-as 200" -c "neighbor 4.4.4.1 remote-as 400" -c "network 1.0.0.0" -c "network 4.0.0.0" -c "network 10.0.0.0"
+s2 vtysh -c "conf t" -c "router bgp 200" -c "no bgp ebgp-requires-policy" -c "neighbor 2.2.2.2 remote-as 300" -c "neighbor 1.1.1.1 remote-as 100" -c "network 2.0.0.0" -c "network 1.0.0.0" -c "network 20.0.0.0"
+s3 vtysh -c "conf t" -c "router bgp 300" -c "no bgp ebgp-requires-policy" -c "neighbor 3.3.3.2 remote-as 400" -c "neighbor 2.2.2.1 remote-as 200" -c "network 3.0.0.0" -c "network 2.0.0.0" -c "network 30.0.0.0"
+s4 vtysh -c "conf t" -c "router bgp 400" -c "no bgp ebgp-requires-policy" -c "neighbor 4.4.4.2 remote-as 100" -c "neighbor 3.3.3.1 remote-as 300" -c "network 4.0.0.0" -c "network 3.0.0.0" -c "network 40.0.0.0"
+py time.sleep(5)
+s1 vtysh -c "show ip bgp"
+
+s1 vtysh -c "conf t" -c "access-list 50 permit 20.0.0.0/8" 
+s1 vtysh -c "conf t" -c "route-map RM1 deny 10" -c "match ip address 50"
+s1 vtysh -c "conf t" -c "route-map RM1 permit 20" 
+s1 vtysh -c "conf t" -c "route-map RM2 permit 10" -c "call RM1"
+s1 vtysh -c "conf t" -c "route-map RM2 permit 20" -c "match ip address 50"
+s1 vtysh -c "conf t" -c "route-map RM3 deny 10" -c "match local-preference 100"
+s1 vtysh -c "conf t" -c "route-map RM3 permit 20" 
+s1 vtysh -c "conf t" -c "router bgp 100" -c "neighbor 1.1.1.2 route-map RM3 in" -c "neighbor 4.4.4.1 route-map RM3 in" -c "end" -c "exit"
+s1 vtysh -c "clear ip bgp * soft"
+py time.sleep(5)
+s1 vtysh -c "show ip bgp"

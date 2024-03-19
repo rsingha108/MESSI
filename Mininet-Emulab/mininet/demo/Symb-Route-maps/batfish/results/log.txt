@@ -1,0 +1,322 @@
+Your snapshot was successfully initialized but Batfish failed to fully recognized some lines in one or more input files. Some unrecognized configuration lines are not uncommon for new networks, and it is often fine to proceed with further analysis. You can help the Batfish developers improve support for your network by running:
+
+    bf.upload_diagnostics(dry_run=False, contact_info='<optional email address>')
+
+to share private, anonymized information. For more information, see the documentation with:
+
+    help(bf.upload_diagnostics)
+Your snapshot was successfully initialized but Batfish failed to fully recognized some lines in one or more input files. Some unrecognized configuration lines are not uncommon for new networks, and it is often fine to proceed with further analysis. You can help the Batfish developers improve support for your network by running:
+
+    bf.upload_diagnostics(dry_run=False, contact_info='<optional email address>')
+
+to share private, anonymized information. For more information, see the documentation with:
+
+    help(bf.upload_diagnostics)
+Your snapshot was successfully initialized but Batfish failed to fully recognized some lines in one or more input files. Some unrecognized configuration lines are not uncommon for new networks, and it is often fine to proceed with further analysis. You can help the Batfish developers improve support for your network by running:
+
+    bf.upload_diagnostics(dry_run=False, contact_info='<optional email address>')
+
+to share private, anonymized information. For more information, see the documentation with:
+
+    help(bf.upload_diagnostics)
+Your snapshot was successfully initialized but Batfish failed to fully recognized some lines in one or more input files. Some unrecognized configuration lines are not uncommon for new networks, and it is often fine to proceed with further analysis. You can help the Batfish developers improve support for your network by running:
+
+    bf.upload_diagnostics(dry_run=False, contact_info='<optional email address>')
+
+to share private, anonymized information. For more information, see the documentation with:
+
+    help(bf.upload_diagnostics)
+Your snapshot was successfully initialized but Batfish failed to fully recognized some lines in one or more input files. Some unrecognized configuration lines are not uncommon for new networks, and it is often fine to proceed with further analysis. You can help the Batfish developers improve support for your network by running:
+
+    bf.upload_diagnostics(dry_run=False, contact_info='<optional email address>')
+
+to share private, anonymized information. For more information, see the documentation with:
+
+    help(bf.upload_diagnostics)
+0 : DENY
+1 : PERMIT {'LP': '134', 'MED': '34', 'Community': []}
+2 : DENY
+3 : DENY
+4 : DENY
+5 : DENY
+6 : DENY
+7 : DENY
+8 : DENY
+9 : DENY
+10 : DENY
+11 : DENY
+12 : DENY
+13 : DENY
+14 : PERMIT {'LP': '518', 'MED': '2', 'Community': ['2:0', '11:10']}
+15 : DENY
+16 : DENY
+17 : DENY
+18 : DENY
+19 : DENY
+20 : DENY
+21 : DENY
+22 : PERMIT {'LP': '132', 'MED': '798', 'Community': ['2:0', '11:0']}
+23 : DENY
+24 : DENY
+25 : DENY
+26 : DENY
+27 : DENY
+28 : DENY
+29 : DENY
+30 : DENY
+31 : DENY
+32 : DENY
+33 : DENY
+34 : DENY
+35 : DENY
+36 : DENY
+37 : DENY
+38 : DENY
+39 : DENY
+40 : DENY
+41 : DENY
+42 : DENY
+43 : DENY
+44 : DENY
+45 : DENY
+46 : DENY
+47 : DENY
+48 : DENY
+49 : DENY
+50 : DENY
+51 : DENY
+52 : DENY
+53 : DENY
+54 : DENY
+55 : DENY
+56 : DENY
+57 : DENY
+58 : DENY
+59 : DENY
+60 : PERMIT {'LP': '802', 'MED': '1', 'Community': ['0:1', '1:11']}
+61 : DENY
+62 : DENY
+63 : DENY
+64 : DENY
+65 : DENY
+66 : DENY
+67 : DENY
+68 : DENY
+69 : DENY
+70 : DENY
+71 : DENY
+72 : DENY
+73 : DENY
+74 : DENY
+75 : DENY
+76 : DENY
+77 : DENY
+78 : DENY
+79 : DENY
+80 : DENY
+81 : DENY
+82 : DENY
+83 : DENY
+84 : DENY
+85 : DENY
+86 : DENY
+87 : DENY
+88 : DENY
+89 : DENY
+90 : DENY
+91 : DENY
+92 : DENY
+93 : PERMIT {'LP': '258', 'MED': '0', 'Community': ['0:1', '1:1']}
+94 : DENY
+95 : DENY
+96 : DENY
+97 : DENY
+98 : DENY
+99 : DENY
+100 : DENY
+101 : DENY
+102 : DENY
+103 : DENY
+104 : DENY
+105 : DENY
+106 : DENY
+107 : DENY
+108 : DENY
+109 : DENY
+110 : DENY
+111 : DENY
+112 : DENY
+113 : DENY
+114 : DENY
+115 : DENY
+116 : DENY
+117 : DENY
+118 : DENY
+119 : DENY
+120 : DENY
+121 : DENY
+122 : DENY
+123 : DENY
+124 : DENY
+125 : DENY
+126 : DENY
+127 : DENY
+128 : DENY
+129 : DENY
+130 : DENY
+131 : DENY
+132 : DENY
+133 : DENY
+134 : DENY
+135 : DENY
+136 : DENY
+137 : DENY
+138 : DENY
+139 : DENY
+140 : DENY
+141 : DENY
+142 : DENY
+143 : DENY
+144 : DENY
+145 : DENY
+146 : DENY
+147 : DENY
+148 : DENY
+149 : DENY
+150 : DENY
+151 : DENY
+152 : DENY
+153 : DENY
+154 : DENY
+155 : DENY
+156 : DENY
+157 : DENY
+158 : DENY
+159 : DENY
+160 : DENY
+161 : DENY
+162 : DENY
+163 : DENY
+164 : DENY
+165 : DENY
+166 : DENY
+167 : DENY
+168 : DENY
+169 : DENY
+170 : DENY
+171 : DENY
+172 : DENY
+173 : DENY
+174 : DENY
+175 : DENY
+176 : DENY
+177 : DENY
+178 : DENY
+179 : DENY
+180 : DENY
+181 : DENY
+182 : DENY
+183 : DENY
+184 : DENY
+185 : DENY
+186 : DENY
+187 : DENY
+188 : DENY
+189 : DENY
+190 : DENY
+191 : PERMIT {'LP': '133', 'MED': '357', 'Community': ['0:10', '12:101']}
+192 : DENY
+193 : DENY
+194 : DENY
+195 : DENY
+196 : DENY
+197 : DENY
+198 : DENY
+199 : DENY
+200 : DENY
+201 : DENY
+202 : DENY
+203 : DENY
+204 : DENY
+205 : DENY
+206 : DENY
+207 : DENY
+208 : DENY
+209 : DENY
+210 : DENY
+211 : DENY
+212 : DENY
+213 : DENY
+214 : DENY
+215 : DENY
+216 : DENY
+217 : DENY
+218 : DENY
+219 : DENY
+220 : DENY
+221 : DENY
+222 : DENY
+223 : DENY
+224 : DENY
+225 : DENY
+226 : DENY
+227 : DENY
+228 : DENY
+229 : DENY
+230 : DENY
+231 : DENY
+232 : DENY
+233 : DENY
+234 : DENY
+235 : DENY
+236 : DENY
+237 : DENY
+238 : DENY
+239 : DENY
+240 : DENY
+241 : DENY
+242 : DENY
+243 : DENY
+244 : DENY
+245 : DENY
+246 : DENY
+247 : DENY
+248 : DENY
+249 : DENY
+250 : DENY
+251 : DENY
+252 : DENY
+253 : DENY
+254 : DENY
+255 : DENY
+256 : DENY
+257 : DENY
+258 : DENY
+259 : DENY
+260 : DENY
+261 : DENY
+262 : DENY
+263 : DENY
+264 : DENY
+265 : DENY
+266 : DENY
+267 : DENY
+268 : DENY
+269 : DENY
+270 : DENY
+271 : PERMIT {'LP': '517', 'MED': '16', 'Community': ['0:1', '1:11']}
+272 : PERMIT {'LP': '289', 'MED': '33', 'Community': ['2:1', '11010:1']}
+273 : PERMIT {'LP': '320', 'MED': '0', 'Community': ['2:0', '11:10']}
+274 : PERMIT {'LP': '166', 'MED': '0', 'Community': ['1:2', '22:112']}
+275 : DENY
+276 : DENY
+277 : DENY
+278 : DENY
+279 : DENY
+280 : DENY
+281 : DENY
+282 : DENY
+283 : DENY
+284 : DENY
+285 : DENY
+286 : DENY

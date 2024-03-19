@@ -1,0 +1,11 @@
+BIRD 1.6.6 ready.
+7.0.0.0/24         dev eth0 [direct1 17:58:33] * (240)
+	Type: device unicast univ
+100.0.0.0/6        unreachable [peere 17:58:42 from 7.0.0.3] * (100/-) [AS31e]
+	Type: BGP unicast univ
+	BGP.origin: EGP
+	BGP.as_path: 1 31
+	BGP.next_hop: 99.218.8.65
+	BGP.med: 129
+	BGP.local_pref: 837
+	BGP.community: (2,2) (2,22)
