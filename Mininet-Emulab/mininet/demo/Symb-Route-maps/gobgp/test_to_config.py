@@ -1,6 +1,11 @@
 import yaml
 import json
 from prefix_list_conversion import convert_prefix_list_to_prefix_set
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+parser.add_argument('-p', '--num-prefixes', type=int, default=3)
+args = parser.parse_args()
 
 with open("test.json", "r") as f:
     data = json.load(f)
@@ -24,7 +29,7 @@ route_map = [
 
 prefix_list = []
 if data["Prefix"] == "Some":
-    for i in range(3):
+    for i in range(args.num_prefixes):
         p0 = {
             "prefix": data["Prefix" + str(i)].split("/")[0],
             "mask": int(data["Prefix" + str(i)].split("/")[1]),

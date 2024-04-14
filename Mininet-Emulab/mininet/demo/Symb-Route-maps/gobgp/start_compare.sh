@@ -1,4 +1,4 @@
-python3 test_to_config.py
+python3 test_to_config.py -p 1
 
 command_to_fork(){
     docker exec exabgp_1 bash -c "exabgp exabgp/conf.ini"

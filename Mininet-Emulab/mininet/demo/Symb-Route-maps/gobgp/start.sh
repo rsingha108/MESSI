@@ -15,7 +15,7 @@ then
 
     # setup the network and start the docker containers
     docker-compose -f docker-compose.yml up -d
-
+    
     # forking a new process to run exabgp command
     command_to_fork &
 
@@ -24,6 +24,7 @@ then
     sleep 10
 
     docker ps
+    docker exec -it gobgp_1 gobgp --version
     # log the configs
     docker exec -it gobgp_1 gobgp policy > config_logs.txt
     docker exec -it gobgp_1 gobgp policy prefix >> config_logs.txt

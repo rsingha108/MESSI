@@ -5,7 +5,7 @@ from sys import stdout
 from time import sleep
 
 messages = [
-    'announce route 99.192.1.4/0 next-hop 100.0.0.3 local-preference 129 as-path [0 4] med 136 origin egp community [1:1 2:1]',
+    'announce route 99.192.166.32/24 next-hop 99.160.16.3 local-preference 134 as-path [0] med 176 origin egp community [65324:5 6707:1]',
 ]
 
 sleep(5)

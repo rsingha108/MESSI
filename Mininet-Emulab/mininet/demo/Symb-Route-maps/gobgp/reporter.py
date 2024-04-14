@@ -15,7 +15,6 @@ with open("results/buckets.txt", "r") as f:
         errors = [int(e[1:-1]) for e in errors]
         error_classes[l[0]] = errors
 
-# error_classes['some-yes-no'] = [186, 200, 245]
 error_output_file = open("results/report_gobgp.txt", "w")
 
 random.seed(20)

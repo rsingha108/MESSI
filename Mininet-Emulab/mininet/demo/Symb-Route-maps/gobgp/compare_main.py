@@ -25,9 +25,10 @@ def write_docker_commands_for_prefix_set(prefix_list):
 
         for p in prefixes:
             p = p[:-1]
-            prefix, range = p.split()
-            print(prefix, range)
-            docker_commands.write('docker exec -it gobgp_1 gobgp policy prefix del ps1 ' + prefix + ' ' + range + '\n')
+            if len(p.split()) > 0:
+                prefix, range = p.split()
+                print(prefix, range)
+                docker_commands.write('docker exec -it gobgp_1 gobgp policy prefix del ps1 ' + prefix + ' ' + range + '\n')
         
         for p in prefix_list:
             docker_commands.write('docker exec -it gobgp_1 gobgp policy prefix add ps1 ' + p['prefix'] + '/' + str(p['mask']) + ' ' + str(p['ge']) + '..' + str(p['le']) + '\n')           
@@ -55,15 +56,15 @@ def write_docker_commands_for_as_path(as_path_regex1, as_path_pd1, as_path_regex
 def write_docker_commands_for_community(com_regex1, com_permit1, com_regex2, com_permit2):
     docker_commands = open('new_docker_commands.sh', 'a')
 
-    if as_path_regex1 != as_path_regex2:
-        cmd1 = "docker exec -it gobgp_1 gobgp policy as-path del c1"
+    if com_regex1 != com_regex2:
+        cmd1 = "docker exec -it gobgp_1 gobgp policy as-path del c1 " + com_regex1
         cmd2 = "docker exec -it gobgp_1 gobgp policy as-path add c1 " + com_regex2
 
         docker_commands.write(cmd1 + "\n" + cmd2 + "\n")
     
     if com_permit1 != com_permit2:
         cmd1 = "docker exec -it gobgp_1 gobgp policy statement statement1 del condition community c1\n"
-        cmd2 = "docker exec -it gobgp_1 gobgp policy statement statement1 add condition community c1 " + "any" if as_path_pd2=="True" else "invert" + "\n"
+        cmd2 = "docker exec -it gobgp_1 gobgp policy statement statement1 add condition community c1 " + ("any" if com_permit2=="True" else "invert") + "\n"
         docker_commands.write(cmd1)
         docker_commands.write(cmd2)
 
@@ -93,7 +94,7 @@ for test_file in tests:
         test = json.load(f)
 
     tid = int(test_file.split('/')[-1].split('.')[0])
-
+    
     rmap1 = test["Rmap1"]
     rmap2 = test["Rmap2"]
     decision1 = test["Decision1"]
@@ -109,6 +110,7 @@ for test_file in tests:
     docker_commands = open('new_docker_commands.sh', 'w')
     docker_commands.close()
 
+    flag = 0
 
     subprocess.run(['bash', 'start_compare.sh'])
 
@@ -116,7 +118,7 @@ for test_file in tests:
         if rmap1[a] != "None":
             if a == "Prefix":
                 prefix_list = []
-                for i in range(3):
+                for i in range(1):
                     p0 = {
                         "prefix": rmap2["Prefix" + str(i)].split("/")[0],
                         "mask": int(rmap2["Prefix" + str(i)].split("/")[1]),
@@ -139,22 +141,27 @@ for test_file in tests:
                 as_path_pd2 = rmap2["ASPath-permit"]
                 write_docker_commands_for_as_path(as_path_regex1, as_path_pd1, as_path_regex2, as_path_pd2)
             else:
-                com_regex1 = rmap1["Community-regex"]
-                com_pd1 = rmap1["Community-permit"]
-                com_regex2 = rmap2["Community-regex"]
-                com_pd2 = rmap2["Community-permit"]
-                write_docker_commands_for_community(com_regex1, com_pd1, com_regex2, com_pd2)
+                # com_regex1 = rmap1["Community-regex"]
+                # com_pd1 = rmap1["Community-permit"]
+                # com_regex2 = rmap2["Community-regex"]
+                # com_pd2 = rmap2["Community-permit"]
+                # write_docker_commands_for_community(com_regex1, com_pd1, com_regex2, com_pd2)
+                flag = 1
+                break
 
+    if flag: continue
+    
     if rmap1["RmapPD"] != rmap2["RmapPD"]:
         rmap_pd1 = rmap1["RmapPD"]
         rmap_pd2 = rmap2["RmapPD"]
 
-    write_docker_commands_for_route_map_permit(rmap_pd1, rmap_pd2)
+        write_docker_commands_for_route_map_permit(rmap_pd1, rmap_pd2)
 
     with open('new_docker_commands.sh', 'a') as f:
         f.write('docker exec -it gobgp_1 gobgp neighbor 3.0.0.3 softreset\n')
         f.write('sleep 10\n')
         f.write('docker exec -it gobgp_1 gobgp global rib > out.txt\n')
+        f.write('docker exec -it gobgp_1 gobgp policy >> config_logs.txt\n')
         f.write('docker-compose down\n')
         f.write('rm -rf gobgp1/gobgp.yml')
 

@@ -26,7 +26,30 @@ running command : "sudo python command-generator-3r.py" (need not worry about th
 
 * dynamic-main.py : For testing dynamics of Route maps
 
-### GoBGP (Mininet-Emulab/mininet/demo/Symb-Route-maps/gobgp)
+### GoBGP
+The [GoBGP Github page](https://github.com/osrg/gobgp) provides no documentation for enabling route aggregation. Hence we do not have
+a setup for testing it.
+
+Navigate to the GoBGP folder:
+```
+$ cd Mininet-Emulab/mininet/demo/Symb-Route-Maps/gobgp
+```
+For running the route-map test cases, ensure that the **tests** directory is located outside the **gobgp** directory.
+
+Inside the **gobgp** directory, create the results folder:
+```
+$ mkdir results
+```
+
+Route-map test cases can be run with the following command:
+```
+$ python3 main.py
+```
+
+For route-map dynamics, use the following:
+```
+$ python3 compare_main.py
+```
 
 ### Batfish (Mininet-Emulab/mininet/demo/Symb-Route-maps/batfish)
 
