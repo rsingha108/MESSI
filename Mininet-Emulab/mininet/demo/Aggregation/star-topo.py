@@ -32,7 +32,7 @@ ip3 : 3.3.3.2
 
 import sys
 
-sys.path.insert(0,'/home/rathin/Desktop/Mininet-Emulab')
+sys.path.insert(0,'../../..')
 print(sys.path)
 from mininet.net import Containernet
 import mininet.node
@@ -68,7 +68,7 @@ ip3 = args.ip3 #"3.3.3.2"
 
 cset = args.conset
 
-img_dict = {'quagga' : "kathara/quagga:latest", 'frr' : "frr-8.3.1:latest", 'bird' : "ibhde/bird4:latest"} # frr-ubuntu20:latest, kathara/frr:latest, frr-debian:latest
+img_dict = {'quagga' : "kathara/quagga:latest", 'frr' : "kathara/frr8:latest", 'bird' : "ibhde/bird4:latest"} # frr-ubuntu20:latest, kathara/frr:latest, frr-debian:latest
 
 
 subprocess.run(["sudo", "docker", "stop", f"mn.s1{cset}"])

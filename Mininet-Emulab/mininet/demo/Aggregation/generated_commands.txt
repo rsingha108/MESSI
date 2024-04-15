@@ -24,7 +24,7 @@ s14 echo "from __future__ import print_function" >> example.py
 s14 echo "from sys import stdout" >> example.py
 s14 echo "from time import sleep" >> example.py
 s14 echo "messages = [" >> example.py
-s14 echo -e "\t'announce route 10.100.1.0/24 next-hop self local-preference 200 as-path [55] med 3 origin egp community [2:3]'," >> example.py
+s14 echo -e "\t'announce route 10.100.1.0/24 next-hop self local-preference 200 as-path [55] med 5 origin egp community [2:3]'," >> example.py
 s14 echo "]" >> example.py
 s14 echo "sleep(5)" >> example.py
 s14 echo "for message in messages:" >> example.py

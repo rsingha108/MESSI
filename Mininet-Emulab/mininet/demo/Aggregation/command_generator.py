@@ -99,4 +99,9 @@ def cmd_gen(d1,d2,d3,d4,cs,sw,cnsl):
 
 ## WRITE HERE A FUNCTION : change_exabgp()
 def change_exabgp():
+    # Stop the running exabgp: py s14.cmd("pkill exabgp")
+    # to check if it is running/stopped: py s14.cmd("pgrep exabgp")
+    # Change the exabgp configuration file
+    # Start the exabgp: py s14.cmd("exabgp exabgp/conf.ini &")
+    # currently we do it manually for each test case
     pass
