@@ -73,3 +73,10 @@ To run the route filtering tests (within the Batfish docker container):
 ```
 sudo python3 main.py 
 ```
+
+### BIRD (Mininet-Emulab/mininet/demo/Symb-Route-maps/bird)
+
+To run the route filtering tests:
+```
+bash run.sh
+```
