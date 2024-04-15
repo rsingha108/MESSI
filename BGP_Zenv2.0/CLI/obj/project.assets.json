@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
+    ".NETCoreApp,Version=v5.0": {
       "CommandLineParser/2.9.1": {
         "type": "package",
         "compile": {
@@ -2116,7 +2116,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0": [
+    ".NETCoreApp,Version=v5.0": [
       "BGP >= 1.0.0",
       "CommandLineParser >= 2.9.1",
       "Newtonsoft.Json >= 13.0.3",
@@ -2124,19 +2124,19 @@
     ]
   },
   "packageFolders": {
-    "/home/rajdeep/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
+      "projectUniqueName": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
       "projectName": "CLI",
-      "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
-      "packagesPath": "/home/rajdeep/.nuget/packages/",
-      "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/obj/",
+      "projectPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rajdeep/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -2146,10 +2146,9 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
-              "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj"
+            "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
+              "projectPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj"
             }
           }
         }
@@ -2162,7 +2161,6 @@
     },
     "frameworks": {
       "net5.0": {
-        "targetAlias": "net5.0",
         "dependencies": {
           "CommandLineParser": {
             "target": "Package",
@@ -2177,22 +2175,7 @@
             "version": "[3.1.1, )"
           }
         },
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.426/RuntimeIdentifierGraph.json"
       }
     }
   }

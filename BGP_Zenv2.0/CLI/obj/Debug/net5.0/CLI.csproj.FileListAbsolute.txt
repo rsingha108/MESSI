@@ -83,3 +83,4 @@ C:/Users/Rathin Singha/OneDrive/Desktop/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.pdb
 C:/Users/Rathin Singha/OneDrive/Desktop/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.genruntimeconfig.cache
 C:/Users/Rathin Singha/OneDrive/Desktop/BGP_Zenv2.0/CLI/obj/Debug/net5.0/ref/CLI.dll
 /home/rajdeep/Desktop/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CommandLine.dll
+/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.pdb

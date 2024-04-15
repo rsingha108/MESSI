@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {}
+    "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {}
   },
   "projects": {
-    "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
+    "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
+        "projectUniqueName": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
         "projectName": "BGP",
-        "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
-        "packagesPath": "/home/rajdeep/.nuget/packages/",
-        "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/obj/",
+        "projectPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rajdeep/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -24,7 +24,6 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -36,7 +35,6 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "net5.0",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -47,22 +45,7 @@
               "version": "[3.1.1, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.426/RuntimeIdentifierGraph.json"
         }
       }
     }

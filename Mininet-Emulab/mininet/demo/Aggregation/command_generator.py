@@ -10,7 +10,15 @@ def cmd_gen(d1,d2,d3,d4,cs,sw,cnsl):
         g.write(f's2{cs} {cnsl} -c "conf t" -c "debug bgp updates" -c "log file /var/log/{sw}/bgpd.log" -c "router bgp {d2["AS"]}" -c "neighbor {d1["NH"]} remote-as {d1["AS"]}" -c "neighbor {d3["NH"]} remote-as {d3["AS"]}" -c "neighbor {d4["NH"]} remote-as {d4["AS"]}" -c "network {nw1}" -c "network {nw3}" -c "network {nw4}"\n') 
         g.write(f's2{cs} {cnsl} -c "conf t" -c "router bgp {d2["AS"]}" -c "neighbor {d1["NH"]} soft-reconfiguration inbound" -c "neighbor {d3["NH"]} soft-reconfiguration inbound" -c "neighbor {d4["NH"]} soft-reconfiguration inbound"\n')
         g.write(f's2{cs} {cnsl} -c "conf t" -c "router bgp {d2["AS"]}" -c "no bgp ebgp-requires-policy"\n')
-        g.write(f's2{cs} {cnsl} -c "conf t" -c "router bgp {d2["AS"]}" -c "aggregate-address 10.100.0.0/16 summary-only matching-MED-only"\n')
+
+        config = f's2{cs} {cnsl} -c "conf t" -c "router bgp {d2["AS"]}" -c "aggregate-address {d2["Agg"]}'
+        if (d2["SummaryOnly"]=="True"):
+            config += ' summary-only'
+        if (d2["MatchingMEDOnly"]=="True"):
+            config += ' matching-MED-only'
+        config += '"\n'
+        # g.write(f's2{cs} {cnsl} -c "conf t" -c "router bgp {d2["AS"]}" -c "aggregate-address {d2["Agg"]} {summary-only} {matching-MED-only}"\n')
+        g.write(config)
        
         ## CONFIG OF S4 (ROUTER)
         g.write(f's4{cs} {cnsl} -c "conf t" -c "debug bgp updates" -c "log file /var/log/{sw}/bgpd.log" -c "router bgp {d4["AS"]}" -c "neighbor {d2["IP4"]} remote-as {d2["AS"]}" -c "network {nw4}"\n') 
@@ -90,10 +98,13 @@ def cmd_gen(d1,d2,d3,d4,cs,sw,cnsl):
         g.write(f's4{cs} vtysh -c "clear ip bgp * soft"\n')
         g.write('py time.sleep(5)\n')
         # g.write(f's2{cs} {cnsl} -c "show ip bgp" >> /mnt/Aggregation/out.txt\n')
-        g.write(f's2{cs} {cnsl} -c "show ip bgp"\n')
         g.write(f's2{cs} {cnsl} -c "show running-config"\n')
-        g.write(f's4{cs} {cnsl} -c "show ip bgp"\n')
+        g.write(f's2{cs} {cnsl} -c "show ip bgp"\n')
         g.write(f's4{cs} {cnsl} -c "show running-config"\n')
+        g.write(f's4{cs} {cnsl} -c "show ip bgp"\n')
+        g.write(f's4{cs} {cnsl} -c "show ip bgp {d2["Agg"]}" >> /mnt/Aggregation/out.txt \n')
+        
+
         # g.write(f's2{cs} cat /var/log/{sw}/bgpd.log >> /mnt/Symb-Route-maps/log.txt \n')
 
 

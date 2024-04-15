@@ -1,0 +1,45 @@
+[
+  {
+    "Prefix": "None",
+    "LE": "None",
+    "GE": "None",
+    "PrefixPD": "None",
+    "RmapPD": "True",
+    "LP": "513",
+    "MED": "None",
+    "Community": "None",
+    "Community-regex": "None",
+    "Community-permit": "None",
+    "ASPath": "None",
+    "ASPath-regex": "None",
+    "ASPath-permit": "None",
+    "Set": "Some",
+    "SetLP": "None",
+    "SetMED": "None",
+    "SetCommunity": "None",
+    "DeleteCommunity": "[4][4]+:[3-4][3-4]*",
+    "ASPathPrepend": "41344",
+    "ASPathExclude": "None",
+    "NextHopIP": "None",
+    "NextHopPeer": "False",
+    "NextHopUnchanged": "False"
+  },
+  {
+    "Prefix": "99.192.0.0/0",
+    "LP": "513",
+    "MED": "129",
+    "Community": "2:35 65532:41",
+    "ASPath": "0 1",
+    "NextHop": "99.160.2.0"
+  },
+  {
+    "Tag": "L1C4A3",
+    "Allowed": "True",
+    "Prefix": "99.192.0.0/0",
+    "LP": "513",
+    "MED": "129",
+    "Community": "2:35 65532:41",
+    "ASPath": "41344 0 1",
+    "NextHop": "99.160.2.0"
+  }
+]
