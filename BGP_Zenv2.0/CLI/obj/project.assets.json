@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "CommandLineParser/2.9.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {}
+        }
+      },
       "DecisionDiagrams/1.2.0": {
         "type": "package",
         "compile": {
@@ -437,6 +446,28 @@
     }
   },
   "libraries": {
+    "CommandLineParser/2.9.1": {
+      "sha512": "OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA==",
+      "type": "package",
+      "path": "commandlineparser/2.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CommandLine20.png",
+        "License.md",
+        "README.md",
+        "commandlineparser.2.9.1.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.xml",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.xml",
+        "lib/net461/CommandLine.dll",
+        "lib/net461/CommandLine.xml",
+        "lib/netstandard2.0/CommandLine.dll",
+        "lib/netstandard2.0/CommandLine.xml"
+      ]
+    },
     "DecisionDiagrams/1.2.0": {
       "sha512": "zrLyDj5auB5pLQBMf/gWe5EL4O1m3yHZmTEArgUKwtI84XLfwa8FW83IZsnEsfH6xIwYLcHAa2pjNyikKaNBHA==",
       "type": "package",
@@ -2087,24 +2118,25 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BGP >= 1.0.0",
+      "CommandLineParser >= 2.9.1",
       "Newtonsoft.Json >= 13.0.3",
       "ZenLib >= 3.1.1"
     ]
   },
   "packageFolders": {
-    "/home/rathin/.nuget/packages/": {}
+    "/home/rajdeep/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rathin/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
+      "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
       "projectName": "CLI",
-      "projectPath": "/home/rathin/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
-      "packagesPath": "/home/rathin/.nuget/packages/",
-      "outputPath": "/home/rathin/Desktop/BGP_Zenv2.0/CLI/obj/",
+      "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
+      "packagesPath": "/home/rajdeep/.nuget/packages/",
+      "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/rathin/.nuget/NuGet/NuGet.Config"
+        "/home/rajdeep/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -2116,8 +2148,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/rathin/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
-              "projectPath": "/home/rathin/Desktop/BGP_Zenv2.0/BGP/BGP.csproj"
+            "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
+              "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj"
             }
           }
         }
@@ -2132,6 +2164,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[2.9.1, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -2156,7 +2192,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/rathin/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
       }
     }
   }

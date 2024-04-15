@@ -5,16 +5,57 @@ using ZenLib;
 using System.Linq;
 using System.IO;
 using static ZenLib.Zen;
+using System.ComponentModel;
 
 namespace BGP{
+
+    /// <summary>
+    /// One entry in a prefix list
+    /// </summary>
     public class PrefixListEntry{
+        
+        /// <summary>
+        /// IPv4 prefix
+        /// (we represent prefixes in their unsigned integer form. e.g. 100.10.1.1 is converted to 1678377217)
+        /// </summary>
         public uint Prefix;
+
+        /// <summary>
+        /// Subnet mask
+        /// (we represent masks in their unsigned integer form e.g, mask 24 is converted to 4294967040) 
+        /// </summary>
         public uint Mask;
+
+        /// <summary>
+        /// Less than or equal to
+        /// </summary>
         public Option<uint> LE;
+
+        /// <summary>
+        /// Greater than or equal to
+        /// </summary>
         public Option<uint> GE;
+
+        /// <summary>
+        /// Permit or deny
+        /// </summary>
         public bool Permit;
+
+        /// <summary>
+        /// Matches any prefix
+        /// </summary>
         public bool Any;
 
+        /// <summary>
+        /// Create a Zen prefix list entry
+        /// </summary>
+        /// <param name="prefix"> IPv4 prefix </param>
+        /// <param name="mask"> subnet mask </param>
+        /// <param name="le"> less than or equal to </param>
+        /// <param name="ge"> greater than or equal to </param>
+        /// <param name="permit"> permit or deny </param>
+        /// <param name="any"> matches any prefix </param>
+        /// <returns> Zen prefix list entry </returns>
         public Zen<PrefixListEntry> Create(
             Zen<uint> prefix,
             Zen<uint> mask,
@@ -33,6 +74,10 @@ namespace BGP{
             );
         }
 
+        /// <summary>
+        /// Convert Zen prefix list entry to a string
+        /// </summary>
+        /// <returns> the string </returns>
         public override string ToString(){
             var pre1 = Prefix/(1<<24);
             var rem1 = Prefix%(1<<24);
@@ -72,138 +117,91 @@ namespace BGP{
     }
 
     public static class PrefixListEntryExtensions{
+
+        /// <summary>
+        /// Get the IPv4 prefix
+        /// </summary>
+        /// <param name="ple"> the prefix list entry </param>
+        /// <returns> the IPv4 prefix </returns>
         public static Zen<uint> GetPrefix(this Zen<PrefixListEntry> ple) => ple.GetField<PrefixListEntry, uint>("Prefix");
+
+        /// <summary>
+        /// Get the subnet mask
+        /// </summary>
+        /// <param name="ple"> the prefix list entry </param>
+        /// <returns> the subnet mask </returns>
         public static Zen<uint> GetMask(this Zen<PrefixListEntry> ple) => ple.GetField<PrefixListEntry, uint>("Mask");
+
+        /// <summary>
+        /// Get the LE value
+        /// </summary>
+        /// <param name="ple"> the prefix list entry</param>
+        /// <returns> the LE value </returns>
         public static Zen<Option<uint>> GetLE(this Zen<PrefixListEntry> ple) => ple.GetField<PrefixListEntry, Option<uint>>("LE");
+
+        /// <summary>
+        /// Get the GE value
+        /// </summary>
+        /// <param name="ple"> the prefix list entry</param>
+        /// <returns> the GE value </returns>
         public static Zen<Option<uint>> GetGE(this Zen<PrefixListEntry> ple) => ple.GetField<PrefixListEntry, Option<uint>>("GE");
+
+        /// <summary>
+        /// Gets the permit value
+        /// </summary>
+        /// <param name="ple"> the prefix list entry </param>
+        /// <returns> permit value </returns>
         public static Zen<bool> GetPermit(this Zen<PrefixListEntry> ple) => ple.GetField<PrefixListEntry, bool>("Permit");
+
+        /// <summary>
+        /// Gets the 'any' value
+        /// </summary>
+        /// <param name="ple"> the prefix list entry </param>
+        /// <returns> 'any' value </returns>
         public static Zen<bool> GetAny(this Zen<PrefixListEntry> ple) => ple.GetField<PrefixListEntry, bool>("Any");
+
+        private static Zen<bool> IsValidMaskLEGE(this Zen<uint> num){
+            uint n = 0;
+            Zen<bool> constraints = (num == n);
+            for(int i=0;i<32;i++){
+                n |= ((uint)1) << (31-i);
+                constraints = Or(constraints, num == n);
+            }
+
+            return constraints;
+        }
+        
+        /// <summary>
+        /// Specifies the conditions for a valid prefix list entry
+        /// </summary>
+        /// <param name="ple"> the prefix list entry </param>
+        /// <returns> true or false </returns>
         public static Zen<bool> IsValidPrefixListEntry(this Zen<PrefixListEntry> ple){
             IList<Zen<bool>> predicates = new List<Zen<bool>>();
-            predicates.Add(
-                Or(
-                    ple.GetMask() == 0,            // 0
-                    ple.GetMask() == 2147483648,   // 1
-                    ple.GetMask() == 3221225472,   // 2
-                    ple.GetMask() == 3758096384,   // 3
-                    ple.GetMask() == 4026531840,   // 4
-                    ple.GetMask() == 4160749568,   // 5
-                    ple.GetMask() == 4227858432,   // 6
-                    ple.GetMask() == 4261412864,   // 7
-                    ple.GetMask() == 4278190080,   // 8
-                    ple.GetMask() == 4286578688,   // 9
-                    ple.GetMask() == 4290772992,   // 10
-                    ple.GetMask() == 4292870144,   // 11
-                    ple.GetMask() == 4293918720,   // 12
-                    ple.GetMask() == 4294443008,   // 13
-                    ple.GetMask() == 4294705152,   // 14
-                    ple.GetMask() == 4294836224,   // 15
-                    ple.GetMask() == 4294901760,   // 16
-                    ple.GetMask() == 4294934528,   // 17
-                    ple.GetMask() == 4294950912,   // 18
-                    ple.GetMask() == 4294959104,   // 19
-                    ple.GetMask() == 4294963200,   // 20
-                    ple.GetMask() == 4294965248,   // 21
-                    ple.GetMask() == 4294966272,   // 22
-                    ple.GetMask() == 4294966784,   // 23
-                    ple.GetMask() == 4294967040,   // 24
-                    ple.GetMask() == 4294967168,   // 25
-                    ple.GetMask() == 4294967232,   // 26
-                    ple.GetMask() == 4294967264,   // 27
-                    ple.GetMask() == 4294967280,   // 28
-                    ple.GetMask() == 4294967288,   // 29
-                    ple.GetMask() == 4294967292,   // 30
-                    ple.GetMask() == 4294967294,   // 31
-                    ple.GetMask() == 4294967295    // 32
-                )
-            );
 
+            // The subnet mask can be 0-32
+            predicates.Add(ple.GetMask().IsValidMaskLEGE());
+
+
+            // The LE value can be 0-32
             var le = ple.GetLE();
-
             predicates.Add(
                 Implies(
                     Option.IsSome(le),
-                    Or(
-                        le.Value() == 0,            // 0
-                        le.Value() == 2147483648,   // 1
-                        le.Value() == 3221225472,   // 2
-                        le.Value() == 3758096384,   // 3
-                        le.Value() == 4026531840,   // 4
-                        le.Value() == 4160749568,   // 5
-                        le.Value() == 4227858432,   // 6
-                        le.Value() == 4261412864,   // 7
-                        le.Value() == 4278190080,   // 8
-                        le.Value() == 4286578688,   // 9
-                        le.Value() == 4290772992,   // 10
-                        le.Value() == 4292870144,   // 11
-                        le.Value() == 4293918720,   // 12
-                        le.Value() == 4294443008,   // 13
-                        le.Value() == 4294705152,   // 14
-                        le.Value() == 4294836224,   // 15
-                        le.Value() == 4294901760,   // 16
-                        le.Value() == 4294934528,   // 17
-                        le.Value() == 4294950912,   // 18                
-                        le.Value() == 4294959104,   // 19
-                        le.Value() == 4294963200,   // 20
-                        le.Value() == 4294965248,   // 21
-                        le.Value() == 4294966272,   // 22
-                        le.Value() == 4294966784,   // 23
-                        le.Value() == 4294967040,   // 24
-                        le.Value() == 4294967168,   // 25
-                        le.Value() == 4294967232,   // 26
-                        le.Value() == 4294967264,   // 27
-                        le.Value() == 4294967280,   // 28
-                        le.Value() == 4294967288,   // 29
-                        le.Value() == 4294967292,   // 30
-                        le.Value() == 4294967294,   // 31
-                        le.Value() == 4294967295    // 32
-                    )
+                    le.Value().IsValidMaskLEGE()
                 )
             );
 
+            // The GE value can be 0-32
             var ge = ple.GetGE();
-
             predicates.Add(
                 Implies(
                     Option.IsSome(ge),
-                    Or(
-                        ge.Value() == 0,            // 0
-                        ge.Value() == 2147483648,   // 1
-                        ge.Value() == 3221225472,   // 2
-                        ge.Value() == 3758096384,   // 3
-                        ge.Value() == 4026531840,   // 4
-                        ge.Value() == 4160749568,   // 5
-                        ge.Value() == 4227858432,   // 6
-                        ge.Value() == 4261412864,   // 7
-                        ge.Value() == 4278190080,   // 8
-                        ge.Value() == 4286578688,   // 9
-                        ge.Value() == 4290772992,   // 10
-                        ge.Value() == 4292870144,   // 11
-                        ge.Value() == 4293918720,   // 12
-                        ge.Value() == 4294443008,   // 13
-                        ge.Value() == 4294705152,   // 14
-                        ge.Value() == 4294836224,   // 15
-                        ge.Value() == 4294901760,   // 16
-                        ge.Value() == 4294934528,   // 17
-                        ge.Value() == 4294950912,   // 18
-                        ge.Value() == 4294959104,   // 19
-                        ge.Value() == 4294963200,   // 20
-                        ge.Value() == 4294965248,   // 21
-                        ge.Value() == 4294966272,   // 22
-                        ge.Value() == 4294966784,   // 23
-                        ge.Value() == 4294967040,   // 24
-                        ge.Value() == 4294967168,   // 25
-                        ge.Value() == 4294967232,   // 26
-                        ge.Value() == 4294967264,   // 27
-                        ge.Value() == 4294967280,   // 28
-                        ge.Value() == 4294967288,   // 29
-                        ge.Value() == 4294967292,   // 30
-                        ge.Value() == 4294967294,   // 31
-                        ge.Value() == 4294967295    // 32
-                    )
+                    ge.Value().IsValidMaskLEGE()
                 )
             );
 
+            // mask <= LE
             predicates.Add(
                 Implies(
                     Option.IsSome(le),
@@ -211,6 +209,7 @@ namespace BGP{
                 )
             );
 
+            // mask <= GE
             predicates.Add(
                 Implies(
                     Option.IsSome(ge),
@@ -218,6 +217,7 @@ namespace BGP{
                 )
             );
 
+            // GE <= LE
             predicates.Add(
                 Implies(
                     And(Option.IsSome(le), Option.IsSome(ge)),
@@ -225,6 +225,7 @@ namespace BGP{
                 )
             );
 
+            // Limit the range of allowed prefixes
             predicates.Add(
                 Or(
                     ple.GetPrefix() == 0,
@@ -235,21 +236,16 @@ namespace BGP{
                 )
             );
 
-            // predicates.Add(ple.GetPermit() == true);
 
+            // Prefix 0 is only allowed iff Any is true
             predicates.Add(
                 And(
-                    (ple.GetPrefix() & 4278190080) != 4278190080,  // first byte cannot equal 255
-                    (ple.GetPrefix() & 4261412864) != 4261412864,  // first byte cannot equal 254
-                    (ple.GetPrefix() & 16711680) != 16711680, // second byte cannot equal 255
-                    (ple.GetPrefix() & 16646144) != 16646144, // second byte cannot equal 254
-                    (ple.GetPrefix() & 65280) != 65280, // third byte cannot equal 255
-                    (ple.GetPrefix() & 65024) != 65024, // third byte cannot equal 254
-                    (ple.GetPrefix() & 255) != 255, // fourth byte cannot equal 255
-                    (ple.GetPrefix() & 254) != 254 // fourth byte cannot equal 254 
+                    Implies(ple.GetAny(), ple.GetPrefix() == 0),
+                    Implies(ple.GetPrefix() == 0, ple.GetAny())
                 )
             );
 
+            // If Any is true, then GE=0, LE=32 and mask=0
             predicates.Add(
                 Implies(
                     ple.GetAny(),
@@ -264,9 +260,30 @@ namespace BGP{
                 )
             );
 
+
+            // preventing some boundary conditions
+            predicates.Add(
+                And(
+                    (ple.GetPrefix() & 4278190080) != 4278190080,  // first byte cannot equal 255
+                    (ple.GetPrefix() & 4261412864) != 4261412864,  // first byte cannot equal 254
+                    (ple.GetPrefix() & 16711680) != 16711680, // second byte cannot equal 255
+                    (ple.GetPrefix() & 16646144) != 16646144, // second byte cannot equal 254
+                    (ple.GetPrefix() & 65280) != 65280, // third byte cannot equal 255
+                    (ple.GetPrefix() & 65024) != 65024, // third byte cannot equal 254
+                    (ple.GetPrefix() & 255) != 255, // fourth byte cannot equal 255
+                    (ple.GetPrefix() & 254) != 254 // fourth byte cannot equal 254 
+                )
+            );
+
             return predicates.Aggregate((a, b) => And(a, b));
         }
 
+        /// <summary>
+        /// Match the incoming route advertisement against the prefix list entry
+        /// </summary>
+        /// <param name="ple"> the prefix list entry </param>
+        /// <param name="ipa"> the route advertisement </param>
+        /// <returns> true or false </returns>
         public static Zen<bool> MatchAgainstPrefix(this Zen<PrefixListEntry> ple, Zen<IPAttr> ipa){
             // This is the actual logic
             // if ple.GetPrefix() and ple.GetMask() == ipa.GetPrefix() and ple.GetMask()
@@ -278,9 +295,10 @@ namespace BGP{
             //      else return false
             // else return false
 
+            
             var expr1 = If<bool>(
+                    // checking for a prefix match
                     (ple.GetPrefix() & ple.GetMask()) == (ipa.GetPrefix() & ple.GetMask()),
-                    //ple.GetPermit(),
                     true,
                     false
                 );
@@ -312,78 +330,172 @@ namespace BGP{
             //         expr4
 
             return If<bool>(
-                Option.IsSome(ple.GetLE()),
+                // if any flag is set, then all prefixes match regardless
+                ple.GetAny(),
+                true,
+                // otherwise, apply above logic
                 If<bool>(
-                    Option.IsSome(ple.GetGE()),
+                    Option.IsSome(ple.GetLE()),
                     If<bool>(
-                        Utils.AndIf(
-                            ple.GetGE().Value() <= ipa.GetMask(), 
-                            ple.GetLE().Value() >= ipa.GetMask()
+                        Option.IsSome(ple.GetGE()),
+                        If<bool>(
+                            // if LE and GE are defined, check whether input route's subnet mask lies within that range
+                            Utils.AndIf(
+                                ple.GetGE().Value() <= ipa.GetMask(), 
+                                ple.GetLE().Value() >= ipa.GetMask()
+                            ),
+                            expr1,
+                            false
                         ),
-                        expr1,
-                        false
+                        If<bool>(
+                            // if LE is defined, but GE is not defined, then check whether Prefix Length <= Route prefix length <= LE
+                            Utils.AndIf(
+                                ipa.GetMask() <= ple.GetLE().Value(),
+                                ipa.GetMask() >= ple.GetMask()
+                            ),
+                            expr1,
+                            false
+                        )
                     ),
                     If<bool>(
-                        Utils.AndIf(
-                            ipa.GetMask() <= ple.GetLE().Value(),   // Prefix Length <= Route prefix length <= LE  
-                            ipa.GetMask() >= ple.GetMask()
+                        // if GE is defined, but LE is not defined, then input route's subnet mask must be greater than GE
+                        Option.IsSome(ple.GetGE()),
+                        If<bool>(ipa.GetMask() >= ple.GetGE().Value(),
+                            expr1,
+                            false
                         ),
-                        expr1,
-                        false
+                        // otherwise prefix mask and input route-mask must be equal
+                        expr4
                     )
-                ),
-                If<bool>(
-                    Option.IsSome(ple.GetGE()),
-                    If<bool>(ipa.GetMask() >= ple.GetGE().Value(),
-                        expr1,
-                        false
-                    ),
-                    expr4
                 )
             );
         }
     }
 
+    /// <summary>
+    /// Prefix list class
+    /// </summary>
     public class PrefixList{
+        /// <summary>
+        /// Array of prefix list entries
+        /// </summary>
         public Array<PrefixListEntry, _3> Value {get; set;}
 
-        public Zen<PrefixList> Create(Zen<FSeq<PrefixListEntry>> value){
+        /// <summary>
+        /// Create a Zen prefix list
+        /// </summary>
+        /// <param name="value"> the array of prefix list entries </param>
+        /// <returns> Zen prefix list </returns>
+        public Zen<PrefixList> Create(Zen<Array<PrefixListEntry, _3>> value){
             return Zen.Create<PrefixList>(("Value", value));
         }
 
+        /// <summary>
+        /// Convert a Zen prefix list to string
+        /// </summary>
+        /// <returns> the string </returns>
         public override string ToString(){
             return string.Join("\n", Value);
         }
     }
 
+    /// <summary>
+    /// Prefix list extensions class
+    /// </summary>
     public static class PrefixListExtensions{
+
+        /// <summary>
+        /// Gets all the prefix list entries
+        /// </summary>
+        /// <param name="plist"> the prefix list </param>
+        /// <returns> the prefix list entries </returns>
         public static Zen<Array<PrefixListEntry, _3>> GetValue(this Zen<PrefixList> plist) => plist.GetField<PrefixList, Array<PrefixListEntry, _3>>("Value");
+
+        /// <summary>
+        /// Checks whether all prefix list entries are unique
+        /// </summary>
+        /// <param name="plist"> the prefix list </param>
+        /// <returns> true or false </returns>
         public static Zen<bool> UniquePrefixes(this Zen<PrefixList> plist){
-            return And(
-                plist.GetValue().Get(0) != plist.GetValue().Get(1),
-                plist.GetValue().Get(0) != plist.GetValue().Get(2),
-                plist.GetValue().Get(1) != plist.GetValue().Get(2)
-            );
-        }
-        public static Zen<bool> IsValidPrefixList(this Zen<PrefixList> plist){
-            return And(
-                plist.UniquePrefixes(), // All prefix list entries should be unique
-                plist.GetValue().Get(0).IsValidPrefixListEntry(),
-                plist.GetValue().Get(1).IsValidPrefixListEntry(),
-                plist.GetValue().Get(2).IsValidPrefixListEntry()
-            );
+            Zen<bool> unique = true;
+            var pr_arr = plist.GetValue().ToArray();
+            var len = plist.GetValue().Length();
+
+            for(int i=0;i<len;i++){
+                for(int j=i+1;j<len;j++){
+                    unique = And(
+                        unique,
+                        pr_arr[i] != pr_arr[j]
+                    );
+                }
+            }
+
+            return unique;
         }
 
+        /// <summary>
+        /// Checks whether the prefix list is valid
+        /// </summary>
+        /// <param name="plist"> the prefix list </param>
+        /// <param name="num_prefixes"> the number of prefixes in the prefix list (1 or 3) </param>
+        /// <returns> true or false </returns>
+        public static Zen<bool> IsValidPrefixList(this Zen<PrefixList> plist, Zen<int> num_prefixes){
+            var pr_arr = plist.GetValue().ToArray();
+            var len = plist.GetValue().Length();
+
+            Zen<bool> check_valid_prefixes = true;
+            
+            // all prefix list entries should be valid
+            for(int i=0;i<len;i++){
+                check_valid_prefixes = And(
+                    check_valid_prefixes,
+                    pr_arr[i].IsValidPrefixListEntry()
+                );
+            }
+
+            Zen<bool> deny_any = true;
+            for(int i=1;i<len;i++){
+                deny_any = And(
+                    deny_any,
+                    Not(pr_arr[i].GetPermit()), pr_arr[i].GetAny()
+                );
+            }
+
+            check_valid_prefixes = If(
+                num_prefixes > 1,
+                // if the number of prefix list entries is more than 1, then all of them should  be unique
+                And(
+                    check_valid_prefixes, 
+                    plist.UniquePrefixes()
+                ),
+                // otherwise all entries (except the first one) in the prefix list must be deny any
+                And(
+                    check_valid_prefixes,
+                    deny_any
+                )
+            );
+
+            return check_valid_prefixes;
+        }
+
+        /// <summary>
+        /// Gets the row-wise difference between 2 prefix lists 
+        /// </summary>
+        /// <param name="prl1"> first prefix list </param>
+        /// <param name="prl2"> second prefix list </param>
+        /// <returns> the difference </returns>
         public static Zen<int> GetRowwiseDifference(this Zen<PrefixList> prl1, Zen<PrefixList> prl2){
             var pre_arr1 = prl1.GetValue().ToArray();
             var pre_arr2 = prl2.GetValue().ToArray();
 
+            var len = prl1.GetValue().Length();
+
             Zen<int> count = 0;
-            for(int i=0;i<3;i++){
+            for(int i=0;i<len;i++){
                 count = If<int>(
                     Utils.AndIf(
-                        pre_arr1[i].GetAny() == true,
-                        pre_arr2[i].GetAny() == true
+                        pre_arr1[i].GetAny(),
+                        pre_arr2[i].GetAny()
                     ),
                     If<int>(
                         pre_arr1[i].GetPermit() != pre_arr2[i].GetPermit(),
@@ -414,6 +526,12 @@ namespace BGP{
             return count;
         }
 
+        /// <summary>
+        /// Gets the difference between 2 prefix lists
+        /// </summary>
+        /// <param name="prl1"> first prefix list </param>
+        /// <param name="prl2"> second prefix list </param>
+        /// <returns> the difference </returns>
         public static Zen<int> GetDifference(this Zen<Option<PrefixList>> prl1, Zen<Option<PrefixList>> prl2){
             Zen<int> count = 0;
             count = If<int>(
@@ -433,33 +551,13 @@ namespace BGP{
             return count;
         }
 
-        public static Zen<bool> MatchAgainstPrefixList(this Zen<PrefixList> plist, Zen<IPAttr> ipa){
-            /*var lambda = Zen.Lambda<FSeq<PrefixListEntry>, bool>();
-            lambda.Initialize(arg =>
-            {
-                return arg.CaseStrict(
-                    empty: false,
-                    cons: Zen.Lambda<Pair<PrefixListEntry, FSeq<PrefixListEntry>>, bool>(x =>
-                    {
-                        var hd = x.Item1();
-                        var tl = x.Item2();
-
-                        return If<bool>(
-                            hd.MatchAgainstPrefix(ipa),
-                            hd.GetPermit(),
-                            lambda.Apply(tl)
-                        );
-                    })
-                );
-            });
-
-            return lambda.Apply(plist.GetValue());*/
-
-            var arr = plist.GetValue().ToArray();
-            /*for(int i=0;i<3;i++){
-                If<int>(arr[i].MatchAgainstPrefix(ipa)) return arr[i].GetPermit();
-            }
-            return false;*/
+        /// <summary>
+        ///  Match the incoming route advertisement against the prefix list
+        /// </summary>
+        /// <param name="plist"> the prefix list </param>
+        /// <param name="ipa"> the route advertisement </param>
+        /// <returns> true or false </returns>
+        public static Zen<bool> MatchAgainstPrefixList(this Zen<PrefixList> plist, Zen<IPAttr> ipa){          
             return If<bool>(
                 plist.GetValue().Get(0).MatchAgainstPrefix(ipa),
                 plist.GetValue().Get(0).GetPermit(),

@@ -19,22 +19,22 @@ namespace BGP{
             var s = rme.SC; // set clause
             var rmap = new Dictionary<string, string>() { };
 
-            if(m.PreList.HasValue){
+            if(m.PrList.HasValue){
                 rmap.Add("Prefix", "Some");
-                rmap.Add("Prefix0", Utils.Prefix2String(m.PreList.Value.Value.Get(0).Prefix, m.PreList.Value.Value.Get(0).Mask));
-                rmap.Add("LE0",Utils.Mask2String(m.PreList.Value.Value.Get(0).LE));
-                rmap.Add("GE0",Utils.Mask2String(m.PreList.Value.Value.Get(0).GE));
-                rmap.Add("PrefixPD0", m.PreList.Value.Value.Get(0).Permit.ToString());
+                rmap.Add("Prefix0", Utils.Prefix2String(m.PrList.Value.Value.Get(0).Prefix, m.PrList.Value.Value.Get(0).Mask));
+                rmap.Add("LE0",Utils.Mask2String(m.PrList.Value.Value.Get(0).LE));
+                rmap.Add("GE0",Utils.Mask2String(m.PrList.Value.Value.Get(0).GE));
+                rmap.Add("PrefixPD0", m.PrList.Value.Value.Get(0).Permit.ToString());
 
-                rmap.Add("Prefix1", Utils.Prefix2String(m.PreList.Value.Value.Get(1).Prefix, m.PreList.Value.Value.Get(1).Mask));
-                rmap.Add("LE1",Utils.Mask2String(m.PreList.Value.Value.Get(1).LE));
-                rmap.Add("GE1",Utils.Mask2String(m.PreList.Value.Value.Get(1).GE));
-                rmap.Add("PrefixPD1", m.PreList.Value.Value.Get(1).Permit.ToString());
+                // rmap.Add("Prefix1", Utils.Prefix2String(m.PreList.Value.Value.Get(1).Prefix, m.PreList.Value.Value.Get(1).Mask));
+                // rmap.Add("LE1",Utils.Mask2String(m.PreList.Value.Value.Get(1).LE));
+                // rmap.Add("GE1",Utils.Mask2String(m.PreList.Value.Value.Get(1).GE));
+                // rmap.Add("PrefixPD1", m.PreList.Value.Value.Get(1).Permit.ToString());
 
-                rmap.Add("Prefix2", Utils.Prefix2String(m.PreList.Value.Value.Get(2).Prefix, m.PreList.Value.Value.Get(2).Mask));
-                rmap.Add("LE2",Utils.Mask2String(m.PreList.Value.Value.Get(2).LE));
-                rmap.Add("GE2",Utils.Mask2String(m.PreList.Value.Value.Get(2).GE));
-                rmap.Add("PrefixPD2", m.PreList.Value.Value.Get(2).Permit.ToString());
+                // rmap.Add("Prefix2", Utils.Prefix2String(m.PreList.Value.Value.Get(2).Prefix, m.PreList.Value.Value.Get(2).Mask));
+                // rmap.Add("LE2",Utils.Mask2String(m.PreList.Value.Value.Get(2).LE));
+                // rmap.Add("GE2",Utils.Mask2String(m.PreList.Value.Value.Get(2).GE));
+                // rmap.Add("PrefixPD2", m.PreList.Value.Value.Get(2).Permit.ToString());
 
 
             }
@@ -93,6 +93,30 @@ namespace BGP{
             route.Add("NextHop", IPAttr.NextHopIP2Str(ipa.NextHop));
             return route;
         }
+
+        public static Dictionary<string, string> RouterToDict(Router rt)
+        {             
+            var router = new Dictionary<string, string>() { };
+            router.Add("AggregateRoute", rt.AggregateRoute.ToString());
+            router.Add("SummaryOnly", rt.SummaryOnly.ToString());
+            router.Add("MatchingMEDOnly", rt.MatchingMEDOnly.ToString());
+            router.Add("AS", rt.AS.ToString());
+            return router;
+        }
+
+        public static List<Dictionary<string, string>> ListRoutes(FSeq<IPAttr> res)
+        {
+            var routes = new List<Dictionary<string, string>>();
+            foreach (var r in res.ToList())
+            {
+                var route = RouteToDict(r);
+                routes.Add(route);
+            }
+            return routes;
+        }
+
+
+
         public static List<Dictionary<string, string>> CreateJson(RouteMapEntry rme, IPAttr ipa, ZenFunction<RouteMapEntry, IPAttr, Pair<string, bool, Option<IPAttr>>> f, int n_tests) 
         {
 
@@ -114,16 +138,17 @@ namespace BGP{
 
             var test = new List<Dictionary<string, string>>(){rmap, route, decision};
             var options = new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping};
-            FileInfo file = new FileInfo($"../../Mininet-Emulab/mininet/demo/Symb-Route-maps//tests/{n_tests}.json");
+            FileInfo file = new FileInfo($"../CLI/tests/{n_tests}.json");
             //FileInfo file = new FileInfo($"tests/{n_tests}.json");
             var info = System.Text.Json.JsonSerializer.Serialize(test, options);
             File.WriteAllText(file.FullName, info);
             return test;
         }
 
+
         public static void CreateJson(RouteMapEntry rme1, RouteMapEntry rme2, IPAttr ipa, bool dec1, bool dec2, int diff, int n_tests)
         {
-            FileInfo file = new FileInfo($"../../Mininet-Emulab/mininet/demo/Symb-Route-maps//tests/{n_tests}.json");
+            FileInfo file = new FileInfo($"../CLI/tests/{n_tests}.json");
             var result = new{
                 Rmap1 = RmeToDict(rme1),
                 Rmap2 = RmeToDict(rme2),
@@ -135,6 +160,119 @@ namespace BGP{
             string jsonString = JsonConvert.SerializeObject(result, Formatting.Indented);
             File.WriteAllText(file.FullName, jsonString);
         }
+
+        public static void CreateJson(RouteMapEntry rme1, IPAttr ipa1, IPAttr ipa2, bool dec1, bool dec2, int diff, int n_tests){
+            FileInfo file = new FileInfo($"../CLI/tests/{n_tests}.json");
+            var result = new{
+                Rmap1 = RmeToDict(rme1),
+                Route1 = RouteToDict(ipa1),
+                Route2 = RouteToDict(ipa2),
+                Decision1 = dec1,
+                Decision2 = dec2,
+                Difference = diff,
+            }; 
+            string jsonString = JsonConvert.SerializeObject(result, Formatting.Indented);
+            File.WriteAllText(file.FullName, jsonString);
+        }
+
+        public static void CreateJson(Router rt, RoutesForDecisionProcess route1, RoutesForDecisionProcess route2, RoutesForDecisionProcess dec, int n_tests){
+            FileInfo file = new FileInfo($"../CLI/tests/{n_tests}.json");
+            var result = new{
+                RouterAS = rt.AS,
+                Route1 = new{
+                    LP = route1.LP,
+                    ASPathLength = route1.ASPathLength,
+                    Origin = route1.Origin,
+                    MED = route1.MED,
+                    ASN = route1.ASN,
+                    IGP = route1.IGP,
+                    RID = Utils.UintToPrefix(route1.RID),
+                    NgbrAddr = Utils.UintToPrefix(route1.NeighborAddr),
+                    ArrivalTime = route1.ArrivalTime
+                },
+                Route2 = new{
+                    LP = route2.LP,
+                    ASPathLength = route2.ASPathLength,
+                    Origin = route2.Origin,
+                    MED = route2.MED,
+                    ASN = route2.ASN,
+                    IGP = route2.IGP,
+                    RID = Utils.UintToPrefix(route2.RID),
+                    NgbrAddr = Utils.UintToPrefix(route2.NeighborAddr),
+                    ArrivalTime = route2.ArrivalTime
+                },
+                Decision = new{
+                    LP = dec.LP,
+                    ASPathLength = dec.ASPathLength,
+                    Origin = dec.Origin,
+                    MED = dec.MED,
+                    ASN = dec.ASN,
+                    IGP = dec.IGP,
+                    RID = Utils.UintToPrefix(dec.RID),
+                    NgbrAddr = Utils.UintToPrefix(dec.NeighborAddr),
+                    ArrivalTime = dec.ArrivalTime
+                }
+            };
+
+            string jsonString = JsonConvert.SerializeObject(result, Formatting.Indented);
+            File.WriteAllText(file.FullName, jsonString);
+        }
+
+        /// <summary>
+        /// For Aggregation tests
+        /// </summary>
+        public static void CreateJson(Router rt, IPAttr route1, IPAttr route2, FSeq<IPAttr> res, int n_tests)
+        {
+            FileInfo file = new FileInfo($"../CLI/tests/{n_tests}.json");
+            var result = new
+            {
+                Router = RouterToDict(rt),
+                Route1 = RouteToDict(route1),
+                Route2 = RouteToDict(route2),
+                output = ListRoutes(res)
+            };
+            string jsonString = JsonConvert.SerializeObject(result, Formatting.Indented);
+            File.WriteAllText(file.FullName, jsonString);
+        }
+
+        /// <summary>
+        /// For Aggregation tests, config change
+        /// </summary>
+        public static void CreateJson(Router rt1, Router rt2, IPAttr route1, IPAttr route2, FSeq<IPAttr> dec1, FSeq<IPAttr> dec2, int n_tests)
+        {
+            FileInfo file = new FileInfo($"../CLI/tests/{n_tests}.json");
+            var result = new
+            {
+                Router1 = RouterToDict(rt1),
+                Router2 = RouterToDict(rt2),
+                Route1 = RouteToDict(route1),
+                Route2 = RouteToDict(route2),
+                Decision1 = ListRoutes(dec1),
+                Decision2 = ListRoutes(dec2)
+            };
+            string jsonString = JsonConvert.SerializeObject(result, Formatting.Indented);
+            File.WriteAllText(file.FullName, jsonString);
+        }
+
+        /// <summary>
+        /// For Aggregation tests, route change (route2 --> route3)
+        /// </summary>
+        public static void CreateJson(Router rt, IPAttr route1, IPAttr route2, IPAttr route3, FSeq<IPAttr> dec1, FSeq<IPAttr> dec2, int n_tests)
+        {
+            FileInfo file = new FileInfo($"../CLI/tests/{n_tests}.json");
+            var result = new
+            {
+                Router = RouterToDict(rt),
+                Route1 = RouteToDict(route1),
+                Route2 = RouteToDict(route2),
+                Route3 = RouteToDict(route3),
+                Decision1 = ListRoutes(dec1),
+                Decision2 = ListRoutes(dec2)
+            };
+            string jsonString = JsonConvert.SerializeObject(result, Formatting.Indented);
+            File.WriteAllText(file.FullName, jsonString);
+        }
+
 
     }
 

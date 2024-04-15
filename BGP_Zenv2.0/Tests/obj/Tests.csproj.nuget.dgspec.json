@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "ZenLib": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -100,6 +104,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "CommandLineParser": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "ZenLib": {
               "target": "Package",
               "version": "[3.1.1, )"

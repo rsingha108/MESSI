@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/rathin/Desktop/BGP_Zenv2.0/CLI/CLI.csproj": {}
+    "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj": {}
   },
   "projects": {
-    "/home/rathin/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
+    "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rathin/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
+        "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
         "projectName": "BGP",
-        "projectPath": "/home/rathin/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
-        "packagesPath": "/home/rathin/.nuget/packages/",
-        "outputPath": "/home/rathin/Desktop/BGP_Zenv2.0/BGP/obj/",
+        "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj",
+        "packagesPath": "/home/rajdeep/.nuget/packages/",
+        "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rathin/.nuget/NuGet/NuGet.Config"
+          "/home/rajdeep/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -62,21 +62,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/rathin/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/rathin/Desktop/BGP_Zenv2.0/CLI/CLI.csproj": {
+    "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rathin/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
+        "projectUniqueName": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
         "projectName": "CLI",
-        "projectPath": "/home/rathin/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
-        "packagesPath": "/home/rathin/.nuget/packages/",
-        "outputPath": "/home/rathin/Desktop/BGP_Zenv2.0/CLI/obj/",
+        "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj",
+        "packagesPath": "/home/rajdeep/.nuget/packages/",
+        "outputPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rathin/.nuget/NuGet/NuGet.Config"
+          "/home/rajdeep/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -88,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/rathin/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
-                "projectPath": "/home/rathin/Desktop/BGP_Zenv2.0/BGP/BGP.csproj"
+              "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj": {
+                "projectPath": "/home/rajdeep/Desktop/BGP_Zenv2.0/BGP/BGP.csproj"
               }
             }
           }
@@ -104,6 +104,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "CommandLineParser": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -128,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/rathin/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
         }
       }
     }

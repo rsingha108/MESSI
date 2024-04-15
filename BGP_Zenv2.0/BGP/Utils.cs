@@ -7,7 +7,16 @@ using System.IO;
 using static ZenLib.Zen;
 
 namespace BGP{
+    /// <summary>
+    /// Generic utility functions
+    /// </summary>
     public static class Utils{
+        /// <summary>
+        /// And operation
+        /// </summary>
+        /// <param name="a">expression 1</param>
+        /// <param name="b">expression 2</param>
+        /// <returns>a boolean</returns>
         public static Zen<bool> AndIf(Zen<bool> a, Zen<bool> b){
             return If<bool>(
                 a,
@@ -24,6 +33,12 @@ namespace BGP{
             );
         }
 
+        /// <summary>
+        /// Or operation
+        /// </summary>
+        /// <param name="a">expression 1</param>
+        /// <param name="b">expression 2</param>
+        /// <returns>a boolean</returns>
         public static Zen<bool> OrIf(Zen<bool> a, Zen<bool> b){
             return If<bool>(
                 a,
@@ -40,6 +55,45 @@ namespace BGP{
             );
         }
 
+        /// <summary>
+        /// Takes an IPv4 address and returns the unsigned integer representation
+        /// </summary>
+        /// <param name="ip">IPv4 address</param>
+        /// <returns>an unsigned integer</returns>
+        public static uint PrefixToUint(int[] ip){
+            uint val = 0;
+            int shift = 24;
+            for(int i=0;i<4;i++){
+                val |= (((uint)ip[i]) << shift);
+                shift -= 8;
+            }
+
+            return val;
+        }
+
+        /// <summary>
+        /// Converts unsigned integer to corresponding IPv4 format
+        /// </summary>
+        /// <param name="ip">the unsigned integer</param>
+        /// <returns>IPv4 address in string format</returns>
+        public static string UintToPrefix(uint ip){
+            var pre1 = ip/(1<<24);
+            var rem1 = ip%(1<<24);
+
+            var pre2 = rem1 / (1 << 16);
+            var rem2 = rem1 % (1 << 16);
+
+            var pre3 = rem2 / (1 << 8);
+            var pre4 = rem2 % (1 << 8);
+
+            return $"{pre1}.{pre2}.{pre3}.{pre4}";
+        }
+        
+        /// <summary>
+        /// Checks whether the communities in the community attribute are in sorted order
+        /// </summary>
+        /// <param name="p">the communities attribute</param>
+        /// <returns>a boolean</returns>
         public static bool IsSortedCommunity(string p){
             var coms = p.Split(" ");
             var duml = new List<Tuple<int,int>>();
@@ -197,12 +251,6 @@ namespace BGP{
             }
             Console.WriteLine();
         }
-
-        // public static List<T> FlattenList<T>(List<List<T>> nestedList)
-        // {
-        //     List<T> flattenedList = nestedList.SelectMany(x => x).ToList();
-        //     return flattenedList;
-        // }
 
         public static List<uint> FlattenList(List<List<uint>> nestedList)
         {
