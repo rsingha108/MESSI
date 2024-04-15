@@ -1,14 +1,18 @@
 # MESSI : Behavioral Testing of BGP Implementations
 
+# Test Generation
+
+Navigate to the BGP_Zenv2.0 folder and follow the instructions in the README.md file.
+
+# Testing BGP Implementations
+
 ## Decision Process
 
 * Directory: Mininet-Emulab/mininet/demo/Decision-Process/
 
-* three-routers.py : simple topology with three 2 exabgp and 1 router.
-
-* command-generator-3r.py : main file to run for getting preference order result for Quagga & FRR (results_quagga.txt & results_frr.txt). This runs three-routers.py and subsequnetly parser.py. takes input 'zen_out.txt' which is output of the Zen (test cases) creates 'generated_command.txt', 'correct.txt' (correct outputs from my decision_maker function), and results for quagga & frr. 
-
-running command : "sudo python command-generator-3r.py" (need not worry about the command-line arguments, those are taken care within this file). change the global variable 'sw' for changing software : Quagga/FRR
+```
+sudo python3 main.py
+```
 
 ## Route Filtering
 
@@ -16,15 +20,27 @@ running command : "sudo python command-generator-3r.py" (need not worry about th
 
 ### FRR (Mininet-Emulab/mininet/demo/Symb-Route-maps/frr)
 
-* one-router.py : For running route filtering tests (results stored in /results directory)
+To run the route filtering tests:
+```
+sudo python3 one-router.py 
+```
 
-* dynamic-main.py : For testing dynamics of Route maps
+To run the route-map dynamics tests:
+```
+sudo python3 dynamic-main.py 
+```
 
 ### Quagga (Mininet-Emulab/mininet/demo/Symb-Route-maps/quagga)
 
-* one-router.py : For running route filtering tests (results stored in /results directory)
+To run the route filtering tests:
+```
+sudo python3 one-router.py 
+```
 
-* dynamic-main.py : For testing dynamics of Route maps
+To run the route-map dynamics tests:
+```
+sudo python3 dynamic-main.py 
+```
 
 ### GoBGP
 The [GoBGP Github page](https://github.com/osrg/gobgp) provides no documentation for enabling route aggregation. Hence we do not have
@@ -53,5 +69,7 @@ $ python3 compare_main.py
 
 ### Batfish (Mininet-Emulab/mininet/demo/Symb-Route-maps/batfish)
 
-main.py : For running route filtering tests (results stored in /results directory)
-
+To run the route filtering tests (within the Batfish docker container):
+```
+sudo python3 main.py 
+```
