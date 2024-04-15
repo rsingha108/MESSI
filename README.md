@@ -14,6 +14,24 @@ Navigate to the BGP_Zenv2.0 folder and follow the instructions in the README.md 
 sudo python3 main.py
 ```
 
+## Aggregation
+
+* Directory: Mininet-Emulab/mininet/demo/Aggregation/
+
+Populate the `tests` directory with the test cases generated using the BGP_Zenv2.0 tool.
+
+```
+sudo python3 main.py --software <software>
+```
+
+where `<software>` is the name of the BGP implementation to be tested. The possible values are `frr`, `quagga`
+
+For testing aggregation with Batfish:
+
+```
+sudo python3 agg_batfish.py
+```
+
 ## Route Filtering
 
 * Directory: Mininet-Emulab/mininet/demo/Symb-Route-maps/
