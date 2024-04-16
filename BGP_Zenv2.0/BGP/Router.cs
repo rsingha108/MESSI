@@ -71,7 +71,8 @@ namespace BGP{
             Zen<uint> asn,
             Zen<uint> igp,
             Zen<uint> rid,
-            Zen<uint> ngbr
+            Zen<uint> ngbr,
+            Zen<uint> arrtime
         ){
             return Zen.Create<RoutesForDecisionProcess>(
                 ("LP", lp),
@@ -81,7 +82,8 @@ namespace BGP{
                 ("ASN", asn),
                 ("IGP", igp),
                 ("RID", rid),
-                ("NeighborAddr", ngbr)
+                ("NeighborAddr", ngbr),
+                ("ArrivalTime", arrtime)
             );
         }
 
@@ -516,40 +518,81 @@ namespace BGP{
         public static Zen<RoutesForDecisionProcess> PathSelection(Zen<Router> rt, Zen<RoutesForDecisionProcess> r1, Zen<RoutesForDecisionProcess> r2){
             var arrtime1 = r1.GetArrTime();
             var arrtime2 = r2.GetArrTime();
-
-            var expr1 = If(arrtime1 <= arrtime2, r1, r2);
             
             var ngbr1 = r1.GetNgbr();
             var ngbr2 = r2.GetNgbr();
-            var expr2 = If(ngbr1 < ngbr2, r1, If(ngbr1 > ngbr2, r2, expr1));
 
             var rid1 = r1.GetRID();
             var rid2 = r2.GetRID();
-            var expr3 = If(rid1 < rid2, r1, If(rid1 > rid2,  r2, expr2));
 
             var igp1 = r1.GetIGP();
             var igp2 = r2.GetIGP();
-            var expr4 = If(igp1 < igp2, r1, If(igp1 > igp2, r1, expr3));
 
             var asn1 = r1.GetASN();
             var asn2 = r2.GetASN();
             var rt_asn = rt.GetAS();
-            var expr5 = If(And(asn1!=asn2, asn1==rt_asn), r2, If(And(asn1!=asn2, asn2==rt_asn),  r1, expr4));
 
             var med1 = r1.GetMED();
             var med2 = r2.GetMED();
-            var expr6 = If(med1 < med2, r1, If(med1 > med2, r2, expr5));
 
             var org1 = r1.GetOrigin();
             var org2 = r2.GetOrigin();
-            var expr7 = If(And(org1!=org2, org1=='i'), r1, If(And(org1!=org2, org2=='i'), r2, expr6));
 
             var asp1 = r1.GetASPLen();
             var asp2 = r2.GetASPLen();
-            var expr8 = If(asp1 < asp2, r1, If(asp1 > asp2, r2, expr7));
 
             var lp1 = r1.GetLP();
             var lp2 = r2.GetLP();
+            // JIndegi to snati ble kchu nai
+
+            r1 = If(
+                asn1 != rt_asn,
+                RoutesForDecisionProcess.Create(100, asp1, org1, med1, asn1, igp1, rid1, ngbr1, arrtime1),
+                r1
+            );
+
+            r2 = If(
+                asn2 != rt_asn,
+                RoutesForDecisionProcess.Create(100, asp2, org2, med2, asn2, igp2, rid2, ngbr2, arrtime2),
+                r2
+            );
+
+            arrtime1 = r1.GetArrTime();
+            arrtime2 = r2.GetArrTime();
+            
+            ngbr1 = r1.GetNgbr();
+            ngbr2 = r2.GetNgbr();
+
+            rid1 = r1.GetRID();
+            rid2 = r2.GetRID();
+
+            igp1 = r1.GetIGP();
+            igp2 = r2.GetIGP();
+
+            asn1 = r1.GetASN();
+            asn2 = r2.GetASN();
+            rt_asn = rt.GetAS();
+
+            med1 = r1.GetMED();
+            med2 = r2.GetMED();
+
+            org1 = r1.GetOrigin();
+            org2 = r2.GetOrigin();
+
+            asp1 = r1.GetASPLen();
+            asp2 = r2.GetASPLen();
+
+            lp1 = r1.GetLP();
+            lp2 = r2.GetLP();
+            
+            var expr1 = If(arrtime1 <= arrtime2, r1, r2);
+            var expr2 = If(ngbr1 < ngbr2, r1, If(ngbr1 > ngbr2, r2, expr1));
+            var expr3 = If(rid1 < rid2, r1, If(rid1 > rid2,  r2, expr2));
+            var expr4 = If(igp1 < igp2, r1, If(igp1 > igp2, r1, expr3));
+            var expr5 = If(And(asn1!=asn2, asn1==rt_asn), r2, If(And(asn1!=asn2, asn2==rt_asn),  r1, expr4));
+            var expr6 = If(med1 < med2, r1, If(med1 > med2, r2, expr5));
+            var expr7 = If(And(org1!=org2, org1=='i'), r1, If(And(org1!=org2, org2=='i'), r2, expr6));
+            var expr8 = If(asp1 < asp2, r1, If(asp1 > asp2, r2, expr7));
             var expr9 = If(lp1 > lp2, r1, If(lp1 < lp2, r2, expr8));
 
             return expr9;

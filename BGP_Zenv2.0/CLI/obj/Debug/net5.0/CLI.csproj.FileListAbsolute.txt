@@ -83,32 +83,61 @@ C:/Users/Rathin Singha/OneDrive/Desktop/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.pdb
 C:/Users/Rathin Singha/OneDrive/Desktop/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.genruntimeconfig.cache
 C:/Users/Rathin Singha/OneDrive/Desktop/BGP_Zenv2.0/CLI/obj/Debug/net5.0/ref/CLI.dll
 /home/rajdeep/Desktop/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CommandLine.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\CLI.exe
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\CLI.deps.json
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\CLI.runtimeconfig.json
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\CLI.runtimeconfig.dev.json
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\CLI.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\CLI.pdb
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\CommandLine.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\DecisionDiagrams.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\Microsoft.Z3.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\Newtonsoft.Json.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\System.Collections.Immutable.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\ZenLib.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\runtimes\linux-x64\native\libz3.so
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\runtimes\osx-x64\native\libz3.dylib
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\runtimes\win-x64\native\libz3.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\BGP.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\bin\Debug\net5.0\BGP.pdb
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.csproj.AssemblyReference.cache
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.AssemblyInfoInputs.cache
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.AssemblyInfo.cs
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.csproj.CoreCompileInputs.cache
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.csproj.CopyComplete
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\refint\CLI.dll
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.pdb
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\CLI.genruntimeconfig.cache
-C:\Users\Rathin Singha\OneDrive\Desktop\MESSI\BGP_Zenv2.0\CLI\obj\Debug\net5.0\ref\CLI.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.exe
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.deps.json
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.runtimeconfig.json
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.runtimeconfig.dev.json
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.pdb
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CommandLine.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/DecisionDiagrams.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/Microsoft.Z3.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/Newtonsoft.Json.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/System.Collections.Immutable.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/ZenLib.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/runtimes/linux-x64/native/libz3.so
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/runtimes/osx-x64/native/libz3.dylib
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/runtimes/win-x64/native/libz3.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/BGP.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/BGP.pdb
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.csproj.AssemblyReference.cache
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.AssemblyInfoInputs.cache
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.AssemblyInfo.cs
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.csproj.CoreCompileInputs.cache
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.csproj.CopyComplete
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/refint/CLI.dll
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.pdb
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.genruntimeconfig.cache
+C:/Users/Rathin Singha/OneDrive/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/ref/CLI.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.deps.json
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.runtimeconfig.json
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.runtimeconfig.dev.json
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/ref/CLI.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CLI.pdb
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/CommandLine.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/DecisionDiagrams.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/Microsoft.Z3.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/Newtonsoft.Json.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/System.Collections.Immutable.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/ZenLib.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/runtimes/linux-x64/native/libz3.so
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/runtimes/osx-x64/native/libz3.dylib
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/runtimes/win-x64/native/libz3.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/BGP.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/bin/Debug/net5.0/BGP.pdb
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.csproj.AssemblyReference.cache
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.GeneratedMSBuildEditorConfig.editorconfig
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.AssemblyInfoInputs.cache
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.AssemblyInfo.cs
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.csproj.CoreCompileInputs.cache
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.csproj.CopyComplete
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/ref/CLI.dll
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.pdb
+/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/Debug/net5.0/CLI.genruntimeconfig.cache
