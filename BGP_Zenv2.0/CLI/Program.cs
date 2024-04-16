@@ -341,7 +341,7 @@ namespace CLI{
 
             int n_tests = 0;
 
-            foreach(var v in f.GenerateInputs(precondition: (rt, r1, r2) => And(rt.IsValidRouterConfig(), r1.IsValidRoute(), r2.IsValidRoute()))){
+            foreach(var v in f.GenerateInputs(precondition: (rt, r1, r2) => And(rt.IsValidRouterConfig(), r1.IsValidRoute(), r2.IsValidRoute(),(r1.GetNgbr()!=r2.GetNgbr())))){
                 Console.Write("Router AS Number: ");
                 Console.WriteLine(v.Item1.AS);
                 Console.Write("Route 1: ");
