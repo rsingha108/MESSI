@@ -193,7 +193,8 @@ namespace BGP{
                 rdp.GetMED() >= 100, rdp.GetMED() <= 300,
                 rdp.GetASN() >= 100, rdp.GetASN() <= 700,
                 rdp.GetIGP() >= 300, rdp.GetIGP() <= 1000,
-                rdp.GetRID() >= 1671377732, rdp.GetRID() <= 1679687938,
+                // rdp.GetRID() >= 1671377732, rdp.GetRID() <= 1679687938,
+                rdp.GetRID() == rdp.GetNgbr(),
                 Utils.OrIf(rdp.GetNgbr() == Utils.PrefixToUint(t1), rdp.GetNgbr() == Utils.PrefixToUint(t2)),
                 rdp.GetArrTime() >= 0, rdp.GetArrTime() <= 1
             );
