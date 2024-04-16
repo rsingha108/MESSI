@@ -1,9 +1,0 @@
-RMap
-False	Local_Preference	215
-False	Prefix_List	100.20.4.5/16,False
-False	MED	7
-True	ASP_List	^[1-2][1-2]$,False
-True	Community_List	^[01]:[21]*$,True
-False	Local_Preference	145
-True	Default	NA
-

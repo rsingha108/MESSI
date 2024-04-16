@@ -1,5 +1,0 @@
-problem is if AS-path contains 43617 (own AS) then deny route always.
-
-/16 matches with /16 only
-
-if prefix list denies then goes to next Rmap entry

@@ -1,3 +1,0 @@
-s1 vtysh -c "conf t" -c "router bgp 500" -c "neighbor 1.1.1.2 remote-as 500" -c "neighbor 2.2.2.2 remote-as 500" -c "network 10.0.0.0" -c "network 1.0.0.0" -c "network 2.0.0.0" -c "neighbor 1.1.1.2 route-reflector-client" -c "neighbor 2.2.2.2 route-reflector-client"
-s3 vtysh -c "conf t" -c "router bgp 500" -c "neighbor 1.1.1.1 remote-as 500" -c "network 1.0.0.0" -c "network 3.0.0.0" -c "network 30.0.0.0"
-s2 vtysh -c "conf t" -c "router bgp 500" -c "neighbor 2.2.2.1 remote-as 500" -c "network 2.0.0.0" -c "network 3.0.0.0" -c "network 20.0.0.0"

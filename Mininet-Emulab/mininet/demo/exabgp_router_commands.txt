@@ -1,3 +1,0 @@
-s2 vtysh -c "conf t" -c "router bgp 65000" -c "neighbor 1.1.1.1 remote-as 65000" -c "network 1.0.0.0" -c "network 2.0.0.0"
-s2 vtysh -c "show ip bgp"
-
