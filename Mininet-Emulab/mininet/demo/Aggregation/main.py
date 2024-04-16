@@ -61,7 +61,7 @@ ip3 = "3.3.3.2"
 
 
 # Iterate over JSON files in the tests directory
-tests_dir = "../tests"
+tests_dir = "./tests"
 g = open('results.txt','w')
 g.close()
 for filename in os.listdir(tests_dir):
