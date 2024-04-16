@@ -19,7 +19,7 @@ def translate(test, subnet_ips):
   d3["AS"],d3["LP"],d3["ASP"],d3["ORG"],d3["MED"],d3["IGP"],d3["AT"],d3["RID"],d3["NH"],d3["NextHop"] = test["Route2"]["ASN"], test["Route2"]["LP"], test["Route2"]["ASPathLength"], test["Route2"]["Origin"], test["Route2"]["MED"], test["Route2"]["IGP"], test["Route2"]["ArrivalTime"], test["Route2"]["RID"], nh3, test["Route2"]["NgbrAddr"]
   d4["NH"], d4["AS"] = nh4, d2["AS"]
   ## decision
-  if test["Decision"] == test["Route1"] : dec = 1
+  if test["Decision"]["NgbrAddr"] == test["Route1"]["NgbrAddr"] : dec = 1
   else : dec = 3
 
   return d1,d2,d3,d4,dec
