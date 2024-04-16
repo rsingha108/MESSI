@@ -1,7 +1,8 @@
-s25 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 100" -c "neighbor 1.1.1.1 remote-as 189" -c "neighbor 3.3.3.1 remote-as 100" -c "neighbor 4.4.4.1 remote-as 100" -c "network 1.0.0.0" -c "network 3.0.0.0" -c "network 4.0.0.0"
+s25 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 100" -c "neighbor 1.1.1.1 remote-as 100" -c "neighbor 3.3.3.1 remote-as 100" -c "neighbor 4.4.4.1 remote-as 100" -c "network 1.0.0.0" -c "network 3.0.0.0" -c "network 4.0.0.0"
 s25 vtysh -c "conf t" -c "router bgp 100" -c "neighbor 1.1.1.1 soft-reconfiguration inbound" -c "neighbor 3.3.3.1 soft-reconfiguration inbound" -c "neighbor 4.4.4.1 soft-reconfiguration inbound"
 s25 vtysh -c "conf t" -c "router bgp 100" -c "no bgp ebgp-requires-policy"
 s25 vtysh -c "conf t" -c "router bgp 100" -c "bgp bestpath compare-routerid"
+s25 vtysh -c "conf t" -c "router bgp 100" -c "bgp always-compare-med"
 s45 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 100" -c "neighbor 4.4.4.2 remote-as 100" -c "network 4.0.0.0"
 s45 vtysh -c "conf t" -c "router bgp 100" -c "neighbor 4.4.4.2 soft-reconfiguration inbound"
 s45 vtysh -c "conf t" -c "router bgp 100" -c "no bgp ebgp-requires-policy"
@@ -14,7 +15,7 @@ s15 echo "}" >> conf.ini
 s15 echo "neighbor 1.1.1.2{" >> conf.ini
 s15 echo -e "\trouter-id 1.1.1.1;" >> conf.ini
 s15 echo -e "\tlocal-address 1.1.1.1;" >> conf.ini
-s15 echo -e "\tlocal-as 189;" >> conf.ini
+s15 echo -e "\tlocal-as 100;" >> conf.ini
 s15 echo -e "\tpeer-as 100;" >> conf.ini
 s15 echo -e "\tapi{" >> conf.ini
 s15 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
@@ -24,7 +25,7 @@ s15 echo "from __future__ import print_function" >> example.py
 s15 echo "from sys import stdout" >> example.py
 s15 echo "from time import sleep" >> example.py
 s15 echo "messages = [" >> example.py
-s15 echo -e "\t'announce route 100.10.1.0/24 next-hop self local-preference 173 as-path [1000] med 177 origin igp aigp 529'," >> example.py
+s15 echo -e "\t'announce route 100.10.1.0/24 next-hop self local-preference 115 as-path [1000, 1001] med 258 origin igp'," >> example.py
 s15 echo "]" >> example.py
 s15 echo "sleep(5)" >> example.py
 s15 echo "for message in messages:" >> example.py
@@ -38,6 +39,7 @@ py s15.cmd("exabgp exabgp/conf.ini &")
 s25 vtysh -c "clear ip bgp * soft"
 py time.sleep(10)
 s25 vtysh -c "show ip bgp"
+s25 cat /var/log/frr/bgpd.log
 s35 mkdir exabgp
 s35 cd exabgp
 s35 echo "process announce-routes{" >> conf.ini
@@ -57,7 +59,7 @@ s35 echo "from __future__ import print_function" >> example.py
 s35 echo "from sys import stdout" >> example.py
 s35 echo "from time import sleep" >> example.py
 s35 echo "messages = [" >> example.py
-s35 echo -e "\t'announce route 100.10.1.0/24 next-hop self local-preference 177 as-path [3000] med 109 origin igp aigp 521'," >> example.py
+s35 echo -e "\t'announce route 100.10.1.0/24 next-hop self local-preference 115 as-path [3000, 3001] med 258 origin igp'," >> example.py
 s35 echo "]" >> example.py
 s35 echo "sleep(5)" >> example.py
 s35 echo "for message in messages:" >> example.py

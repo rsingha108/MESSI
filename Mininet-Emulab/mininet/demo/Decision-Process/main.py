@@ -67,7 +67,7 @@ g = open(f'results_{sw}.txt','w')
 g.close()
 # Iterate over the files in the tests folder
 n_tests = len(os.listdir(tests_folder))
-for i in range(n_tests):
+for i in range(11,n_tests):
 	filename = f"{i}.json"
 	# Read the contents of the JSON file
 	with open(os.path.join(tests_folder, filename), "r") as file:
@@ -111,7 +111,7 @@ for i in range(n_tests):
 
 	# Result Parsing
 	actual_decision = dec ## 1 or 3
-	router_decision = result_parser.parse_rib()
+	router_decision = result_parser.parse_rib(test)
 	with open(f'results_{sw}.txt','a') as f:
 		f.write(f"{actual_decision},{router_decision}\n")
 

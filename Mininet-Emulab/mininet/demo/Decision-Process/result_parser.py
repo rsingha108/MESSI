@@ -17,7 +17,7 @@ RPKI validation codes: V valid, I invalid, N Not found
  *>                  1.1.1.1                177             0 1000 1001 e
 """
 
-def parse_rib():
+def parse_rib(test):
 	with open("out.txt","r") as f:
 		lines = f.readlines()
 	route_idx = 0
@@ -34,8 +34,8 @@ def parse_rib():
 			best = line
 	
 	if "1.1.1.1" in best:
-		return 1
-	else:
-		return 3
+		return (1 if test["Route1"]["NgbrAddr"] == '1.1.1.1' else 3)
+	if "3.3.3.1" in best:
+		return (1 if test["Route1"]["NgbrAddr"] == '3.3.3.1' else 3)
 		
 	
