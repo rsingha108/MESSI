@@ -1,11 +1,12 @@
-BGP routing table entry for 100.10.1.0/24, version 0
-Paths: (2 available, no best path)
-  Not advertised to any peer
+BGP routing table entry for 100.10.1.0/24, version 5
+Paths: (2 available, best #1, table default)
+  Advertised to non peer-group peers:
+  1.1.1.1 3.3.3.1 4.4.4.1
   Local
-    99.190.1.3 (inaccessible, import-check enabled) from 3.3.3.1 (3.3.3.1)
-      Origin EGP, metric 173, invalid, external
-      Last update: Tue Apr 16 17:57:41 2024
+    1.1.1.1 from 1.1.1.1 (1.1.1.1)
+      Origin IGP, metric 109, valid, external, best (Origin)
+      Last update: Tue Apr 16 18:39:44 2024
   Local
-    99.190.1.32 (inaccessible, import-check enabled) from 1.1.1.1 (1.1.1.1)
-      Origin EGP, metric 142, invalid, external
-      Last update: Tue Apr 16 17:57:35 2024
+    3.3.3.1 from 3.3.3.1 (3.3.3.1)
+      Origin EGP, metric 173, valid, external
+      Last update: Tue Apr 16 18:39:39 2024

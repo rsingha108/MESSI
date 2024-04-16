@@ -2,13 +2,8 @@
 
 
 
-def translate(test):
-  nh1 = "1.1.1.1"
-  ip1 = "1.1.1.2"
-  nh4 = "4.4.4.1"
-  ip4 = "4.4.4.2"
-  nh3 = "3.3.3.1"
-  ip3 = "3.3.3.2"
+def translate(test, subnet_ips):
+  nh1, ip1, nh3, ip3, nh4, ip4 = subnet_ips
   # print(test)
   d1,d2,d3,d4 = {},{},{},{}
   ## configs of router s2
