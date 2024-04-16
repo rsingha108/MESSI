@@ -1,8 +1,0 @@
-BGP routing table entry for 100.0.0.0/8, version 5
-Paths: (1 available, best #1, table default)
-  Advertised to non peer-group peers:
-  4.4.4.2
-  43618, (aggregated by 43618 192.168.19.25)
-    4.4.4.2 from 4.4.4.2 (192.168.19.25)
-      Origin EGP, metric 0, valid, external, atomic-aggregate, best (First path received)
-      Last update: Mon Apr 15 09:09:50 2024
