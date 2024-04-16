@@ -1,0 +1,50 @@
+{
+  "Router": {
+    "AggregateRoute": "Prefix: 100.0.1.8/0, Local Preference: 0, MED: 0, Community: [], AS Path: [], Next Hop: 0.0.0.0",
+    "SummaryOnly": "False",
+    "MatchingMEDOnly": "False",
+    "AS": "100"
+  },
+  "Route1": {
+    "Prefix": "100.0.1.32/0",
+    "LP": "545",
+    "MED": "129",
+    "Community": "11011:2 20000:11",
+    "ASPath": "0 6",
+    "NextHop": "100.0.16.0"
+  },
+  "Route2": {
+    "Prefix": "100.0.1.64/0",
+    "LP": "192",
+    "MED": "16",
+    "Community": "9120:8 6917:6",
+    "ASPath": "1",
+    "NextHop": "100.0.1.4"
+  },
+  "output": [
+    {
+      "Prefix": "100.0.1.8/0",
+      "LP": "0",
+      "MED": "0",
+      "Community": "",
+      "ASPath": "",
+      "NextHop": "0.0.0.0"
+    },
+    {
+      "Prefix": "100.0.1.32/0",
+      "LP": "545",
+      "MED": "129",
+      "Community": "11011:2 20000:11",
+      "ASPath": "0 6",
+      "NextHop": "100.0.16.0"
+    },
+    {
+      "Prefix": "100.0.1.64/0",
+      "LP": "192",
+      "MED": "16",
+      "Community": "9120:8 6917:6",
+      "ASPath": "1",
+      "NextHop": "100.0.1.4"
+    }
+  ]
+}

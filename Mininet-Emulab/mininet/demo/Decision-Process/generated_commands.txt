@@ -1,66 +1,74 @@
-s2 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 43617" -c "no bgp ebgp-requires-policy" -c "neighbor 7.0.0.3 remote-as 43618" -c "neighbor 3.0.0.3 remote-as 43618" -c "network 7.0.0.0" -c "network 2.0.0.0" -c "network 3.0.0.0"
-s1 mkdir exabgp
-s1 cd exabgp
-s1 echo "process announce-routes{" >> conf.ini
-s1 echo -e "\trun python exabgp/example.py;" >> conf.ini
-s1 echo -e "\tencoder json;" >> conf.ini
-s1 echo "}" >> conf.ini
-s1 echo "neighbor 7.0.0.1{" >> conf.ini
-s1 echo -e "\trouter-id 7.0.0.3;" >> conf.ini
-s1 echo -e "\tlocal-address 7.0.0.3;" >> conf.ini
-s1 echo -e "\tlocal-as 43618;" >> conf.ini
-s1 echo -e "\tpeer-as 43617;" >> conf.ini
-s1 echo -e "\tapi{" >> conf.ini
-s1 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
-s1 echo -e "\t}" >> conf.ini
-s1 echo -e "}" >> conf.ini
-s1 echo "from __future__ import print_function" >> example.py
-s1 echo "from sys import stdout" >> example.py
-s1 echo "from time import sleep" >> example.py
-s1 echo "messages = [" >> example.py
-s1 echo -e "\t'announce route 100.10.0.0/24 next-hop self local-preference 101 as-path [100] med 3 origin egp'," >> example.py
-s1 echo "]" >> example.py
-s1 echo "sleep(5)" >> example.py
-s1 echo "for message in messages:" >> example.py
-s1 printf "\tstdout.write(message + '\\\n')\n" >> example.py
-s1 echo -e "\tstdout.flush()" >> example.py
-s1 echo -e "\tsleep(1)" >> example.py
-s1 echo "while True:" >> example.py
-s1 echo -e "\tsleep(1)" >> example.py
-s1 cd ..
-py s1.cmd("exabgp exabgp/conf.ini &")
+s25 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 102" -c "neighbor 1.1.1.1 remote-as 193" -c "neighbor 3.3.3.1 remote-as 189" -c "neighbor 4.4.4.1 remote-as 101" -c "network 1.0.0.0" -c "network 3.0.0.0" -c "network 4.0.0.0"
+s25 vtysh -c "conf t" -c "router bgp 102" -c "neighbor 1.1.1.1 soft-reconfiguration inbound" -c "neighbor 3.3.3.1 soft-reconfiguration inbound" -c "neighbor 4.4.4.1 soft-reconfiguration inbound"
+s25 vtysh -c "conf t" -c "router bgp 102" -c "no bgp ebgp-requires-policy"
+s25 vtysh -c "conf t" -c "router bgp 102" -c "bgp bestpath compare-routerid"
+s45 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 101" -c "neighbor 4.4.4.2 remote-as 102" -c "network 4.0.0.0"
+s45 vtysh -c "conf t" -c "router bgp 101" -c "neighbor 4.4.4.2 soft-reconfiguration inbound"
+s45 vtysh -c "conf t" -c "router bgp 101" -c "no bgp ebgp-requires-policy"
+s15 mkdir exabgp
+s15 cd exabgp
+s15 echo "process announce-routes{" >> conf.ini
+s15 echo -e "\trun python exabgp/example.py;" >> conf.ini
+s15 echo -e "\tencoder json;" >> conf.ini
+s15 echo "}" >> conf.ini
+s15 echo "neighbor 1.1.1.2{" >> conf.ini
+s15 echo -e "\trouter-id 1.1.1.1;" >> conf.ini
+s15 echo -e "\tlocal-address 1.1.1.1;" >> conf.ini
+s15 echo -e "\tlocal-as 193;" >> conf.ini
+s15 echo -e "\tpeer-as 102;" >> conf.ini
+s15 echo -e "\tapi{" >> conf.ini
+s15 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
+s15 echo -e "\t}" >> conf.ini
+s15 echo -e "}" >> conf.ini
+s15 echo "from __future__ import print_function" >> example.py
+s15 echo "from sys import stdout" >> example.py
+s15 echo "from time import sleep" >> example.py
+s15 echo "messages = [" >> example.py
+s15 echo -e "\t'announce route 100.10.1.0/24 next-hop 99.190.1.32 local-preference 177 as-path [] med 142 origin egp aigp 4'," >> example.py
+s15 echo "]" >> example.py
+s15 echo "sleep(5)" >> example.py
+s15 echo "for message in messages:" >> example.py
+s15 printf "\tstdout.write(message + '\\\n')\n" >> example.py
+s15 echo -e "\tstdout.flush()" >> example.py
+s15 echo -e "\tsleep(1)" >> example.py
+s15 echo "while True:" >> example.py
+s15 echo -e "\tsleep(1)" >> example.py
+s15 cd ..
+py s15.cmd("exabgp exabgp/conf.ini &")
+s25 vtysh -c "clear ip bgp * soft"
 py time.sleep(10)
-s2 vtysh -c "show ip bgp" >> /mnt/Preference-order/out_log_frr.txt
-s3 mkdir exabgp
-s3 cd exabgp
-s3 echo "process announce-routes{" >> conf.ini
-s3 echo -e "\trun python exabgp/example.py;" >> conf.ini
-s3 echo -e "\tencoder json;" >> conf.ini
-s3 echo "}" >> conf.ini
-s3 echo "neighbor 3.0.0.1{" >> conf.ini
-s3 echo -e "\trouter-id 3.0.0.3;" >> conf.ini
-s3 echo -e "\tlocal-address 3.0.0.3;" >> conf.ini
-s3 echo -e "\tlocal-as 43618;" >> conf.ini
-s3 echo -e "\tpeer-as 43617;" >> conf.ini
-s3 echo -e "\tapi{" >> conf.ini
-s3 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
-s3 echo -e "\t}" >> conf.ini
-s3 echo -e "}" >> conf.ini
-s3 echo "from __future__ import print_function" >> example.py
-s3 echo "from sys import stdout" >> example.py
-s3 echo "from time import sleep" >> example.py
-s3 echo "messages = [" >> example.py
-s3 echo -e "\t'announce route 100.10.0.0/24 next-hop self local-preference 101 as-path [1000] med 3 origin egp'," >> example.py
-s3 echo "]" >> example.py
-s3 echo "sleep(5)" >> example.py
-s3 echo "for message in messages:" >> example.py
-s3 printf "\tstdout.write(message + '\\\n')\n" >> example.py
-s3 echo -e "\tstdout.flush()" >> example.py
-s3 echo -e "\tsleep(1)" >> example.py
-s3 echo "while True:" >> example.py
-s3 echo -e "\tsleep(1)" >> example.py
-s3 cd ..
-py s3.cmd("exabgp exabgp/conf.ini &")
+s25 vtysh -c "show ip bgp"
+s35 mkdir exabgp
+s35 cd exabgp
+s35 echo "process announce-routes{" >> conf.ini
+s35 echo -e "\trun python exabgp/example.py;" >> conf.ini
+s35 echo -e "\tencoder json;" >> conf.ini
+s35 echo "}" >> conf.ini
+s35 echo "neighbor 3.3.3.2{" >> conf.ini
+s35 echo -e "\trouter-id 3.3.3.1;" >> conf.ini
+s35 echo -e "\tlocal-address 3.3.3.1;" >> conf.ini
+s35 echo -e "\tlocal-as 189;" >> conf.ini
+s35 echo -e "\tpeer-as 102;" >> conf.ini
+s35 echo -e "\tapi{" >> conf.ini
+s35 echo -e "\t\tprocesses [announce-routes];" >> conf.ini
+s35 echo -e "\t}" >> conf.ini
+s35 echo -e "}" >> conf.ini
+s35 echo "from __future__ import print_function" >> example.py
+s35 echo "from sys import stdout" >> example.py
+s35 echo "from time import sleep" >> example.py
+s35 echo "messages = [" >> example.py
+s35 echo -e "\t'announce route 100.10.1.0/24 next-hop 99.190.1.3 local-preference 173 as-path [] med 173 origin egp aigp 7'," >> example.py
+s35 echo "]" >> example.py
+s35 echo "sleep(5)" >> example.py
+s35 echo "for message in messages:" >> example.py
+s35 printf "\tstdout.write(message + '\\\n')\n" >> example.py
+s35 echo -e "\tstdout.flush()" >> example.py
+s35 echo -e "\tsleep(1)" >> example.py
+s35 echo "while True:" >> example.py
+s35 echo -e "\tsleep(1)" >> example.py
+s35 cd ..
+py s35.cmd("exabgp exabgp/conf.ini &")
+s25 vtysh -c "clear ip bgp * soft"
 py time.sleep(10)
-s2 vtysh -c "show ip bgp" > /mnt/Preference-order/out.txt
-s2 vtysh -c "show ip bgp" >> /mnt/Preference-order/out_log_frr.txt
+s25 vtysh -c "show ip bgp"
+s25 vtysh -c "show ip bgp 100.10.1.0/24" > /mnt/Decision-Process/out.txt 

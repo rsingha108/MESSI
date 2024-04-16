@@ -1,202 +1,130 @@
+"""
+Topology :
+
+
+       subnet1          subnet4
+(s1) ----------- (s2) ----------- (s4)
+nh1            ip1| ip4		     nh4
+                  |ip3
+                  |
+                  | subnet3
+                  |
+                  |nh3
+                (s3)		
+                   
+s1 : exabgp
+s3 : exabgp
+s2 : router (frr/quagga)
+s4 : router (frr/quagga)
+"""
+
+import os
+import sys
+sys.path.insert(0,'..')
 import subprocess
 import time
 import numpy as np
 from tqdm import tqdm
+import command_generator
+import argparse
+import json
+import translator
+import helper
 
-sw = 'frr'
-if sw == 'quagga' or sw == 'frr' : 
-	cnsl = 'vtysh'
-elif sw == 'bird' :
-	cnsl = 'birdc'
+########## ARGUMENTS ##########
+parser = argparse.ArgumentParser()
+parser.add_argument("--software", type=str, default="frr")
+args = parser.parse_args()
 
-def decision_maker(d1,d2,d3):
-	if d1["AS"] != d2["AS"] : lp1 = 100
-	else: lp1 = int(d1["LP"])
-	if d3["AS"] != d2["AS"] : lp3 = 100
-	else: lp3 = int(d3["LP"])
+sw = args.software
+cnsl = 'vtysh'
+
+######## HYPERPARAMETERS ########
+cs = 5 # container set
+
+nh1 = "1.1.1.1"
+ip1 = "1.1.1.2"
+nh4 = "4.4.4.1"
+ip4 = "4.4.4.2"
+nh3 = "3.3.3.1"
+ip3 = "3.3.3.2"
+
+## ******* manual config ********
+# d1 = {"NH" : nh1, "AS" : "43617", "IP" : "10.100.1.0/24", "LP" : "220", "ASP" : "3", "MED" : "5", "ORG" : "e", "COM" : "[2:3]"}
+# d2 = {"IP1" : ip1, "IP4" : ip4, "IP3" : ip3, "AS" : "43618"}
+# d3 = {"NH" : nh3, "AS" : "43619", "IP" : "10.100.2.0/24", "LP" : "200", "ASP" : "2", "MED" : "3", "ORG" : "e", "COM" : "[2:3]"}
+# d4 = {"NH" : nh4, "AS" : "43620"}
+
+d1 =  {'AS': "193", 'LP': "177", 'ASP': "1", 'ORG': 'e', 'MED': "142", 'IGP': "4", 'AT': "0", 'RID': '100.0.1.64', 'NH': '1.1.1.1', 'NextHop': '99.190.1.32'}
+d2 =  {'IP1': '1.1.1.2', 'IP3': '3.3.3.2', 'IP4': '4.4.4.2', 'AS': "102"}
+d3 =  {'AS': "189", 'LP': "173", 'ASP': "2", 'ORG': 'e', 'MED': "173", 'IGP': "7", 'AT': "0", 'RID': '99.190.1.3', 'NH': '3.3.3.1', 'NextHop': '99.190.1.3'}
+d4 =  {'NH': '4.4.4.1', 'AS': "101"}
+
+nh1, ip1, nh4, ip4, nh3, ip3 = helper.generate_subnet_ips(d1,d2,d3,d4)
+
+print ("nh1: ", nh1)
+print ("ip1: ", ip1)
+print ("nh4: ", nh4)
+print ("ip4: ", ip4)
+print ("nh3: ", nh3)
+print ("ip3: ", ip3)
 	
-	oval = {'i':3,'e':2,'?':1}
-	o1 = oval[d1["ORG"]]
-	o3 = oval[d3["ORG"]]	
-	
-	n1 = int(''.join(d1["NH"].split('.')))
-	n3 = int(''.join(d3["NH"].split('.')))
-	
-	l1 = [lp1, -1*int(d1["ASP"]), o1, -1*int(d1["MED"]), -1*n1]
-	l3 = [lp3, -1*int(d3["ASP"]), o3, -1*int(d3["MED"]), -1*n3] 
-	#print(l1,l3)
-
-	for i in range(len(l1)):
-		if l1[i] != l3[i] :
-			if l1[i] > l3[i] : return 1
-			else : return 3
-	
-def commands_gen(d1,d2,d3):
-	nw1 = d1["NH"].split('.')[0]+'.0.0.0'
-	nw2 = d3["NH"].split('.')[0]+'.0.0.0'
-	
-	with open('generated_commands.txt','w') as g:
-	
-		g.write(f's2 {cnsl} -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp {d2["AS"]}" -c "no bgp ebgp-requires-policy" -c "neighbor {d1["NH"]} remote-as {d1["AS"]}" -c "neighbor {d3["NH"]} remote-as {d3["AS"]}" -c "network {nw1}" -c "network 2.0.0.0" -c "network {nw2}"\n') # -c "debug bgp updates", -c "log file /var/log/frr/bgpd.log", -c "bgp bestpath compare-routerid"
-
-		g.write('s1 mkdir exabgp\n')
-
-		g.write('s1 cd exabgp\n')
-		g.write('s1 echo "process announce-routes{" >> conf.ini\n')
-		g.write('s1 echo -e "\\trun python exabgp/example.py;" >> conf.ini\n')
-		g.write('s1 echo -e "\\tencoder json;" >> conf.ini\n')
-		g.write('s1 echo "}" >> conf.ini\n')
-
-
-		g.write(f's1 echo "neighbor {d2["IP1"]}')
-		g.write('{" >> conf.ini\n')
-		g.write(f's1 echo -e "\\trouter-id {d1["NH"]};" >> conf.ini\n')
-		g.write(f's1 echo -e "\\tlocal-address {d1["NH"]};" >> conf.ini\n')
-		g.write(f's1 echo -e "\\tlocal-as {d1["AS"]};" >> conf.ini\n')
-		g.write(f's1 echo -e "\\tpeer-as {d2["AS"]};" >> conf.ini\n')
-		g.write('s1 echo -e "\\tapi{" >> conf.ini\n')
-		g.write('s1 echo -e "\\t\\tprocesses [announce-routes];" >> conf.ini\n')
-		g.write('s1 echo -e "\\t}" >> conf.ini\n')
-		g.write('s1 echo -e "}" >> conf.ini\n')
-
-
-		g.write('s1 echo "from __future__ import print_function" >> example.py\n')
-		g.write('s1 echo "from sys import stdout" >> example.py\n')
-		g.write('s1 echo "from time import sleep" >> example.py\n')
-
-		g.write('s1 echo "messages = [" >> example.py\n')
-		g.write(f's1 echo -e "\\t\'announce route 100.10.0.0/24 next-hop self local-preference {d1["LP"]} as-path {d1["ASP"]} med {d1["MED"]} origin {d1["ORG"]}\'," >> example.py\n')
-	
-		g.write('s1 echo "]" >> example.py\n')
-
-		g.write('s1 echo "sleep(5)" >> example.py\n')
-
-		g.write('s1 echo "for message in messages:" >> example.py\n')
-		g.write('s1 printf "\\tstdout.write(message + \'\\\\\\n\')\\n" >> example.py\n')
-		g.write('s1 echo -e "\\tstdout.flush()" >> example.py\n')
-		g.write('s1 echo -e "\\tsleep(1)" >> example.py\n')
-
-		g.write('s1 echo "while True:" >> example.py\n')
-		g.write('s1 echo -e "\\tsleep(1)" >> example.py\n')
-
-		g.write('s1 cd ..\n')
-		g.write('py s1.cmd("exabgp exabgp/conf.ini &")\n')
-		g.write('py time.sleep(10)\n')
-		g.write(f's2 {cnsl} -c "show ip bgp" >> /mnt/Preference-order/out_log_{sw}.txt\n')
+## ******* Read from test directory ********
+# tests_folder = "./tests"
+# g = open(f'results_{sw}.txt','w')
+# g.close()
+# # Iterate over the files in the tests folder
+# n_tests = len(os.listdir(tests_folder))
+# for i in range(n_tests):
+# 	filename = f"{i}.json"
+# 	# Read the contents of the JSON file
+# 	with open(os.path.join(tests_folder, filename), "r") as file:
+# 		test = json.load(file)
 		
-		##-------------------------------------------------------------------------------------------------------------------------
-		g.write('s3 mkdir exabgp\n')
-
-		g.write('s3 cd exabgp\n')
-		g.write('s3 echo "process announce-routes{" >> conf.ini\n')
-		g.write('s3 echo -e "\\trun python exabgp/example.py;" >> conf.ini\n')
-		g.write('s3 echo -e "\\tencoder json;" >> conf.ini\n')
-		g.write('s3 echo "}" >> conf.ini\n')
-
-
-		g.write(f's3 echo "neighbor {d2["IP2"]}')
-		g.write('{" >> conf.ini\n')
-		g.write(f's3 echo -e "\\trouter-id {d3["NH"]};" >> conf.ini\n')
-		g.write(f's3 echo -e "\\tlocal-address {d3["NH"]};" >> conf.ini\n')
-		g.write(f's3 echo -e "\\tlocal-as {d3["AS"]};" >> conf.ini\n')
-		g.write(f's3 echo -e "\\tpeer-as {d2["AS"]};" >> conf.ini\n')
-		g.write('s3 echo -e "\\tapi{" >> conf.ini\n')
-		g.write('s3 echo -e "\\t\\tprocesses [announce-routes];" >> conf.ini\n')
-		g.write('s3 echo -e "\\t}" >> conf.ini\n')
-		g.write('s3 echo -e "}" >> conf.ini\n')
-
-
-		g.write('s3 echo "from __future__ import print_function" >> example.py\n')
-		g.write('s3 echo "from sys import stdout" >> example.py\n')
-		g.write('s3 echo "from time import sleep" >> example.py\n')
-
-		g.write('s3 echo "messages = [" >> example.py\n')
-		g.write(f's3 echo -e "\\t\'announce route 100.10.0.0/24 next-hop self local-preference {d3["LP"]} as-path {d3["ASP"]} med {d3["MED"]} origin {d3["ORG"]}\'," >> example.py\n')
+# 	print(f"\n**** Test case {i} ****")
 	
-		g.write('s3 echo "]" >> example.py\n')
+# 	d1, d2, d3, d4, dec = translator.translate(test)
 
-		g.write('s3 echo "sleep(5)" >> example.py\n')
+# 	print ("d1: ", d1)
+# 	print ("d2: ", d2)
+# 	print ("d3: ", d3)
+# 	print ("d4: ", d4)
+# 	print ("dec: ", dec)	
+# ============================================ #
+aspl1,aspl3 = int(d1["ASP"]), int(d3["ASP"])
+d1["ASP"] =  str(list(np.arange(1000, 100+aspl1, 1))) ## the s2 router is always AS100 set by Zen. Be careful to avoid that AS number otherwise horizon rule (route won't be accepted)
+d3["ASP"] =  str(list(np.arange(3000, 300+aspl3, 1)))
+omap = {'i':'igp','e':'egp','?':'incomplete'}
+d1["ORG"] = omap[d1["ORG"]]
+d3["ORG"] = omap[d3["ORG"]]
 
-		g.write('s3 echo "for message in messages:" >> example.py\n')
-		g.write('s3 printf "\\tstdout.write(message + \'\\\\\\n\')\\n" >> example.py\n')
-		g.write('s3 echo -e "\\tstdout.flush()" >> example.py\n')
-		g.write('s3 echo -e "\\tsleep(1)" >> example.py\n')
+command_generator.cmd_gen(d1,d2,d3,d4,cs,sw,cnsl)
 
-		g.write('s3 echo "while True:" >> example.py\n')
-		g.write('s3 echo -e "\\tsleep(1)" >> example.py\n')
+args = ["sudo", "python3", "star-topo.py", f"--software={sw}", f"--nh1={nh1}", f"--ip1={ip1}", f"--nh4={nh4}", f"--ip4={ip4}", f"--nh3={nh3}", f"--ip3={ip3}", f'--conset={cs}']
+print(" ".join(args))
+message = 'source generated_commands.txt'
 
-		g.write('s3 cd ..\n')
-		g.write('py s3.cmd("exabgp exabgp/conf.ini &")\n')
-		g.write('py time.sleep(10)\n')
-		g.write(f's2 {cnsl} -c "show ip bgp" > /mnt/Preference-order/out.txt\n')
-		g.write(f's2 {cnsl} -c "show ip bgp" >> /mnt/Preference-order/out_log_{sw}.txt\n')		
+sp = subprocess.run(args,input=message.encode())
 
-		
-with open('zen_out.txt','r') as f:
-	lines = f.readlines()
-		
-	
-lines = lines[5:-1]	
-print(lines[-1])
-tests = []
-test = []
-for line in lines:
-	if line == '\n' : 
-		tests.append(';'.join(test))
-		test = []
-	else:
-		if line.startswith('(') : 
-			line = line[1:-1]
-			test.append(line)
-		if line.startswith(',') : 
-			line = line[2:-1]
-			test.append(line)
+# ============================================ #
 
-#print("tests : \n",tests)
-
-g = open(f'out_log_{sw}.txt','w')
-g.close()
-g = open(f'results_{sw}.txt','w')
-g.close()
-g = open('correct.txt','w')
-g.close()
+	## Result Parsing
+	# actual_decision = dec ## 1 or 3
+	# with open('out.txt','r') as f:
+	# 	lines = f.readlines()
+	# asp_line = lines[3].strip()
+	# if "100" in asp_line:
+	# 	router_decision = 1
+	# if "300" in asp_line:
+	# 	router_decision = 3
+	# with open(f'results_{sw}.txt','a') as f:
+	# 	f.write(f"{actual_decision},{router_decision}\n")
 
 			
-ct = 0	
-for line in tqdm(tests[11:12]):
-	ct += 1
-	print(f"\n**** NEW SESSION {ct} ****")
-	#print("\nline : ",line)
-	with open(f'out_log_{sw}.txt','a') as g:
-		g.write(f"\n\n@@Test case {ct} : {line}\n\n")
-	sp = line.split(';')
-	d2 = {}
-	d1 = {}
-	d3 = {}
-	d2["IP1"],d2["IP2"],d2["AS"] = sp[0].split(',')
-	#AS Number, Local Preference, AS_Path Length, Origin, MED, IGP Metric, Send/Arrival Time, Router ID, Neighbor Address
-	d1["AS"],d1["LP"],d1["ASP"],d1["ORG"],d1["MED"],d1["IGP"],d1["AT"],d1["RID"],d1["NH"] = sp[1].split(',')
-	d3["AS"],d3["LP"],d3["ASP"],d3["ORG"],d3["MED"],d3["IGP"],d3["AT"],d3["RID"],d3["NH"] = sp[2].split(',')
-	x = decision_maker(d1,d2,d3)
-	with open('correct.txt','a') as g:
-		if x == 1 : g.write(d1["NH"]+'\n')
-		elif x == 3 : g.write(d3["NH"]+'\n')
-	asn1,asn3 = int(d1["ASP"]), int(d3["ASP"])
-	d1["ASP"] =  str(list(np.arange(100, asn1*100 + 1, 100)))#'[' + ' '.join(['100']*asn1) + ']'
-	d3["ASP"] =  str(list(np.arange(1000, asn3*1000 + 1, 1000)))
-	omap = {'i':'igp','e':'egp','?':'incomplete'}
-	d1["ORG"] = omap[d1["ORG"]]
-	d3["ORG"] = omap[d3["ORG"]]
 
-	commands_gen(d1,d2,d3)
-	time.sleep(5)
-	args = ["sudo", "python", "three-routers.py", f"--software={sw}", f'--ip1={d2["IP1"]}', f'--ip2={d2["IP2"]}', f'--nh1={d1["NH"]}', f'--nh2={d3["NH"]}']
-	print(" ".join(args))
-	message = 'source generated_commands.txt'
+
 	
-	sp = subprocess.run(args,input=message.encode())
 	
-	sp1 = subprocess.run(["python", "parser.py", f"--software={sw}"])
 	
 	
 

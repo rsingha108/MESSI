@@ -62,9 +62,11 @@ ip3 = "3.3.3.2"
 
 # Iterate over JSON files in the tests directory
 tests_dir = "./tests"
-g = open('results.txt','w')
+g = open(f'results_{sw}.txt','w')
 g.close()
-for filename in os.listdir(tests_dir):
+n_tests = len(os.listdir(tests_dir))
+for i in range(n_tests):
+       filename = f"{i}.json"
        print(f"Running test {filename}")
        file_path = os.path.join(tests_dir, filename)
        with open(file_path, "r") as file:
@@ -92,7 +94,7 @@ for filename in os.listdir(tests_dir):
               router_decision = False
        else:
               router_decision = True
-       with open('results.txt','a') as f:
+       with open(f'results_{sw}.txt','a') as f:
               f.write(f"{actual_decision},{router_decision}\n")
               
 
