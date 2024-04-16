@@ -1,4 +1,6 @@
-BGP table version is 5, local router ID is 192.168.19.26, vrf id 0
+"""
+Displayed  4 routes and 5 total paths
+BGP table version is 4, local router ID is 192.168.19.26, vrf id 0
 Default local pref 100, local AS 100
 Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
                i internal, r RIB-failure, S Stale, R Removed
@@ -11,7 +13,29 @@ RPKI validation codes: V valid, I invalid, N Not found
  *> 3.0.0.0/8        0.0.0.0                  0         32768 i
  * i4.0.0.0/8        4.4.4.1                  0    100      0 i
  *>                  0.0.0.0                  0         32768 i
- *> 100.10.1.0/24    1.1.1.1                298             0 3000 3001 3002 3003 e
- *                   3.3.3.1                299             0 1000 1001 1002 1003 e
+ *  100.10.1.0/24    3.3.3.1                173             0 3000 3001 3002 i
+ *>                  1.1.1.1                177             0 1000 1001 e
+"""
 
-Displayed  4 routes and 6 total paths
+def parse_rib():
+	with open("out.txt","r") as f:
+		lines = f.readlines()
+	route_idx = 0
+	for i,line in enumerate(lines):
+		if "100.10.1.0/24" not in line:
+			continue
+		route_idx = i
+		break
+
+	filtered_lines = lines[route_idx:]
+
+	for line in filtered_lines:
+		if ">" in line:
+			best = line
+	
+	if "1.1.1.1" in best:
+		return 1
+	else:
+		return 3
+		
+	

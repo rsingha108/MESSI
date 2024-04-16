@@ -30,6 +30,7 @@ import argparse
 import json
 import translator
 import helper
+import result_parser
 
 ########## ARGUMENTS ##########
 parser = argparse.ArgumentParser()
@@ -66,7 +67,7 @@ g = open(f'results_{sw}.txt','w')
 g.close()
 # Iterate over the files in the tests folder
 n_tests = len(os.listdir(tests_folder))
-for i in ["3"]:#range(n_tests):
+for i in range(n_tests):
 	filename = f"{i}.json"
 	# Read the contents of the JSON file
 	with open(os.path.join(tests_folder, filename), "r") as file:
@@ -92,8 +93,8 @@ for i in ["3"]:#range(n_tests):
 	print ("dec: ", dec)	
 # ============================================ #
 	aspl1,aspl3 = int(d1["ASP"]), int(d3["ASP"])
-	d1["ASP"] =  str(list(np.arange(1000, 100+aspl1, 1))) ## the s2 router is always AS100 set by Zen. Be careful to avoid that AS number otherwise horizon rule (route won't be accepted)
-	d3["ASP"] =  str(list(np.arange(3000, 300+aspl3, 1)))
+	d1["ASP"] =  str(list(np.arange(1000, 1000+aspl1, 1))) ## the s2 router is always AS100 set by Zen. Be careful to avoid that AS number otherwise horizon rule (route won't be accepted)
+	d3["ASP"] =  str(list(np.arange(3000, 3000+aspl3, 1)))
 	omap = {'i':'igp','e':'egp','?':'incomplete'}
 	d1["ORG"] = omap[d1["ORG"]]
 	d3["ORG"] = omap[d3["ORG"]]
@@ -108,17 +109,11 @@ for i in ["3"]:#range(n_tests):
 
 # ============================================ #
 
-	# # Result Parsing
-	# actual_decision = dec ## 1 or 3
-	# with open('out.txt','r') as f:
-	# 	lines = f.readlines()
-	# asp_line = lines[3].strip()
-	# if "100" in asp_line:
-	# 	router_decision = 1
-	# if "300" in asp_line:
-	# 	router_decision = 3
-	# with open(f'results_{sw}.txt','a') as f:
-	# 	f.write(f"{actual_decision},{router_decision}\n")
+	# Result Parsing
+	actual_decision = dec ## 1 or 3
+	router_decision = result_parser.parse_rib()
+	with open(f'results_{sw}.txt','a') as f:
+		f.write(f"{actual_decision},{router_decision}\n")
 
 			
 

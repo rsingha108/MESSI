@@ -96,7 +96,7 @@ def cmd_gen(d1,d2,d3,d4,cs,sw,cnsl):
         g.write(f's2{cs} {cnsl} -c "show ip bgp"\n')
         # g.write(f's4{cs} {cnsl} -c "show running-config"\n')
         # g.write(f's4{cs} {cnsl} -c "show ip bgp"\n')
-        g.write(f's2{cs} {cnsl} -c "show ip bgp 100.10.1.0/24" > /mnt/Decision-Process/out.txt \n')
+        g.write(f's2{cs} {cnsl} -c "show ip bgp" > /mnt/Decision-Process/out.txt \n')
         
 
         # g.write(f's2{cs} cat /var/log/{sw}/bgpd.log >> /mnt/Symb-Route-maps/log.txt \n')
