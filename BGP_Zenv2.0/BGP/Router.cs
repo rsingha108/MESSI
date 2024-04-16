@@ -182,6 +182,8 @@ namespace BGP{
         public static Zen<uint> GetArrTime(this Zen<RoutesForDecisionProcess> rdp) => rdp.GetField<RoutesForDecisionProcess, uint>("ArrivalTime");
 
         public static Zen<bool> IsValidRoute(this Zen<RoutesForDecisionProcess> rdp){
+            int[] t1 = {1, 1, 1, 1};
+            int[] t2 = {3, 3, 3, 1};
             return And(
                 rdp.GetLP() >= 100, rdp.GetLP() <= 300,
                 rdp.GetASPLen() >= 1, rdp.GetASPLen() <= 4,
@@ -190,7 +192,7 @@ namespace BGP{
                 rdp.GetASN() >= 100, rdp.GetASN() <= 700,
                 rdp.GetIGP() >= 300, rdp.GetIGP() <= 1000,
                 rdp.GetRID() >= 1671377732, rdp.GetRID() <= 1679687938,
-                rdp.GetNgbr() >= 1671377732, rdp.GetNgbr() <= 1679687938,
+                Utils.OrIf(rdp.GetNgbr() == Utils.PrefixToUint(t1), rdp.GetNgbr() == Utils.PrefixToUint(t2)),
                 rdp.GetArrTime() >= 0, rdp.GetArrTime() <= 1
             );
         }

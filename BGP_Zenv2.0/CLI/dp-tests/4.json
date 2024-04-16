@@ -1,0 +1,36 @@
+{
+  "RouterAS": 100,
+  "Route1": {
+    "LP": 126,
+    "ASPathLength": 3,
+    "Origin": "i",
+    "MED": 173,
+    "ASN": 189,
+    "IGP": 521,
+    "RID": "100.0.1.3",
+    "NgbrAddr": "99.190.1.3",
+    "ArrivalTime": 0
+  },
+  "Route2": {
+    "LP": 126,
+    "ASPathLength": 2,
+    "Origin": "i",
+    "MED": 173,
+    "ASN": 189,
+    "IGP": 521,
+    "RID": "99.190.1.3",
+    "NgbrAddr": "99.190.1.3",
+    "ArrivalTime": 0
+  },
+  "Decision": {
+    "LP": 126,
+    "ASPathLength": 2,
+    "Origin": "i",
+    "MED": 173,
+    "ASN": 189,
+    "IGP": 521,
+    "RID": "99.190.1.3",
+    "NgbrAddr": "99.190.1.3",
+    "ArrivalTime": 0
+  }
+}

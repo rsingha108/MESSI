@@ -1,29 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj": {}
+    "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\CLI\\CLI.csproj": {}
   },
   "projects": {
-    "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
+    "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
+        "projectUniqueName": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj",
         "projectName": "BGP",
-        "projectPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/",
+        "projectPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj",
+        "packagesPath": "C:\\Users\\Rathin Singha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\BGP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Rathin Singha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -35,6 +38,7 @@
       },
       "frameworks": {
         "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -45,33 +49,66 @@
               "version": "[3.1.1, )"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.426/RuntimeIdentifierGraph.json"
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj": {
+    "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\CLI\\CLI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
+        "projectUniqueName": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\CLI\\CLI.csproj",
         "projectName": "CLI",
-        "projectPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/",
+        "projectPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\CLI\\CLI.csproj",
+        "packagesPath": "C:\\Users\\Rathin Singha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\CLI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Rathin Singha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
-              "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
-                "projectPath": "/postgres-data/rathin/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj"
+              "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj": {
+                "projectPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj"
               }
             }
           }
@@ -84,6 +121,7 @@
       },
       "frameworks": {
         "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "CommandLineParser": {
               "target": "Package",
@@ -98,7 +136,41 @@
               "version": "[3.1.1, )"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.426/RuntimeIdentifierGraph.json"
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

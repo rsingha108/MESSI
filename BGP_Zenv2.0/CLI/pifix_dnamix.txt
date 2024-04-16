@@ -1,0 +1,298 @@
+/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/Program.cs(111,6): warning CS8321: The local function 'GenerateAggregationTestCases' is declared but never used [/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj]
+/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/Program.cs(128,6): warning CS8321: The local function 'GenerateRouteMapTestCases' is declared but never used [/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj]
+/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/Program.cs(242,6): warning CS8321: The local function 'GenerateAggregationDifferenceTestCases' is declared but never used [/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj]
+/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/Program.cs(313,6): warning CS8321: The local function 'GenerateRouteDifferenceTestCases' is declared but never used [/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj]
+/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/Program.cs(365,6): warning CS8321: The local function 'GenerateRouteDifferenceTestCases2' is declared but never used [/home/rajdeep/Desktop/BGP_Zenv2.0/CLI/CLI.csproj]
+nums() --> [102]
+nums() --> [1-2]
+nums() --> [0-2]
+nums() --> [20]
+com regex : ^[102]?:[1-2][1-2]* [0-2][0-2]+:[20][20]?$
+Number of multi-com +ve examples: 76
+Number of all -ve examples: 2604992
+com regex : ^1347:49370 26593:37798$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4901609
+pos: 1347:49370 26593:37798
+nums() --> [0-2]
+nums() --> [02]
+nums() --> [21]
+nums() --> [0]
+com regex : ^[0-2][0-2]+:[02][02]? [21]+:[1][0]+$
+Number of multi-com +ve examples: 184
+Number of all -ve examples: 8181509
+pos: 10002:2 22211:100
+pos: 10221:2 22112:10000
+pos: 20002:2 21221:1000
+neg: 21120:6553 11208:1
+neg: 6553:656 25054:1678
+neg: 9011:65 65530:1002
+nums() --> [0-1]
+nums() --> [2]
+nums() --> [0-1]
+nums() --> [21]
+com regex : ^[0-1][0-1]*:[2] [0-1][0-1]+:[21][21]+$
+Number of multi-com +ve examples: 172
+Number of all -ve examples: 3274128
+com regex : ^15168:61172 26974:65527$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4985000
+pos: 15168:61172 26974:65527
+com regex : ^55453:5680 20716:33432$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4958072
+com regex : ^41487:52898 24989:22866$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4990000
+com regex : ^10156:22086 29808:2580$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4961072
+pos: 10156:22086 29808:2580
+com regex : ^54624:18774 18521:31783$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4833924
+nums() --> [2]
+nums() --> [1-2]
+nums() --> [0-2]
+nums() --> [0-2]
+com regex : ^[2]:[1-2][1-2] [0-2]+:[0-2][0-2]$
+Number of multi-com +ve examples: 31
+Number of all -ve examples: 1802452
+pos: 2:11 11120:12
+pos: 2:21 21120:11
+pos: 2:11 20112:11
+neg: 6776:6 10011:65511
+neg: 2:10 51001:1100
+neg: 6963:6553 65122:202
+nums() --> [1-2]
+nums() --> [1]
+nums() --> [0-1]
+nums() --> [1-2]
+com regex : ^[1-2][1-2]+:[1][1]? [0-1][0-1]*:[1-2]$
+Number of multi-com +ve examples: 41
+Number of all -ve examples: 2093278
+com regex : ^11605:36380 11690:45585$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4576103
+pos: 11605:36380 11690:45585
+nums() --> [021]
+nums() --> [2]
+nums() --> [0-2]
+nums() --> [2]
+com regex : ^[021][021]*:[2][2]* [0-2]?:[2][2]?$
+Number of multi-com +ve examples: 78
+Number of all -ve examples: 740952
+nums() --> [0-2]
+nums() --> [1-2]
+nums() --> [0-2]
+nums() --> [0-2]
+com regex : ^[0-2][0-2]:[1-2][1-2]* [0-2]:[0-2]*$
+Number of multi-com +ve examples: 161
+Number of all -ve examples: 1851528
+com regex : ^20557:38114 54256:8586$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4908288
+pos: 20557:38114 54256:8586
+com regex : ^54458:13093 8526:43879$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4703841
+com regex : ^62060:26999 41601:18118$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4631108
+com regex : ^12133:38305 21460:10436$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4914336
+pos: 12133:38305 21460:10436
+nums() --> [21]
+nums() --> [0]
+nums() --> [1]
+nums() --> [012]
+com regex : ^[21]+:[2] [1]*:[012]*$
+Number of multi-com +ve examples: 204
+Number of all -ve examples: 2058768
+pos: 11111:2 11111:2221
+pos: 11111:2 11111:11000
+pos: 11111:2 11111:20
+neg: 65530:7 8011:41
+neg: 6575:6553 10049:31
+neg: 17004:3570 51539:131
+com regex : ^33452:15179 9656:6641$
+Number of multi-com +ve examples: 1
+Number of all -ve examples: 4687445
+nums() --> [0-2]
+nums() --> [1-2]
+nums() --> [1-2]
+nums() --> [1-2]
+com regex : ^[0-2][0-2]+:[1-2][1-2]* [1-2][1-2]*:[1-2][1-2]*$
+Number of multi-com +ve examples: 270
+Number of all -ve examples: 2148072
+pos: 11020:1 11222:2
+pos: 20111:1 22121:21
+pos: 12012:2 12112:111
+neg: 11200:658 656:108
+neg: 659:655 20080:11
+neg: 21011:8 20000:1201
+populated regexs_as = ^6073 24281$
+
+nums() --> [021]
+nums() --> [1-2]
+populated regexs_as = ^[2] [1][1-2]*$
+
+pexs3: 2 1|2 11|2 121
+pexs3_fseq: [2,1]|[2,11]|[2,121]
+nexs3: 0|0 1|2
+nexs3_fseq: [0]|[0,1]|[2]
+2 1 2 11 2 121 
+0 0 1 2 
+populated regexs_as = ^16534 33258$
+
+nums() --> [12]
+populated regexs_as = ^[3][12]?$
+
+pexs3: 3|32|31
+pexs3_fseq: [3]|[32]|[31]
+nexs3: 0|0 5|0 6
+nexs3_fseq: [0]|[0,5]|[0,6]
+3 32 31 
+0 0 5 0 6 
+populated regexs_as = ^10366 51671$
+
+nums() --> [0-1]
+populated regexs_as = ^[12]+$
+
+pexs3: 2|21|111
+pexs3_fseq: [2]|[21]|[111]
+nexs3: 0|0 2|0 6
+nexs3_fseq: [0]|[0,2]|[0,6]
+2 21 111 
+0 0 2 0 6 
+nums() --> [0-2]
+nums() --> [0-2]
+populated regexs_as = ^49264$
+
+nums() --> [2]
+populated regexs_as = ^[1-2]*$
+
+pexs3: 2|12|212
+pexs3_fseq: [2]|[12]|[212]
+nexs3: 0|0 2|0 6
+nexs3_fseq: [0]|[0,2]|[0,6]
+2 12 212 
+0 0 2 0 6 
+generating inputs...
+
+0
+1
+2
+3
+4
+5
+6
+7
+Route Map 1:
+Permit: True
+Match Clause: Local Preference: None, MED: None, Prefix List: Some([[Prefix: 0.0.0.0/0, LE: Some(32), GE: Some(0), Permit: True, Any: True],[Prefix: 0.0.0.0/0, LE: Some(32), GE: Some(0), Permit: False, Any: True],[Prefix: 0.0.0.0/0, LE: Some(32), GE: Some(0), Permit: False, Any: True]]), Community List: None, AS Path List: None
+Set Clause: None
+Route Map 2:
+Permit: True
+Match Clause: Local Preference: None, MED: None, Prefix List: Some([[Prefix: 99.224.2.4/11, LE: None, GE: None, Permit: True, Any: False],[Prefix: 0.0.0.0/0, LE: Some(32), GE: Some(0), Permit: False, Any: True],[Prefix: 0.0.0.0/0, LE: Some(32), GE: Some(0), Permit: False, Any: True]]), Community List: None, AS Path List: None
+Set Clause: None
+Route:
+Prefix: 99.171.74.27/15, Local Preference: 261, MED: 66, Community: [20002:2, 21221:1000], AS Path: [0, 2], Next Hop: 99.206.3.3
+Decision 1: True
+Decision 2: False
+Difference: 1
+
+
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+Total Cases: 
+Permit any cases: 
