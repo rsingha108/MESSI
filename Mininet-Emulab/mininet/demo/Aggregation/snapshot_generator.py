@@ -24,12 +24,33 @@ def extract_agg_route(router):
     ip, ip1, mask, mask_length = convert_ip_subnet(prefix)
     summary_only = bool(router["SummaryOnly"])
     matching_med_only = bool(router["MatchingMEDOnly"])
-    agg_str += f"{ip} {mask}"
+    agg_str += f" {ip} {mask}"
     if summary_only:
         agg_str += " summary-only"
-    if matching_med_only:
-        agg_str += " as-set"
     return agg_str, ip, mask, mask_length
+
+def ip_prefix_correction(ip_prefix):
+    # Split the IP address and prefix length
+    ip, prefix_length = ip_prefix.split('/')
+    ip_parts = ip.split('.')
+
+    # Convert IP address parts to integers
+    ip_int = 0
+    for part in ip_parts:
+        ip_int = (ip_int << 8) + int(part)
+
+    # Calculate the corrected IP address
+    corrected_ip_int = ip_int & ((2 ** 32 - 1) << (32 - int(prefix_length)))
+    corrected_ip_parts = []
+    for _ in range(4):
+        corrected_ip_parts.append(str(corrected_ip_int >> 24))
+        corrected_ip_int = (corrected_ip_int << 8)%(2 ** 32 - 1) 
+
+    corrected_ip = '.'.join(corrected_ip_parts)
+    corrected_prefix = f"{corrected_ip}/{prefix_length}"
+
+    return corrected_prefix
+
     
     
 def snap_gen(test):
@@ -60,7 +81,7 @@ def snap_gen(test):
         f.write(f"    network {ip}/{mask_length}\n")
 
     with open(dir_path + "C.cfg", "w") as f:
-        agg_str = form_agg_str(test['Router']["AggregateRoute"])
+        agg_str, ip, mask, mask_length = extract_agg_route(test['Router'])
         f.write("hostname RouterC\n\n")
         f.write("interface eth0/0\n")
         f.write("    ip address 1.0.0.2 255.255.255.0\n")

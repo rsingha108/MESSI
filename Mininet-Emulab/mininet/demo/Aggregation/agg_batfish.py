@@ -16,7 +16,7 @@ def run_aggregation():
     bf.init_snapshot(SNAPSHOT_PATH, name=SNAPSHOT_NAME, overwrite=True)
     result = bf.q.bgpRib(nodes='RouterC').answer().frame()
     res = result.values
-    print(bf.q.initIssues().answer().frame())
+    # print(bf.q.initIssues().answer().frame())
     routes = []
     for row in res:
         routes.append(row[2])
@@ -39,14 +39,18 @@ for i in range(n_tests):
     
     ### PARSING ###
     actual_decision = False
-    agg_str, agg_ip, agg_mask, agg_mask_length = snapshot_generator.extract_agg_prefix(test["Router"])
+    agg_str, agg_ip, agg_mask, agg_mask_length = snapshot_generator.extract_agg_route(test["Router"])
     for d in test["output"]:
         if d["Prefix"] == (agg_ip + "/" + str(agg_mask_length)):
             actual_decision = True
     
     router_decision = False
     for route in routes:
-        if route == agg_ip + "/" + str(agg_mask_length):
+        agg_ip_mask = agg_ip + "/" + str(agg_mask_length)
+        print ("agg_ip_mask = ", agg_ip_mask)
+        agg_ip_mask_corrected = snapshot_generator.ip_prefix_correction(agg_ip_mask)
+        print ("agg_ip_mask corrected = ", agg_ip_mask_corrected)
+        if route == agg_ip_mask_corrected:
             router_decision = True
     
     with open(f'results_batfish.txt','a') as f:
