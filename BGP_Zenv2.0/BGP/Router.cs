@@ -321,7 +321,7 @@ namespace BGP{
                 // allowed set of prefixes
                 aggroute.GetPrefix() >= 1671377732,
                 aggroute.GetPrefix() <= 1679687938,
-
+                (aggroute.GetPrefix() & aggroute.GetMask()) > 0,
                 // valid masks
                 aggroute.GetMask().IsValidMask(),
 

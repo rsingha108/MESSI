@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj": {}
+    "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj": {
+    "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj",
+        "projectUniqueName": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
         "projectName": "BGP",
-        "projectPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj",
-        "packagesPath": "C:\\Users\\Rathin Singha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\BGP\\obj\\",
+        "projectPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
+        "packagesPath": "/home/rajdeep/.nuget/packages/",
+        "outputPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Rathin Singha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/rajdeep/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,31 +53,16 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
         }
       }
     }

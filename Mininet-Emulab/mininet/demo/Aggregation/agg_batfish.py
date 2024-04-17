@@ -14,9 +14,11 @@ SNAPSHOT_PATH = 'test_snapshot'
 bf.set_network(NETWORK_NAME)
 bf.init_snapshot(SNAPSHOT_PATH, name=SNAPSHOT_NAME, overwrite=True)
 
-result = bf.q.bgpRib(nodes='RouterD').answer().frame()
+result = bf.q.bgpRib(nodes='RouterC').answer().frame()
 
 res = result.values
+
+print(bf.q.initIssues().answer().frame())
 
 routes = []
 

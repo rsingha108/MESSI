@@ -427,6 +427,10 @@ namespace BGP{
             );
 
             predicates.Add(
+                (ipa.GetPrefix() & ipa.GetMask()) > 0
+            );
+
+            predicates.Add(
                 And(
                     (ipa.GetPrefix() & 4278190080) != 4278190080,  // first byte cannot equal 255
                     (ipa.GetPrefix() & 4261412864) != 4261412864,  // first byte cannot equal 254

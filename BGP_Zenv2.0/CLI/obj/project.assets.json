@@ -5,27 +5,19 @@
       "CommandLineParser/2.9.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/CommandLine.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/CommandLine.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/CommandLine.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/CommandLine.dll": {}
         }
       },
       "DecisionDiagrams/1.2.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/DecisionDiagrams.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/DecisionDiagrams.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/DecisionDiagrams.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/DecisionDiagrams.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {
@@ -58,14 +50,10 @@
       "Microsoft.Z3/4.11.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.Z3.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Z3.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Z3.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Z3.dll": {}
         },
         "build": {
           "build/_._": {}
@@ -88,14 +76,10 @@
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -106,9 +90,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.Collections.Immutable/6.0.0": {
@@ -118,14 +100,10 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Collections.Immutable.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -139,9 +117,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.Dynamic.Runtime/4.3.0": {
@@ -163,9 +139,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Dynamic.Runtime.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Dynamic.Runtime.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Dynamic.Runtime.dll": {}
@@ -179,9 +153,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.IO/4.3.0": {
@@ -194,9 +166,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.IO.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.IO.dll": {}
         }
       },
       "System.Linq/4.3.0": {
@@ -209,9 +179,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.6/_._": {}
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
@@ -239,9 +207,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.6/System.Linq.Expressions.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.6/System.Linq.Expressions.dll": {}
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
@@ -266,9 +232,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.ObjectModel.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.ObjectModel.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.ObjectModel.dll": {}
@@ -284,9 +248,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Reflection.dll": {}
         }
       },
       "System.Reflection.Emit/4.3.0": {
@@ -299,9 +261,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.1/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -315,9 +275,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -332,9 +290,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll": {}
@@ -349,9 +305,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/_._": {}
         }
       },
       "System.Reflection.Primitives/4.3.0": {
@@ -362,9 +316,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/System.Reflection.Primitives.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/System.Reflection.Primitives.dll": {}
         }
       },
       "System.Reflection.TypeExtensions/4.3.0": {
@@ -374,9 +326,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/_._": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
@@ -392,9 +342,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/_._": {}
         }
       },
       "System.Runtime/4.3.0": {
@@ -404,22 +352,16 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Runtime.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -433,9 +375,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/_._": {}
         }
       },
       "System.Text.Encoding/4.3.0": {
@@ -446,9 +386,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Text.Encoding.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Text.Encoding.dll": {}
         }
       },
       "System.Threading/4.3.0": {
@@ -458,9 +396,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Threading.dll": {}
@@ -474,9 +410,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Threading.Tasks.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
       "ZenLib/3.1.1": {
@@ -489,14 +423,10 @@
           "System.Dynamic.Runtime": "4.3.0"
         },
         "compile": {
-          "lib/netstandard2.1/ZenLib.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/ZenLib.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/ZenLib.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/ZenLib.dll": {}
         }
       },
       "BGP/1.0.0": {
@@ -2194,34 +2124,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rathin Singha\\.nuget\\packages\\": {}
+    "/home/rajdeep/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\CLI\\CLI.csproj",
+      "projectUniqueName": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
       "projectName": "CLI",
-      "projectPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\CLI\\CLI.csproj",
-      "packagesPath": "C:\\Users\\Rathin Singha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\CLI\\obj\\",
+      "projectPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
+      "packagesPath": "/home/rajdeep/.nuget/packages/",
+      "outputPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rathin Singha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/rajdeep/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj": {
-              "projectPath": "C:\\Users\\Rathin Singha\\OneDrive\\Desktop\\All-about-MESSI\\MESSI\\BGP_Zenv2.0\\BGP\\BGP.csproj"
+            "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
+              "projectPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj"
             }
           }
         }
@@ -2255,35 +2183,16 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.17, 5.0.17]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
       }
     }
   }
