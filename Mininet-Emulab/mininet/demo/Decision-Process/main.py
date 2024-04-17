@@ -67,7 +67,7 @@ g = open(f'results_{sw}.txt','w')
 g.close()
 # Iterate over the files in the tests folder
 n_tests = len(os.listdir(tests_folder))
-for i in range(11,n_tests):
+for i in range(n_tests):
 	filename = f"{i}.json"
 	# Read the contents of the JSON file
 	with open(os.path.join(tests_folder, filename), "r") as file:
