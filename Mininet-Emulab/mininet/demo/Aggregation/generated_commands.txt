@@ -1,8 +1,8 @@
 s24 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 43618" -c "neighbor 1.1.1.1 remote-as 43617" -c "neighbor 3.3.3.1 remote-as 43619" -c "neighbor 4.4.4.1 remote-as 43620" -c "network 1.0.0.0" -c "network 3.0.0.0" -c "network 4.0.0.0"
 s24 vtysh -c "conf t" -c "router bgp 43618" -c "neighbor 1.1.1.1 soft-reconfiguration inbound" -c "neighbor 3.3.3.1 soft-reconfiguration inbound" -c "neighbor 4.4.4.1 soft-reconfiguration inbound"
 s24 vtysh -c "conf t" -c "router bgp 43618" -c "no bgp ebgp-requires-policy"
-s24 vtysh -c "conf t" -c "router bgp 43618" -c "aggregate-address 99.189.7.142/26"
-s44 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 43620" -c "neighbor 4.4.4.2 remote-as 43618" -c "network 4.0.0.0"
+s24 vtysh -c "conf t" -c "router bgp 43618" -c "aggregate-address 99.197.29.160/8 summary-only"
+s44 vtysh -c "conf t" -c "debug bgp updates" -c "router bgp 43620" -c "neighbor 4.4.4.2 remote-as 43618" -c "network 4.0.0.0"
 s44 vtysh -c "conf t" -c "router bgp 43620" -c "neighbor 4.4.4.2 soft-reconfiguration inbound"
 s44 vtysh -c "conf t" -c "router bgp 43620" -c "no bgp ebgp-requires-policy"
 s14 mkdir exabgp
@@ -24,7 +24,7 @@ s14 echo "from __future__ import print_function" >> example.py
 s14 echo "from sys import stdout" >> example.py
 s14 echo "from time import sleep" >> example.py
 s14 echo "messages = [" >> example.py
-s14 echo -e "\t'announce route 100.24.198.128/29 next-hop self local-preference 288 as-path [0 5] med 32 origin egp community [656:38 11220:656]'," >> example.py
+s14 echo -e "\t'announce route 100.18.160.128/19 next-hop self local-preference 129 as-path [1 22] med 80 origin egp community [10:22 10111:11]'," >> example.py
 s14 echo "]" >> example.py
 s14 echo "sleep(5)" >> example.py
 s14 echo "for message in messages:" >> example.py
@@ -35,8 +35,10 @@ s14 echo "while True:" >> example.py
 s14 echo -e "\tsleep(1)" >> example.py
 s14 cd ..
 py s14.cmd("exabgp exabgp/conf.ini &")
-py time.sleep(5)
+s24 vtysh -c "clear ip bgp * soft"
+py time.sleep(10)
 s24 vtysh -c "show ip bgp"
+s24 cat /var/log/frr/bgpd.log
 s34 mkdir exabgp
 s34 cd exabgp
 s34 echo "process announce-routes{" >> conf.ini
@@ -56,7 +58,7 @@ s34 echo "from __future__ import print_function" >> example.py
 s34 echo "from sys import stdout" >> example.py
 s34 echo "from time import sleep" >> example.py
 s34 echo "messages = [" >> example.py
-s34 echo -e "\t'announce route 99.172.201.38/2 next-hop self local-preference 266 as-path [1 2211] med 136 origin egp community [2:2 11:1101]'," >> example.py
+s34 echo -e "\t'announce route 99.222.16.66/8 next-hop self local-preference 160 as-path [0] med 33 origin egp community [8241:6553 981:101]'," >> example.py
 s34 echo "]" >> example.py
 s34 echo "sleep(5)" >> example.py
 s34 echo "for message in messages:" >> example.py
@@ -67,13 +69,9 @@ s34 echo "while True:" >> example.py
 s34 echo -e "\tsleep(1)" >> example.py
 s34 cd ..
 py s34.cmd("exabgp exabgp/conf.ini &")
-py time.sleep(5)
 s24 vtysh -c "clear ip bgp * soft"
-py time.sleep(5)
-s44 vtysh -c "clear ip bgp * soft"
-py time.sleep(5)
+py time.sleep(10)
 s24 vtysh -c "show running-config"
 s24 vtysh -c "show ip bgp"
-s44 vtysh -c "show running-config"
-s44 vtysh -c "show ip bgp"
-s44 vtysh -c "show ip bgp 99.189.7.142/26" >> /mnt/Aggregation/out.txt 
+s24 cat /var/log/frr/bgpd.log
+s24 vtysh -c "show ip bgp 99.197.29.160/8" >> /mnt/Aggregation/out.txt 
