@@ -248,5 +248,50 @@ namespace Tests{
 
             Assert.IsTrue(res);
         }
+
+        [TestMethod]
+        public void SomeNewTests(){
+            var f = new ZenFunction<Router, IPAttr, IPAttr, FSeq<IPAttr>>(RouterExtensions.GetRouteAdvertisements);
+
+            var masks = new List<uint>();
+            uint n = 0;
+            masks.Add(n);
+            for(int i=0;i<32;i++){
+                n |= ((uint)1) << (31-i);
+                masks.Add(n);
+            }
+
+            int[] t1 = {99, 229, 211, 200};
+            var aggrt = new IPAttr{
+                Prefix = Utils.PrefixToUint(t1),
+                Mask = masks[20]
+            };
+            var rt = new Router{
+                AggregateRoute = aggrt,
+                SummaryOnly = false,
+                MatchingMEDOnly = false
+            };
+
+            int[] t2 = {99, 223, 215, 216};
+            var route1 = new IPAttr{
+                Prefix = Utils.PrefixToUint(t2),
+                Mask = masks[7],
+                MED = 33
+            };
+            
+            int[] t3 = {100, 2, 12, 208};
+            var route2 = new IPAttr{
+                Prefix = Utils.PrefixToUint(t3),
+                Mask = masks[10],
+                MED = 40
+            };
+
+            var res = f.Evaluate(rt, route1, route2).ToList();
+
+            Assert.IsTrue(res.Count == 2);
+            Assert.IsTrue(res.Contains(route1));
+            Assert.IsTrue(res.Contains(route2));
+            // Assert.IsTrue(res.Contains(aggrt));
+        }
     }
 }

@@ -301,8 +301,8 @@ namespace BGP{
 
         private static Zen<bool> IsValidMask(this Zen<uint> num){
             uint n = 0;
-            Zen<bool> constraints = True();
-            for(int i=0;i<32;i++){
+            Zen<bool> constraints = False();
+            for(int i=0;i<31;i++){
                 n |= ((uint)1) << (31-i);
                 constraints = Or(constraints, num == n);
             }
