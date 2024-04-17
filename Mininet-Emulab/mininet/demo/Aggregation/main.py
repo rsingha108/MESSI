@@ -65,7 +65,7 @@ tests_dir = "./tests"
 g = open(f'results_{sw}.txt','w')
 g.close()
 n_tests = len(os.listdir(tests_dir))
-for i in ["1"]:#range(n_tests):
+for i in range(n_tests):
        filename = f"{i}.json"
        print(f"Running test {filename}")
        file_path = os.path.join(tests_dir, filename)

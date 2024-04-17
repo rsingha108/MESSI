@@ -1,7 +1,7 @@
 s24 vtysh -c "conf t" -c "debug bgp updates" -c "log file /var/log/frr/bgpd.log" -c "router bgp 43618" -c "neighbor 1.1.1.1 remote-as 43617" -c "neighbor 3.3.3.1 remote-as 43619" -c "neighbor 4.4.4.1 remote-as 43620" -c "network 1.0.0.0" -c "network 3.0.0.0" -c "network 4.0.0.0"
 s24 vtysh -c "conf t" -c "router bgp 43618" -c "neighbor 1.1.1.1 soft-reconfiguration inbound" -c "neighbor 3.3.3.1 soft-reconfiguration inbound" -c "neighbor 4.4.4.1 soft-reconfiguration inbound"
 s24 vtysh -c "conf t" -c "router bgp 43618" -c "no bgp ebgp-requires-policy"
-s24 vtysh -c "conf t" -c "router bgp 43618" -c "aggregate-address 99.197.29.160/8 summary-only"
+s24 vtysh -c "conf t" -c "router bgp 43618" -c "aggregate-address 100.15.65.67/31"
 s44 vtysh -c "conf t" -c "debug bgp updates" -c "router bgp 43620" -c "neighbor 4.4.4.2 remote-as 43618" -c "network 4.0.0.0"
 s44 vtysh -c "conf t" -c "router bgp 43620" -c "neighbor 4.4.4.2 soft-reconfiguration inbound"
 s44 vtysh -c "conf t" -c "router bgp 43620" -c "no bgp ebgp-requires-policy"
@@ -24,7 +24,7 @@ s14 echo "from __future__ import print_function" >> example.py
 s14 echo "from sys import stdout" >> example.py
 s14 echo "from time import sleep" >> example.py
 s14 echo "messages = [" >> example.py
-s14 echo -e "\t'announce route 100.18.160.128/19 next-hop self local-preference 129 as-path [1 22] med 80 origin egp community [10:22 10111:11]'," >> example.py
+s14 echo -e "\t'announce route 99.161.172.137/15 next-hop self local-preference 129 as-path [20] med 0 origin egp community [10:11 11122:20]'," >> example.py
 s14 echo "]" >> example.py
 s14 echo "sleep(5)" >> example.py
 s14 echo "for message in messages:" >> example.py
@@ -58,7 +58,7 @@ s34 echo "from __future__ import print_function" >> example.py
 s34 echo "from sys import stdout" >> example.py
 s34 echo "from time import sleep" >> example.py
 s34 echo "messages = [" >> example.py
-s34 echo -e "\t'announce route 99.222.16.66/8 next-hop self local-preference 160 as-path [0] med 33 origin egp community [8241:6553 981:101]'," >> example.py
+s34 echo -e "\t'announce route 100.15.65.66/26 next-hop self local-preference 517 as-path [2 11] med 66 origin egp community [10:22 21121:2]'," >> example.py
 s34 echo "]" >> example.py
 s34 echo "sleep(5)" >> example.py
 s34 echo "for message in messages:" >> example.py
@@ -74,4 +74,4 @@ py time.sleep(10)
 s24 vtysh -c "show running-config"
 s24 vtysh -c "show ip bgp"
 s24 cat /var/log/frr/bgpd.log
-s24 vtysh -c "show ip bgp 99.197.29.160/8" >> /mnt/Aggregation/out.txt 
+s24 vtysh -c "show ip bgp 100.15.65.67/31" >> /mnt/Aggregation/out.txt 
