@@ -62,7 +62,7 @@ ip3 = "3.3.3.2"
 # d4 =  {'NH': '4.4.4.1', 'AS': "101"}
 	
 ## ******* Read from test directory ********
-tests_folder = "./tests"
+tests_folder = "../tests"
 g = open(f'results_{sw}.txt','w')
 g.close()
 # Iterate over the files in the tests folder
