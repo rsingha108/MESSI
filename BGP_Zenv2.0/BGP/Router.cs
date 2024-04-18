@@ -544,7 +544,6 @@ namespace BGP{
 
             var lp1 = r1.GetLP();
             var lp2 = r2.GetLP();
-            // JIndegi to snati ble kchu nai
 
             r1 = If(
                 asn1 != rt_asn,

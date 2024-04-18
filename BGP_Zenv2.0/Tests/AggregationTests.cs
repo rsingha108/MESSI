@@ -85,6 +85,38 @@ namespace Tests{
 
             Assert.IsTrue(res3.Count() == 1);
             Assert.IsTrue(res3.Contains(agg_route));
+
+
+            int[] t5 = {99, 229, 211, 200};
+            var aggrt2 = new IPAttr{
+                Prefix = Utils.PrefixToUint(t5),
+                Mask = masks[20]
+            };
+            var rt3 = new Router{
+                AggregateRoute = aggrt2,
+                SummaryOnly = false,
+                MatchingMEDOnly = false
+            };
+
+            int[] t6 = {99, 223, 215, 216};
+            var route1 = new IPAttr{
+                Prefix = Utils.PrefixToUint(t6),
+                Mask = masks[7],
+                MED = 33
+            };
+            
+            int[] t7 = {100, 2, 12, 208};
+            var route2 = new IPAttr{
+                Prefix = Utils.PrefixToUint(t7),
+                Mask = masks[10],
+                MED = 40
+            };
+
+            var res4 = f.Evaluate(rt, route1, route2).ToList();
+
+            Assert.IsTrue(res4.Count == 2);
+            Assert.IsTrue(res4.Contains(route1));
+            Assert.IsTrue(res4.Contains(route2));
         }
 
         [TestMethod]
@@ -247,51 +279,6 @@ namespace Tests{
             var res = f.Evaluate(rt1, ipa1, ipa2, ipa3);
 
             Assert.IsTrue(res);
-        }
-
-        [TestMethod]
-        public void SomeNewTests(){
-            var f = new ZenFunction<Router, IPAttr, IPAttr, FSeq<IPAttr>>(RouterExtensions.GetRouteAdvertisements);
-
-            var masks = new List<uint>();
-            uint n = 0;
-            masks.Add(n);
-            for(int i=0;i<32;i++){
-                n |= ((uint)1) << (31-i);
-                masks.Add(n);
-            }
-
-            int[] t1 = {99, 229, 211, 200};
-            var aggrt = new IPAttr{
-                Prefix = Utils.PrefixToUint(t1),
-                Mask = masks[20]
-            };
-            var rt = new Router{
-                AggregateRoute = aggrt,
-                SummaryOnly = false,
-                MatchingMEDOnly = false
-            };
-
-            int[] t2 = {99, 223, 215, 216};
-            var route1 = new IPAttr{
-                Prefix = Utils.PrefixToUint(t2),
-                Mask = masks[7],
-                MED = 33
-            };
-            
-            int[] t3 = {100, 2, 12, 208};
-            var route2 = new IPAttr{
-                Prefix = Utils.PrefixToUint(t3),
-                Mask = masks[10],
-                MED = 40
-            };
-
-            var res = f.Evaluate(rt, route1, route2).ToList();
-
-            Assert.IsTrue(res.Count == 2);
-            Assert.IsTrue(res.Contains(route1));
-            Assert.IsTrue(res.Contains(route2));
-            // Assert.IsTrue(res.Contains(aggrt));
         }
     }
 }

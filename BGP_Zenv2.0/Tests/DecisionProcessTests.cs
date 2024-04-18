@@ -76,8 +76,8 @@ namespace Tests
                 ArrivalTime = 1
             };
 
-            // Assert.IsTrue(f.Evaluate(rt, r1, r2) == r2);
-            // Assert.IsTrue(f.Evaluate(rt, r1, r3) == r3);
+            Assert.IsTrue(f.Evaluate(rt, r1, r2).ASN == r2.ASN);
+            Assert.IsTrue(f.Evaluate(rt, r1, r3).MED == r3.MED);
             Assert.IsTrue(f.Evaluate(rt, r1, r4) == r4);
 
         }
