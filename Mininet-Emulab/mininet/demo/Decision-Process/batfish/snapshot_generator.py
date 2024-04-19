@@ -1,4 +1,4 @@
-
+import numpy as np
 
 def convert_mask_length(mask_length):
     octets = [0, 0, 0, 0]
@@ -40,48 +40,88 @@ def ip_prefix_correction(ip_prefix):
 
     return corrected_prefix
 
+"""
+hostname routerA
+
+interface eth0/0
+    ip address 1.0.0.2 255.255.255.0
+interface eth0/1
+    ip address 100.0.0.1 255.255.255.0
+
+route-map POLICY permit 10
+    set local-preference 200
+    set metric 50
+    set origin igp | egp 65002
+    set as-path prepend 300 400
+    set ip next-hop 192.0.0.1
+
+router bgp 65001
+    router-id 10.0.0.1
+    neighbor 1.0.0.1 remote-as 65000
+    neighbor 100.0.0.2 remote-as 65002
+    network 100.0.0.0/24
+    neighbor 1.0.0.1 route-map POLICY outx
+"""
     
     
 def snap_gen(test):
     dir_path  = "test_snapshot/configs/"
 
     with open(dir_path + "A.cfg", "w") as f:
-        ip, ip1, mask, mask_length = convert_ip_subnet(test['Route1']['Prefix'])
+        ip, ip1, mask, mask_length = convert_ip_subnet("100.10.0.0/24")
+        # print(test)
         f.write("hostname RouterA\n\n")
         f.write("interface eth0/0\n")
-        f.write("    ip address 1.0.0.1 255.255.255.0\n")
+        f.write("   ip address 5.0.0.1 255.255.255.0\n")
         f.write("interface eth0/1\n")
-        f.write(f"    ip address {ip1} {mask}\n\n")
-        f.write("router bgp 10\n")
-        f.write("    neighbor 1.0.0.2 remote-as 11\n")
-        f.write(f"    neighbor {ip} remote-as 12\n")
-        f.write(f"    network {ip}/{mask_length}\n")
+        f.write(f"  ip address {ip1} {mask}\n\n")
+        f.write(f"route-map RMAP permit 10\n")
+        f.write(f"  set local-preference {test['Route1']['LP']}\n")
+        f.write(f"  set metric {test['Route1']['MED']}\n")
+        l = list(np.arange(1000, 1000+test['Route1']['ASPathLength'], 1))
+        asp = " ".join([str(x) for x in l])
+        f.write(f"  set as-path prepend {asp}\n")
+        omap = {'i':'igp','e':'egp 8765','?':'incomplete'}
+        f.write(f"  set origin {omap[test['Route1']['Origin']]}\n")
+        f.write(f"    \n")
+        f.write(f"router bgp {test['Route1']['ASN']}\n")
+        f.write(f"   router-id {test['Route1']['RID']}\n")
+        f.write(f"   neighbor 5.0.0.2 remote-as {test['RouterAS']}\n")
+        f.write(f"   neighbor {ip} remote-as 12\n")
+        f.write(f"   network {ip}/{mask_length}\n")
+        f.write(f"   neighbor 5.0.0.2 route-map RMAP out\n")
 
     with open(dir_path + "B.cfg", "w") as f:
-        ip, ip1, mask, mask_length = convert_ip_subnet(test['Route2']['Prefix'])
+        ip, ip1, mask, mask_length = convert_ip_subnet("100.10.0.0/24")
         f.write("hostname RouterB\n\n")
         f.write("interface eth0/0\n")
-        f.write("    ip address 2.0.0.1 255.255.255.0\n")
+        f.write("   ip address 6.0.0.1 255.255.255.0\n")
         f.write("interface eth0/1\n")
-        f.write(f"    ip address {ip1} {mask}\n\n")
-        f.write("router bgp 20\n")
-        f.write("    neighbor 2.0.0.2 remote-as 11\n")
-        f.write(f"    neighbor {ip} remote-as 22\n")
-        f.write(f"    network {ip}/{mask_length}\n")
+        f.write(f"  ip address {ip1} {mask}\n\n")
+        f.write(f"route-map RMAP permit 10\n")
+        f.write(f"  set local-preference {test['Route2']['LP']}\n")
+        f.write(f"  set metric {test['Route2']['MED']}\n")
+        l = list(np.arange(2000, 2000+test['Route2']['ASPathLength'], 1))
+        asp = " ".join([str(x) for x in l])
+        f.write(f"  set as-path prepend {asp}\n")
+        omap = {'i':'igp','e':'egp 8766','?':'incomplete'}
+        f.write(f"  set origin {omap[test['Route2']['Origin']]}\n")
+        f.write(f"    \n")
+        f.write(f"router bgp {test['Route2']['ASN']}\n")
+        f.write(f"   neighbor 6.0.0.2 remote-as {test['RouterAS']}\n")
+        f.write(f"   neighbor {ip} remote-as 22\n")
+        f.write(f"   network {ip}/{mask_length}\n")
+        f.write(f"   neighbor 6.0.0.2 route-map RMAP out\n")
 
     with open(dir_path + "C.cfg", "w") as f:
-        agg_str, ip, mask, mask_length = extract_agg_route(test['Router'])
         f.write("hostname RouterC\n\n")
         f.write("interface eth0/0\n")
-        f.write("    ip address 1.0.0.2 255.255.255.0\n")
+        f.write("    ip address 5.0.0.2 255.255.255.0\n")
         f.write("interface eth0/1\n")
-        f.write("    ip address 2.0.0.2 255.255.255.0\n")
-        f.write("interface eth0/2\n")
-        f.write(f"    ip address 3.0.0.1 255.255.255.0\n\n")
-        f.write("router bgp 11\n")
-        f.write("    neighbor 1.0.0.1 remote-as 10\n")
-        f.write("    neighbor 2.0.0.1 remote-as 20\n")
-        f.write(f"    neighbor 3.0.0.2 remote-as 30\n")
+        f.write("    ip address 6.0.0.2 255.255.255.0\n")
+        f.write(f"router bgp {test['RouterAS']}\n")
+        f.write(f"    neighbor 5.0.0.1 remote-as {test['Route1']['ASN']}\n")
+        f.write(f"    neighbor 6.0.0.1 remote-as {test['Route2']['ASN']}\n")
 
 
 

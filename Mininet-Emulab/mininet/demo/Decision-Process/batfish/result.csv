@@ -1,0 +1,2 @@
+Node,VRF,Network,Status,Next_Hop,Next_Hop_IP,Next_Hop_Interface,Protocol,AS_Path,Metric,Local_Pref,Communities,Origin_Protocol,Origin_Type,Originator_Id,Received_From_IP,Received_Path_Id,Cluster_List,Tunnel_Encapsulation_Attribute,Weight,Tag
+routerc,default,100.10.0.0/24,['BEST'],ip 6.0.0.1,6.0.0.1,dynamic,bgp,189 2000 2001,173,177,[],bgp,igp,100.10.0.1,6.0.0.1,,,,0,

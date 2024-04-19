@@ -1,0 +1,20 @@
+hostname routerA
+
+interface eth0/0
+    ip address 1.0.0.2 255.255.255.0
+interface eth0/1
+    ip address 100.0.0.1 255.255.255.0
+
+route-map POLICY permit 10
+    set local-preference 200
+    set metric 50
+    set origin igp
+    set as-path prepend 300 400
+    set ip next-hop 192.0.0.1
+
+router bgp 10
+    router-id 10.0.0.1
+    neighbor 1.0.0.1 remote-as 11
+    neighbor 100.0.0.2 remote-as 65002
+    network 100.0.0.0/24
+    neighbor 1.0.0.1 route-map POLICY out
