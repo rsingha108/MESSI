@@ -37,12 +37,12 @@ Here are all the command line options:
 
 For example, to generate all test cases for route aggregation with configuration dynamics, you should run:
 ```
-$ dotnet run -a -d
+$ dotnet run -- -a -d
 ```
 
 Similarly for route aggregation with route dynamics, use the following command:
 ```
-$ dotnet run -a -r
+$ dotnet run -- -a -r
 ```
 
 All test cases will be saved in separate JSON files within the **tests** directory. The set of regexes used for generating the current set of tests will be written to **regex-pos-neg.txt**.

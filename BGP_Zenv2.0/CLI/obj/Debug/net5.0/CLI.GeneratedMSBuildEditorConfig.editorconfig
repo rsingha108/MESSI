@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = CLI
-build_property.ProjectDir = /home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/
+build_property.ProjectDir = /home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/CLI/

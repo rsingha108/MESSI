@@ -70,3 +70,15 @@ C:/Users/Rathin Singha/OneDrive/Desktop/All-about-MESSI/MESSI/BGP_Zenv2.0/BGP/ob
 C:/Users/Rathin Singha/OneDrive/Desktop/All-about-MESSI/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/refint/BGP.dll
 C:/Users/Rathin Singha/OneDrive/Desktop/All-about-MESSI/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.pdb
 C:/Users/Rathin Singha/OneDrive/Desktop/All-about-MESSI/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/ref/BGP.dll
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/bin/Debug/net5.0/BGP.deps.json
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/bin/Debug/net5.0/BGP.dll
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/bin/Debug/net5.0/ref/BGP.dll
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/bin/Debug/net5.0/BGP.pdb
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.csproj.AssemblyReference.cache
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.GeneratedMSBuildEditorConfig.editorconfig
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.AssemblyInfoInputs.cache
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.AssemblyInfo.cs
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.csproj.CoreCompileInputs.cache
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.dll
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/ref/BGP.dll
+/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/Debug/net5.0/BGP.pdb

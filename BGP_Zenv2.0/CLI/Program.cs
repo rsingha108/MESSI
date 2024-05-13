@@ -299,7 +299,7 @@ namespace CLI{
                 rme.GetSetClause().IsNone()
             );
 
-            var cond3 = IPAttrExtensions.GetDifference(ipa1, ipa2) <= 2;
+            var cond3 = IPAttrExtensions.GetDifference(ipa1, ipa2) <= 1;
 
             var cond4 = IPAttrExtensions.DecisionDiffer(rme, ipa1, ipa2);
 

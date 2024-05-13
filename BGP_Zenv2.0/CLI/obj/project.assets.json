@@ -2129,11 +2129,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
+      "projectUniqueName": "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
       "projectName": "CLI",
-      "projectPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
+      "projectPath": "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/CLI/CLI.csproj",
       "packagesPath": "/home/rajdeep/.nuget/packages/",
-      "outputPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/CLI/obj/",
+      "outputPath": "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/CLI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/rajdeep/.nuget/NuGet/NuGet.Config"
@@ -2148,8 +2148,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
-              "projectPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj"
+            "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj": {
+              "projectPath": "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj"
             }
           }
         }

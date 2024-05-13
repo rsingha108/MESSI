@@ -2077,11 +2077,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
+      "projectUniqueName": "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
       "projectName": "BGP",
-      "projectPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
+      "projectPath": "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/BGP.csproj",
       "packagesPath": "/home/rajdeep/.nuget/packages/",
-      "outputPath": "/home/rajdeep/Desktop/gobgp_examples/MESSI/BGP_Zenv2.0/BGP/obj/",
+      "outputPath": "/home/rajdeep/Desktop/MESSI/BGP_Zenv2.0/BGP/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/rajdeep/.nuget/NuGet/NuGet.Config"
