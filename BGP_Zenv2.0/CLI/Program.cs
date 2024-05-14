@@ -64,9 +64,7 @@ namespace CLI{
             var cond3 = RouteMapEntryExtensions.DecisionDiffer(rme1, rme2, ipa);
             var cond4 = RouteMapEntryExtensions.GetDifference(rme1, rme2) <= 1;
 
-            var cond5 = Option.IsSome(rme1.GetMatchClause().GetPrefixList());
-
-            return And(cond1, cond2, cond3, cond4, cond5);
+            return And(cond1, cond2, cond3, cond4);
         }
 
         private static void GenerateAggregationTestCases(){
