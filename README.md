@@ -4,7 +4,7 @@ This repository contains the code for our work [MESSI](https://www.usenix.org/co
 
 ## Test Generation
 
-Navigate to `BGP_Zenv2.0` folder and follow the instructions provided in the README.
+Navigate to `BGP_Zenv2.0` folder and follow the instructions provided in the README. You can also use the generated tests [here](https://drive.google.com/drive/folders/1piNPJlptVjOuovqKd2OgOoL6SqKsjYsP?usp=sharing).
 
 ## Testing BGP Implementations
 
