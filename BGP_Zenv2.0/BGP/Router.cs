@@ -588,7 +588,7 @@ namespace BGP{
             var expr1 = If(arrtime1 <= arrtime2, r1, r2);
             var expr2 = If(ngbr1 > ngbr2, r1, If(ngbr1 < ngbr2, r2, expr1));
             var expr3 = If(rid1 < rid2, r1, If(rid1 > rid2,  r2, expr2));
-            var expr4 = If(igp1 < igp2, r1, If(igp1 > igp2, r1, expr3));
+            var expr4 = If(igp1 < igp2, r1, If(igp1 > igp2, r2, expr3));
             var expr5 = If(And(asn1!=asn2, asn1==rt_asn), r2, If(And(asn1!=asn2, asn2==rt_asn),  r1, expr4));
             var expr6 = If(med1 < med2, r1, If(med1 > med2, r2, expr5));
             var expr7 = If(And(org1!=org2, org1=='i'), r1, If(And(org1!=org2, org2=='i'), r2, expr6));
