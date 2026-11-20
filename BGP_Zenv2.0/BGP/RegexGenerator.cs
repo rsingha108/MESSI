@@ -285,7 +285,7 @@ namespace BGP{
 
         public List<string> GenerateASPosEx(string asp){
 
-            string regex = "(0|[1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])"; // all numbers from 0-65535 accecpted
+            string regex = "([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])"; // AS numbers 1-65535; AS 0 is reserved (RFC 7607)
             Regex<char> r0 = Regex.Parse("^" + regex + "$"); // valid AS regex of the form "AA" (single)
             regex = "^(" + regex + " )*" + regex + "$"; // now you can accept AS of the form "AA" or "AA AA AA AA..."
             Regex<char> r1 = Regex.Parse(regex); // valid regex multi
@@ -301,7 +301,7 @@ namespace BGP{
 
         public List<string> GenerateASNegEx(string asp){
 
-            string regex = "(0|[1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])"; // all numbers from 0-65535 accecpted
+            string regex = "([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])"; // AS numbers 1-65535; AS 0 is reserved (RFC 7607)
             Regex<char> r0 = Regex.Parse("^" + regex + "$"); // valid AS regex of the form "AA" (single)
             regex = "^(" + regex + " )*" + regex + "$"; // now you can accept AS of the form "AA" or "AA AA AA AA..."
             Regex<char> r1 = Regex.Parse(regex); // valid regex multi
